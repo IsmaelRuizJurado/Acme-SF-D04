@@ -18,6 +18,8 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link-pedro = 31026814K: Ruiz Aguilar, Pedro Jesus
 master.menu.anonymous.favourite-link-ismael = 49167510L: Ruiz Jurado, Ismael
 
 # master.menu.administrator ###################################################

@@ -19,7 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ismael" action="https://www.start.gg"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pedro" action="https://soundcloud.com/user-417378934-864405743/yeat-wat-u-want-2-prod-sky"/>
+      <acme:menu-suboption code="master.menu.anonymous.favourite-link-ismael" action="https://www.start.gg"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
