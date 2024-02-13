@@ -23,6 +23,8 @@
       <acme:menu-suboption code="master.menu.anonymous.favourite-link-ismael" action="https://www.start.gg"/>
       <acme:menu-suboption code="master.menu.anonymous.favourite-link-juanant" action="https://www.loldle.net"/>
       <acme:menu-suboption code="master.menu.anonymous.favourite-link-diego" action="https://www.igualdad.gob.es/"/>
+      <acme:menu-suboption code="master.menu.anonymous.favourite-link-angela" action="https://www.zara.com/es/"/>
+      
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
