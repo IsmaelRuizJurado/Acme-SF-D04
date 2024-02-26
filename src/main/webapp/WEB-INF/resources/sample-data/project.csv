@@ -1,0 +1,29 @@
+key,code,title,abstractt,indication,cost,link,draft_mode,key:manager
+project-01,ABC-0123,T,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+project-02,BCD-0123,Ti,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+project-03,CDE-0123,Esto es un title de exactamente 75 caracteres - - - - - - - - - - - - - - -,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+project-04,DEF-0123,Esto es un title de exactamente 74 caracteres - - - - - - - - - - - - - - ,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+project-05,EFJ-0123,Esto es un title de 38 caracteres - - ,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+project-06,FJI-0123,練習題目,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-07,JIK-0123,τίτλος πρακτικής,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-08,IKO-0123,<script>alert("hi!")</script>,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-09,KOP-4675,<h1>Hola Mundo!</h1>,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-10,NHB-0123,Title estándar,A,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-11,SPL-0123,Title estándar,Ab,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-12,DAU-0123,Title estándar,Esto es un abstractt de exactamente 100 caracteres - - - - - - - - - - - - - - - - - - - - - - - - -,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-13,CUD-0123,Title estándar,Esto es un abstractt de exactamente 99 caracteres - - - - - - - - - - - - - - - - - - - - - - - - -,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-14,XXX-0123,Title estándar,Esto es un abstractt de exactamente 50 caracteres-,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-15,VMJ-0123,Title estándar,專業實踐,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-16,AAA-0123,Title estándar,περίληψη πρακτικής,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-17,NIG-0123,Title estándar,<script>alert("hi!")</script>,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-18,PAL-9999,Title estándar,<h1>Hola Mundo!</h1>,true,EUR 0.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-19,WEY-0123,Title estándar,Abstractt estándar,true,"EUR 150,000.0",https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-20,ABS-0123,Title estándar,Abstractt estándar,true,EUR 0.01,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-21,IDC-0123,Title estándar,Abstractt estándar,true,EUR 00.02,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-22,IDK-0123,Title estándar,Abstractt estándar,true,EUR 1000000.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-23,ETA-0123,Title estándar,Abstractt estándar,true,EUR 999999.99,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-24,GPO-0123,Title estándar,Abstractt estándar,true,USD 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-25,NEG-0123,Title estándar,Abstractt estándar,true,GBP 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+project-26,XCX-0000,Title estándar,Abstractt estándar,true,EUR 10.0,null,true,manager-01
+project-27,KYS-0123,Title estándar,Abstractt estándar,true,EUR 10.0,ftp://user:pass@acme.org,true,manager-01
+project-28,ZZZ-0123,Title estándar,Abstractt estándar,true,EUR 10.0,https://github.com/IsmaelRuizJurado/Acme-SF-D02/a?b,false,manager-02
