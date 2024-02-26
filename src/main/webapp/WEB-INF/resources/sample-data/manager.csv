@@ -1,0 +1,34 @@
+key,degree,overview,certifications,link,key:userAccount
+manager-01,Degree1,Overview1,Certifications1,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-01
+manager-02,Degree2,Overview2,Certifications2,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-02
+manager-03,Degree estándar,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-03
+manager-04,E,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-04
+manager-05,Es,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-05
+manager-06,Esto es un degree de exactamente 75 caracteres - - - - - - - - - - - - - - ,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-06
+manager-07,Esto es un degree de exactamente 74 caracteres - - - - - - - - - - - - - -,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-07
+manager-08,Esto es un degree de 38 caracteres - -,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-08
+manager-09,公司名稱,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-09
+manager-10,Όνομα εταιρείας,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-10
+manager-11,<script>alert("hi!")</script>,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-11
+manager-12,<h1>Hola Mundo!</h1>,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-12
+manager-13,Degree estándar,O,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-13
+manager-14,Degree estándar,Ov,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-14
+manager-15,Degree estándar,Esto es un overview de exactamente 100 caracteres - - - - - - - - - - - - - - - - - - - - - - - - - ,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-15
+manager-16,Degree estándar,Esto es un overview de exactamente 99 caracteres - - - - - - - - - - - - - - - - - - - - - - - - - ,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-16
+manager-17,Degree estándar,Esto es un overview de exactamente 50 caracteres -,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-17
+manager-18,Degree estándar,增值稅代碼,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-18
+manager-19,Degree estándar,κώδικα ΦΠΑ,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-19
+manager-20,Degree estándar,<h1>Hola Mundo!</h1>,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-20
+manager-21,Degree estándar,console.log("Hola!"),Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-21
+manager-22,Degree estándar,Overview estándar,C,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-22
+manager-23,Degree estándar,Overview estándar,Ce,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-23
+manager-24,Degree estándar,Overview estándar,Esto es un certifications de exactamente 100 caracteres - - - - - - - - - - - - - - - - - - - - - - ,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-24
+manager-25,Degree estándar,Overview estándar,Esto es un certifications de exactamente 99 caracteres - - - - - - - - - - - - - - - - - - - - - - ,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-25
+manager-26,Degree estándar,Overview estándar,Esto es un certifications de 50 caracteres - - - -,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-26
+manager-27,Degree estándar,Overview estándar,公司簡介,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-27
+manager-28,Degree estándar,Overview estándar,Επισκόπηση της εταιρείας,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-28
+manager-29,Degree estándar,Overview estándar,<script>alert("hi!")</script>,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-29
+manager-30,Degree estándar,Overview estándar,<h1>Hola Mundo!</h1>,https://github.com/IsmaelRuizJurado/Acme-SF-D02,user-account-manager-30
+manager-31,Degree estándar,Overview estándar,Certifications estándar,null,user-account-manager-31
+manager-32,Degree estándar,Overview estándar,Certifications estándar,ftp://user:pass@acme.org,user-account-manager-32
+manager-33,Degree estándar,Overview estándar,Certifications estándar,https://github.com/IsmaelRuizJurado/Acme-SF-D02/a?b,user-account-manager-33
