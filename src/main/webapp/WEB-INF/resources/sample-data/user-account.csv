@@ -36,3 +36,5 @@ user-account-manager-30,true,"UserIdentity{name: 'Ismael', surname: 'Ruiz', emai
 user-account-manager-31,true,"UserIdentity{name: 'Ismael', surname: 'Ruiz', email: 'ismruijur@acme.com'}",manager31,manager31
 user-account-manager-32,true,"UserIdentity{name: 'Ismael', surname: 'Ruiz', email: 'ismruijur@acme.com'}",manager32,manager32
 user-account-manager-33,true,"UserIdentity{name: 'Ismael', surname: 'Ruiz', email: 'ismruijur@acme.com'}",manager33,manager33
+user-account-sponsor-01,true,"UserIdentity{name:'Sponsor1',surname:'Uno',email:'sponsor1@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name:'Sponsor2',surname:'Dos',email:'sponsor@acme.com'}",sponsor2,sponsor2
