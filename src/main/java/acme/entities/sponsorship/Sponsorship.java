@@ -1,5 +1,5 @@
 
-package acme.entities.Invoice;
+package acme.entities.sponsorship;
 
 import java.util.Date;
 
@@ -9,64 +9,69 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
-import acme.entities.Sponsorship.Sponsorship;
+import acme.entities.project.Project;
+import acme.roles.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Invoice extends AbstractEntity {
+public class Sponsorship extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$")
+	@Pattern(regexp = "^[A-Z]{1,3}-[0-9]{3}$")
 	protected String			code;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Valid
-	protected Date				registration_time;
+	@Past
+	protected Date				moment;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				due_date;
+	protected Date				startPeriod;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date				endPeriod;
 
 	@Valid
 	@NotNull
-	protected Money				quantity;
+	protected Money				amount;
 
-	@Valid
 	@NotNull
-	protected Money				tax;
+	protected SponsorshipType	type;
+
+	@Email
+	protected String			email;
 
 	@URL
 	protected String			link;
 
-
-	public Money totalAmount() {
-		double total;
-		total = this.quantity.getAmount() + this.tax.getAmount();
-		Money totalAmount = new Money();
-		totalAmount.setAmount(total);
-		totalAmount.setCurrency(this.quantity.getCurrency());
-		return totalAmount;
-	}
-
+	protected boolean			draftMode;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Sponsorship sponsorship;
+	protected Project			project;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Sponsor			sponsor;
 
 }

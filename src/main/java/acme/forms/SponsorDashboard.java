@@ -2,6 +2,7 @@
 package acme.forms;
 
 import acme.client.data.AbstractForm;
+import acme.datatypes.Stats;
 import lombok.Getter;
 import lombok.Setter;
 
