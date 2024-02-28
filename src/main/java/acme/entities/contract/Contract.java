@@ -17,6 +17,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
 import acme.entities.project.Project;
 import acme.roles.Client;
 import lombok.Getter;
@@ -57,7 +58,9 @@ public class Contract extends AbstractEntity {
 	@Length(min = 1, max = 100)
 	private String				goals;
 
-	private Double				budget;
+	@NotNull
+	@Valid
+	private Money				budget;
 
 	private boolean				draftMode;
 

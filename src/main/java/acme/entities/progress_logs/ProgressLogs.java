@@ -63,6 +63,6 @@ public class ProgressLogs extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	private Contract			contract;
 }

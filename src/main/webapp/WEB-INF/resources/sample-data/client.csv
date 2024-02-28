@@ -4,7 +4,7 @@ client-02,CLI-0002,baseCase,COMPANY,juamormog@acme.com,https://loldle.net/classi
 client-03,CLI-0000,baseCase,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-03
 client-04,CLI-9999,baseCase,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-04
 client-05,CLI-0005,x,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-05
-client-06,CLI-0006,Este es un nombre con 76 valores------------------------------------------,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-06
+client-06,CLI-0006,Este es un nombre con 75 valores-------------------------------------------,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-06
 client-07,CLI-0007,公司名稱,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-07
 client-08,CLI-0008,Όνομα εταιρείας,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-08
 client-09,CLI-0009,<script>alert("hi!")</script>,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-09
