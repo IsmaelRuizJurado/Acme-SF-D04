@@ -15,10 +15,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
-import org.abego.treelayout.internal.util.Contract;
 import org.hibernate.validator.constraints.Length;
 
 import acme.client.data.AbstractEntity;
+import acme.entities.contract.Contract;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -63,6 +63,6 @@ public class ProgressLogs extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	private Contract			contract;
 }
