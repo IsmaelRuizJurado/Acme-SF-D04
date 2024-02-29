@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -18,6 +17,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
 import acme.entities.project.Project;
 import acme.roles.Client;
 import lombok.Getter;
@@ -58,9 +58,9 @@ public class Contract extends AbstractEntity {
 	@Length(min = 1, max = 100)
 	private String				goals;
 
-	@Min(0)
 	@NotNull
-	private Double				budget;
+	@Valid
+	private Money				budget;
 
 	private boolean				draftMode;
 
