@@ -17,7 +17,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-// import acme.entities.code_audits.CodeAudits;
+import acme.entities.code_audits.CodeAudits;
 import lombok.Getter;
 import lombok.Setter;
 
