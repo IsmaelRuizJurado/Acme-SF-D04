@@ -2,7 +2,6 @@
 package acme.entities.code_audits;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,8 +48,8 @@ public class CodeAudits extends AbstractEntity {
 	private CodeAuditsType		type;
 
 	@NotBlank
-	@Length(max = 101)
-	private List<String>		correctiveActions;
+	@Length(max = 100)
+	private String				correctiveActions;
 
 	@URL
 	private String				link;
