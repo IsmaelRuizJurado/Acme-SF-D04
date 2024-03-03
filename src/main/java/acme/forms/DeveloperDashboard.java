@@ -2,6 +2,7 @@
 package acme.forms;
 
 import acme.client.data.AbstractForm;
+import acme.datatypes.Stats;
 
 public class DeveloperDashboard extends AbstractForm {
 	// Serialisation identifier -----------------------------------------------
@@ -14,7 +15,7 @@ public class DeveloperDashboard extends AbstractForm {
 
 	private Integer				numTrainingSessionsWithLink;
 
-	private Statistics			statistics;
+	private Stats				trainingModulesTimeStats;
 
 	// Derived attributes -----------------------------------------------------
 

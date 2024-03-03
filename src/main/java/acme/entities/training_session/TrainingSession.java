@@ -40,9 +40,12 @@ public class TrainingSession extends AbstractEntity {
 	private String				code;
 
 	@NotNull
-	@NotBlank
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				period;
+	private Date				startPeriod;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endPeriod;
 
 	@NotNull
 	@NotBlank
@@ -55,6 +58,8 @@ public class TrainingSession extends AbstractEntity {
 	private String				instructor;
 
 	@Email
+	@NotNull
+	@NotBlank
 	private String				contactEmail;
 
 	@URL
