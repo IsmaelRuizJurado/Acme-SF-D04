@@ -1,26 +1,32 @@
 
-package acme.entities.banner;
+package acme.entities.contract;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
+import acme.entities.project.Project;
+import acme.roles.Client;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
+@Entity
+public class Contract extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,36 +34,47 @@ public class Banner extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
-	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				instantiationMoment;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				startDisplayPeriod;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				endDisplayPeriod;
-
-	@NotNull
+	@Column(unique = true)
 	@NotBlank
-	@URL
-	private String				pictureLink;
+	@NotNull
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{4}")
+	private String				code;
 
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	protected Date				instantiationMoment;
+
 	@NotBlank
 	@Length(min = 1, max = 75)
-	private String				slogan;
+	private String				providerName;
+
+	@NotBlank
+	@Length(min = 1, max = 75)
+	private String				customerName;
 
 	@NotNull
 	@NotBlank
-	@URL
-	private String				webLink;
+	@Length(min = 1, max = 100)
+	private String				goals;
+
+	@NotNull
+	@Valid
+	private Money				budget;
+
+	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Project				project;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Client				client;
 }

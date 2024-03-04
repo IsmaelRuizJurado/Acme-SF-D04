@@ -1,26 +1,30 @@
 
-package acme.entities.banner;
+package acme.entities.audit_records;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.entities.code_audits.CodeAudits;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
+@Entity
+public class AuditRecords extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,36 +32,30 @@ public class Banner extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
+	@Column(unique = true)
+	@NotBlank
 	@NotNull
+	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	private String				code;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				instantiationMoment;
+	private Date				period;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				startDisplayPeriod;
+	private MarkType			mark;
 
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				endDisplayPeriod;
-
-	@NotNull
-	@NotBlank
 	@URL
-	private String				pictureLink;
-
-	@NotNull
-	@NotBlank
-	@Length(min = 1, max = 75)
-	private String				slogan;
-
-	@NotNull
-	@NotBlank
-	@URL
-	private String				webLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private CodeAudits			code_audits;
 
 }

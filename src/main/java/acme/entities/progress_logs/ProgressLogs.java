@@ -1,57 +1,61 @@
 
-package acme.entities.user_stories;
+package acme.entities.progress_logs;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.datatypes.Money;
-import acme.entities.project.Project;
+import acme.entities.contract.Contract;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-public class UserStory extends AbstractEntity {
-
+@Entity
+public class ProgressLogs extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
+	@Column(unique = true)
 	@NotBlank
-	@Length(min = 1, max = 75)
-	private String				title;
+	@NotNull
+	@Pattern(regexp = "PG-[A-Z]{1,2}-[0-9]{4}")
+	private String				recordId;
 
 	@NotNull
-	@NotBlank
-	@Length(min = 1, max = 100)
-	private String				description;
-
-	@Valid
-	@NotNull
-	private Money				estimatedCostPerHour;
+	@Min(1)
+	private Integer				completeness;
 
 	@NotNull
 	@NotBlank
-	@Length(min = 1, max = 100)
-	private String				acceptanceCriteria;
+	@Length(min = 0, max = 100)
+	private String				comment;
 
-	@Valid
 	@NotNull
-	private Priority			priority;
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				registrationMoment;
 
-	@URL
-	private String				link;
+	@NotNull
+	@NotBlank
+	@Length(min = 0, max = 75)
+	private String				responsiblePerson;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -60,6 +64,5 @@ public class UserStory extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Project				project;
-
+	private Contract			contract;
 }
