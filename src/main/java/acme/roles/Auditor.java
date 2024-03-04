@@ -30,7 +30,7 @@ public class Auditor extends AbstractRole {
 	@NotBlank
 	@Length(max = 25)
 	@Column(unique = true)
-	private Integer				professionalId;
+	private String				professionalId;
 
 	@NotBlank
 	@Length(max = 100)
