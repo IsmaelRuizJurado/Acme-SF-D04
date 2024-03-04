@@ -41,7 +41,12 @@ public class AuditRecords extends AbstractEntity {
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date				period;
+	private Date				startPeriod;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	private Date				endPeriod;
 
 	@NotNull
 	private MarkType			mark;
