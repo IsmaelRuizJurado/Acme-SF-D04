@@ -43,4 +43,9 @@ public class Objective extends AbstractEntity {
 	
 	@URL
 	private String				link;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Project				project;
 }
