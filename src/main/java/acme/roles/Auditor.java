@@ -1,9 +1,9 @@
 
 package acme.roles;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -23,20 +23,21 @@ public class Auditor extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
+	@NotNull
 	@NotBlank
 	@Length(max = 75)
 	private String				firm;
 
+	@NotNull
 	@NotBlank
 	@Length(max = 25)
-	@Column(unique = true)
 	private String				professionalId;
 
+	@NotNull
 	@NotBlank
 	@Length(max = 100)
 	private String				certifications;
 
-	@NotBlank
 	@URL
 	private String				link;
 

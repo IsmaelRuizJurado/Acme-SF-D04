@@ -2,6 +2,7 @@
 package acme.forms;
 
 import acme.client.data.AbstractForm;
+import acme.datatypes.Stats;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,9 +20,9 @@ public class AuditorDashboard extends AbstractForm {
 	private Integer				totalNumAudits;
 
 	//Average, deviation, minimum, and maximum number of audit records in their audits
-	private Statistic			numAuditRecord;
+	private Stats				numAuditRecord;
 
 	//Average, deviation, minimum, and maximum time of the period lengths in their audit records
-	private Statistic			auditingTimePeriod;
+	private Stats				auditingTimePeriod;
 
 }

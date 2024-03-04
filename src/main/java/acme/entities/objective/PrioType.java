@@ -1,6 +1,6 @@
 
 package acme.entities.objective;
 
-public enum prioType {
+public enum PrioType {
 	LOW, MEDIUM, HIGH;
 }

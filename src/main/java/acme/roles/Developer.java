@@ -39,6 +39,8 @@ public class Developer extends AbstractRole {
 	@Length(min = 1, max = 100)
 	private String				skills;
 
+	@NotBlank
+	@NotNull
 	@Email
 	private String				email;
 

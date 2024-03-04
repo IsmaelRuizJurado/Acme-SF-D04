@@ -3,11 +3,8 @@ package acme.entities.objective;
 
 import java.util.Date;
 
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -16,7 +13,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.entities.project.Project;
+import acme.client.helpers.MomentHelper;
 
 public class Objective extends AbstractEntity {
 
@@ -27,28 +24,40 @@ public class Objective extends AbstractEntity {
 	@Past
 	protected Date				instantiationMoment;
 
+	@NotNull
 	@NotBlank
 	@Length(min = 1, max = 75)
 	private String				title;
 
+	@NotNull
 	@NotBlank
 	@Length(min = 1, max = 100)
 	private String				description;
 
 	@NotNull
-	private prioType			priority;
+	private PrioType			priority;
 
 	@NotNull
-	private Boolean				critical;
+	private boolean				critical;
 
-	@Min(0)
-	private Integer				duration;
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	protected Date				startPeriod;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	protected Date				endPeriod;
 
 	@URL
 	private String				link;
 
+
 	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private Project				project;
+	public int duration() {
+		int duration;
+		duration = (int) MomentHelper.computeDuration(this.startPeriod, this.endPeriod).getSeconds() / 3600;
+		return duration;
+	}
 }
