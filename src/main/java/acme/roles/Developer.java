@@ -1,8 +1,6 @@
 
 package acme.roles;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -22,27 +20,28 @@ public class Developer extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long							serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@NotNull
 	@Length(min = 1, max = 75)
-	private String										degree;
+	private String				degree;
 
 	@NotBlank
 	@NotNull
 	@Length(min = 1, max = 100)
-	private String										specialisation;
+	private String				specialisation;
 
 	@NotBlank
 	@NotNull
-	private List<@Length(min = 1, max = 100) String>	skills;
+	@Length(min = 1, max = 100)
+	private String				skills;
 
 	@Email
-	private String										email;
+	private String				email;
 
 	@URL
-	private String										link;
+	private String				link;
 }

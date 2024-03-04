@@ -1,0 +1,10 @@
+key,code,startPeriod,endPeriod,location,instructor,contactEmail,optionalLink,key:training-module
+training-session-01,TS-A-000,2021/08/21 00:00, 2021/08/21 10:00,Esta es una location de 75 caracteres-----------------------,Esto es un instructor de 75 caracteres----------------------,developer@acme.com,https://es.linkedin.com,training-module-01
+training-session-02,TS-AB-102,2020/02/28 23:59, 2020/02/29 00:00,Esta es una location de 74 caracteres----------------------,Esto es un instructor de 74 caracteres---------------------,developer@acme.com,https://es.linkedin.com,training-module-02
+training-session-03,TS-ABC-123,2020/02/29 00:00, 2020/02/29 10:00,A,A,developer@acme.com,https://es.linkedin.com,training-module-03
+training-session-04,TS-ABC-124,2021/12/31 23:59, 2022/01/01 00:00,2c,2c,developer@acme.com,https://es.linkedin.com,training-module-04
+training-session-05,TS-ABC-125,2022/01/01 00:00, 2022/01/01 10:00,Esta es una location de 52 caracteres,Esto es un instructor de 53 caracteres,developer@acme.com,https://es.linkedin.com,training-module-05
+training-session-06,TS-ABC-126,2021/08/21 00:00, 2021/08/21 10:00,Esta es una location de 75 caracteres-----------------------,Esto es un instructor de 75 caracteres----------------------,developer@acme.com,https://es.linkedin.com,training-module-01
+training-session-07,TS-ABC-127,2021/08/21 10:00, 2021/08/21 10:10,Esta es una location de 75 caracteres-----------------------,Esto es un instructor de 75 caracteres----------------------,developer@acme.com,null,training-module-01
+training-session-08,TS-ABC-128,2021/08/21 08:00, 2021/08/21 10:00,这是一个具有75个字符的位置-----------------------,Esto es un instructor de 75 caracteres----------------------,developer@acme.com,https://es.linkedin.com,training-module-01
+training-session-09,TS-ABC-129,2021/08/21 05:00, 2021/08/21 10:00,Esta es una location de 75 caracteres-----------------------,นี่คือคำสั่งผู้สอนที่มี 75 ตัวอักษร----------------------,developer@acme.com,https://es.linkedin.com,training-module-01
