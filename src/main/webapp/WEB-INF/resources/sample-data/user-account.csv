@@ -90,3 +90,5 @@ user-account-developer-07,true,"UserIdentity{name: 'diego', surname: 'manzanos',
 user-account-developer-08,true,"UserIdentity{name: 'diego', surname: 'manzanos', email: 'diemanane@acme.com'}",developer8,developer8
 user-account-developer-09,true,"UserIdentity{name: 'diego', surname: 'manzanos', email: 'diemanane@acme.com'}",developer9,developer9
 user-account-developer-10,true,"UserIdentity{name: 'diego', surname: 'manzanos', email: 'diemanane@acme.com'}",developer10,developer10
+user-account-auditor-01,true,"UserIdentity{name: 'Angela', surname: 'Lopez', email: 'anglopoli1@acme.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Angela', surname: 'Lopez', email: 'anglopoli1@acme.com'}",auditor2,auditor2
