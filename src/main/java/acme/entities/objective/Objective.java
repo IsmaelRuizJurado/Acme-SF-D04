@@ -3,8 +3,10 @@ package acme.entities.objective;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -14,7 +16,12 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.helpers.MomentHelper;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Objective extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
@@ -42,12 +49,10 @@ public class Objective extends AbstractEntity {
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
 	protected Date				startPeriod;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
 	protected Date				endPeriod;
 
 	@URL
@@ -55,7 +60,8 @@ public class Objective extends AbstractEntity {
 
 
 	@NotNull
-	public int duration() {
+	@Transient
+	public Integer duration() {
 		int duration;
 		duration = (int) MomentHelper.computeDuration(this.startPeriod, this.endPeriod).getSeconds() / 3600;
 		return duration;

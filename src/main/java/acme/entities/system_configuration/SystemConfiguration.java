@@ -22,5 +22,5 @@ public class SystemConfiguration extends AbstractEntity {
 
 	@Pattern(regexp = "^([A-Z]{3},)*[A-Z]{3}$", message = "{validation.systemConfiguration.aceptedCurrencies}")
 	@NotNull
-	protected String			aceptedCurrencies;
+	protected String			acceptedCurrencies;
 }

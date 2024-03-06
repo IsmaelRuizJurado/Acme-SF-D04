@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -61,6 +62,7 @@ public class Risk extends AbstractEntity {
 
 
 	@NotNull
+	@Transient
 	public Double value() {
 		double value;
 		value = this.probability * this.impact;
