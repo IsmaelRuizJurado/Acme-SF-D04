@@ -64,7 +64,6 @@ public class TrainingModule extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	@Valid
 	private Integer				estimatedTotalTime;
 
 	// Relationships ----------------------------------------------------------
