@@ -1,0 +1,41 @@
+key,title,description,estimated_cost_per_hour,acceptance_criteria,priority,link,draft_mode,key:manager
+user-story-01,T,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+user-story-02,Ti,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+user-story-03,Esto es un title de exactamente 75 caracteres - - - - - - - - - - - - - - -,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+user-story-04,Esto es un title de exactamente 74 caracteres - - - - - - - - - - - - - -,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+user-story-05,Esto es un title de 38 caracteres - -,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,false,manager-01
+user-story-06,實用會議,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-07,Πρακτική συνεδρίαση,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-08,"<script>alert(""hi!"")</script>",Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-09,<h1>Hola Mundo!</h1>,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-10,Title estándar,D,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-11,Title estándar,De,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-12,Title estándar,Esto es un description de exactamente 100 caracteres - - - - - - - - - - - - - - - - - - - - - - - -,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-13,Title estándar,Esto es un description de exactamente 99 caracteres - - - - - - - - - - - - - - - - - - - - - - - -,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-14,Title estándar,練習摘要,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-15,Title estándar,Περίληψη της συνεδρίας πρακτικής,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-16,Title estándar,"<script>alert(""hi!"")</script>",EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-17,Title estándar,<h1>Hola Mundo!</h1>,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-18,Title estándar,Description estándar,EUR 0.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-19,Title estándar,Description estándar,"EUR 150,000.0",Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-20,Title estándar,Description estándar,EUR 0.01,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-21,Title estándar,Description estándar,EUR 00.02,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-22,Title estándar,Description estándar,EUR 1000000.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-23,Title estándar,Description estándar,EUR 999999.99,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-24,Title estándar,Description estándar,USD 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-25,Title estándar,Description estándar,GBP 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-26,Title estándar,Description estándar,EUR 10.0,A,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-27,Title estándar,Description estándar,EUR 10.0,Ac,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-28,Title estándar,Description estándar,EUR 10.0,Esto es un acceptance criteria de exactamente 100 caracteres - - - - - - - - - - - - - - - - - - - -,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-29,Title estándar,Description estándar,EUR 10.0,Esto es un acceptance criteria de exactamente 99 caracteres - - - - - - - - - - - - - - - - - - - -,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-30,Title estándar,Description estándar,EUR 10.0,Esto es un acceptance criteria de 50 caracteres -,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-31,Title estándar,Description estándar,EUR 10.0,თხა,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-32,Title estándar,Description estándar,EUR 10.0,коза,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-33,Title estándar,Description estándar,EUR 10.0,"<script>alert(""hi!"")</script>",SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-34,Title estándar,Description estándar,EUR 10.0,<h1>Hola Mundo!</h1>,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-35,Title estándar,Description estándar,EUR 10.0,Acceptance Criteria estándar,MUST,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-36,Title estándar,Description estándar,EUR 10.0,Acceptance Criteria estándar,COULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-37,Title estándar,Description estándar,EUR 10.0,Acceptance Criteria estándar,WONT,https://github.com/IsmaelRuizJurado/Acme-SF-D02,true,manager-01
+user-story-38,Title estándar,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,null,true,manager-01
+user-story-39,Title estándar,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,ftp://user:pass@acme.org,true,manager-01
+user-story-40,Title estándar,Description estándar,EUR 10.0,Acceptance Criteria estándar,SHOULD,https://github.com/IsmaelRuizJurado/Acme-SF-D02/a?b,false,manager-02

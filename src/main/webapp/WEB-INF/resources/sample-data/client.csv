@@ -1,0 +1,17 @@
+key,identification,company_name,type,email,link,key:userAccount
+client-01,CLI-0001,baseCase,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-01
+client-02,CLI-0002,baseCase,COMPANY,juamormog@acme.com,https://loldle.net/classic,user-account-client-02
+client-03,CLI-0000,baseCase,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-03
+client-04,CLI-9999,baseCase,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-04
+client-05,CLI-0005,x,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-05
+client-06,CLI-0006,Este es un nombre con 75 valores-------------------------------------------,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-06
+client-07,CLI-0007,公司名稱,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-07
+client-08,CLI-0008,Όνομα εταιρείας,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-08
+client-09,CLI-0009,<script>alert("hi!")</script>,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-09
+client-10,CLI-0010,<h1>Hola Mundo!</h1>,INDIVIDUAL,juamormog@acme.com,https://loldle.net/classic,user-account-client-10
+client-11,CLI-0011,baseCase,INDIVIDUAL,juamormog@gmail.com,https://loldle.net/classic,user-account-client-11
+client-12,CLI-0012,baseCase,INDIVIDUAL,juamormog@alum.us.es,https://loldle.net/classic,user-account-client-12
+client-13,CLI-0013,baseCase,INDIVIDUAL,juamormog@hotmail.com,https://loldle.net/classic,user-account-client-13
+client-14,CLI-0014,baseCase,INDIVIDUAL,juamormog@acme.com,https://es.linkedin.com,user-account-client-14
+client-15,CLI-0015,baseCase,INDIVIDUAL,juamormog@acme.com,ftp://user:pass@acme.org,user-account-client-15
+client-16,CLI-0016,baseCase,INDIVIDUAL,juamormog@acme.com,null,user-account-client-16
