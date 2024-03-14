@@ -1,0 +1,13 @@
+
+administrator.system-configuration.form.title = System Configuration
+administrator.system-configuration.form.label.systemCurrency = System currency:
+administrator.system-configuration.form.label.acceptedCurrencies = Accepted currencies:
+administrator.system-configuration.form.label.spamWords = Words considered spam:
+administrator.system-configuration.form.label.spamThreshold = Threshold of spam words:
+
+administrator.system-configuration.form.button.update = Update
+
+administrator.system-configuration.form.error.system-currency = The currency introduced is not accepted by the system
+validation.systemConfiguration.systemCurrency = The system currency must be 3 letters in capital letters
+validation.systemConfiguration.aceptedCurrencies = Accepted currencies must have 3 capitalized letters and are separated by commas
+validation.systemConfiguration.spamWords = Spam words must be separated by commas
