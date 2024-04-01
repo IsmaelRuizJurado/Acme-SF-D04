@@ -18,7 +18,7 @@ public class ManagerDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	private Map<String, Integer>	totalPriorities;
+	private Map<String, Integer>	totalUserStoriesByPriority;
 
 	private Stats					userStoriesCostStats;
 

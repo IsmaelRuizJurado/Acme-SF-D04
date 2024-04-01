@@ -10,6 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Stats {
 
+	public Stats() {
+	}
+
+
 	// Attributes -------------------------------------------------------------
 	int		count;
 
