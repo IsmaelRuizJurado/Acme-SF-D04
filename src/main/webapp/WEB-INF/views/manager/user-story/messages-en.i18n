@@ -1,0 +1,28 @@
+manager.user-story.list.title = User Story list
+manager.user-story.list.label.title = Title
+manager.user-story.list.label.description = Description
+manager.user-story.list.label.estimatedCostPerHour = Estimated cost per hour
+
+manager.user-story.form.title = User Story details
+manager.user-story.form.label.title = Title
+manager.user-story.form.label.description = Description
+manager.user-story.form.label.estimatedCostPerHour = Estimated cost per hour
+manager.user-story.form.label.acceptanceCriteria = Acceptance Criteria
+manager.user-story.form.label.priority = Priority
+manager.user-story.form.label.link = Link
+manager.user-story.form.label.draftMode = Draft mode
+manager.user-story.form.label.money = Cost in the system currency
+
+manager.user-story.form.error.spam = The introduced text is considered Spam
+
+manager.user-story.form.error.estimatedCostPerHour = The cost must be positive and lower than 1000000
+manager.user-story.form.error.estimatedCostPerHour2 = The introduced currency is not accepted by the system
+
+manager.user-story.list.button.add = Add to a project
+manager.user-story.list.button.deleteFromProject = Delete from a project
+
+manager.user-story.list.button.create = Create
+manager.user-story.form.button.delete = Delete
+manager.user-story.form.button.update = Update
+manager.user-story.form.button.publish = Publish
+manager.user-story.form.button.create = Create

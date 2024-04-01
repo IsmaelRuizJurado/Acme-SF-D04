@@ -1,0 +1,21 @@
+
+manager.project-user-story.form.title = Project - User Story
+manager.projectUserStory.form.userStory = User story
+manager.projectUserStory.form.button.delete = Delete
+manager.projectUserStory.form.button.create = Add
+
+manager.projectUserStory.form.error.userstory = This user story is yet in the course
+
+manager.projectUserStory.form.error.project = The selected project is not editable
+
+manager.projectUserStory.form.label.project = Project
+
+manager.projectUserStory.form.userStory.title = Title of the user story
+
+manager.projectUserStory.form.userStory.description = Description of the user story
+
+manager.projectUserStory.form.userStory.info = Add the user story with the following info to a project
+
+manager.projectUserStory.form.userStory.delete.info = Delete user story with the following info from a project
+
+manager.projectUserStory.form.error.projectNotNull = You must select a project

@@ -1,0 +1,28 @@
+manager.user-story.list.title = Lista de historias de usuario
+manager.user-story.list.label.title = Título
+manager.user-story.list.label.description = Descripción
+manager.user-story.list.label.estimatedCostPerHour = Coste estimado por hora
+
+manager.user-story.form.title = Detalles de la historia de usuario
+manager.user-story.form.label.title = Título
+manager.user-story.form.label.description = Descripción
+manager.user-story.form.label.estimatedCostPerHour = Coste estimado por hora
+manager.user-story.form.label.acceptanceCriteria = Criterios de aceptación
+manager.user-story.form.label.priority = Prioridad
+manager.user-story.form.label.link = Enlace
+manager.user-story.form.label.draftMode = Modo borrador
+manager.user-story.form.label.money = Coste en divisa del sistema
+
+manager.user-story.form.error.spam = El texto introducido es considerado Spam
+
+manager.user-story.form.error.estimatedCostPerHour = El coste debe ser positivo y menor que 1000000
+manager.user-story.form.error.estimatedCostPerHour2 = La divisa introducida no es aceptada por el sistema
+
+manager.user-story.list.button.add = Añadir a un proyecto
+manager.user-story.list.button.deleteFromProject = Borrar de un proyecto
+
+manager.user-story.list.button.create = Crear
+manager.user-story.form.button.delete = Eliminar
+manager.user-story.form.button.update = Actualizar
+manager.user-story.form.button.publish = Publicar
+manager.user-story.form.button.create = Crear

@@ -1,0 +1,14 @@
+
+any.project.list.title = Proyectos publicados
+any.project.form.title = Detalles del proyecto
+authenticated.project.list.label.title = Título
+authenticated.project.list.label.abstractt = Resumen
+authenticated.project.list.label.cost = Coste
+
+any.project.form.label.code = Código
+any.project.form.label.title = Título
+any.project.form.label.abstractt = Resumen
+any.project.form.label.cost = Coste
+any.project.form.label.link = Enlace
+any.project.form.label.manager = Carrera del Mánager
+manager.project.form.label.money = Coste en la divisa del sistema

@@ -25,6 +25,10 @@
       		<acme:menu-suboption code="master.menu.anonymous.favourite-link-diego" action="https://www.igualdad.gob.es/"/>
       		<acme:menu-suboption code="master.menu.anonymous.favourite-link-angela" action="https://www.zara.com/es/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.project" action="/any/project/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
@@ -36,6 +40,12 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show" access="isAuthenticated()"/>
 			<acme:menu-suboption code="master.menu.list.banner" action="/administrator/banner/list" access="isAuthenticated()"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
+			<acme:menu-suboption code="master.menu.manager.project" action="/manager/project/list"/>
+			<acme:menu-suboption code="master.menu.manager.user-story" action="/manager/user-story/list-all"/>
+			<acme:menu-suboption code="master.menu.manager.manager-dashboard" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
@@ -57,6 +67,8 @@
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-manager" action="/authenticated/manager/create" access="!hasRole('Manager')"/>
+			<acme:menu-suboption code="master.menu.user-account.manager" action="/authenticated/manager/update" access="hasRole('Manager')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/authenticated/system/sign-out" access="isAuthenticated()"/>

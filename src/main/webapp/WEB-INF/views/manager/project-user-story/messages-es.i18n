@@ -1,0 +1,21 @@
+
+manager.project-user-story.form.title = Proyecto - Historia de Usuario
+manager.projectUserStory.form.userStory = Historia de usuario
+manager.projectUserStory.form.button.delete = Borrar
+manager.projectUserStory.form.button.create = Añadir
+
+manager.projectUserStory.form.error.userstory = Esta historia de usuario aún está en el proyecto
+
+manager.projectUserStory.form.error.project = El proyecto elegido no es editable
+
+manager.projectUserStory.form.label.project = Proyecto
+
+manager.projectUserStory.form.userStory.title = Título de la historia de usuario
+
+manager.projectUserStory.form.userStory.description = Descripción de la historia de usuario
+
+manager.projectUserStory.form.userStory.info = Añadir la historia de usuario con la siguiente información a un proyecto
+
+manager.projectUserStory.form.userStory.delete.info = Borrar la historia de usuario con la siguiente información de un proyecto
+
+manager.projectUserStory.form.error.projectNotNull = Debes elegir un proyecto

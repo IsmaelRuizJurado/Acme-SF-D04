@@ -1,0 +1,34 @@
+manager.project.list.title = Lista de tus proyectos
+manager.project.list.label.title = Título
+manager.project.list.label.abstractt = Resumen
+manager.project.list.label.cost = Coste
+
+manager.project.form.title = Detalles del proyecto
+manager.project.form.label.code = Código
+manager.project.form.label.title = Título
+manager.project.form.label.abstractt = Resumen
+manager.project.form.label.cost = Coste
+manager.project.form.label.link = Enlace
+manager.project.form.label.manager = Mánager
+manager.project.form.label.draftMode = Borrador
+manager.project.form.label.indication = ¿Sin errores críticos?
+manager.project.form.label.money = Coste en divisa del sistema
+
+manager.project.form.error.nouserstory = Este proyecto no tiene historias de usuario
+manager.project.form.error.indication = Este proyecto tiene errores fatales 
+manager.project.form.error.userstorynp = Algunas historias de usuario de este proyecto no están publicadas
+
+manager.project.form.error.spam = El texto introducido es considerado Spam
+
+manager.project.userStories = Historias de usuario
+
+manager.project.form.error.code = Existe un proyecto con el mismo código
+manager.project.form.error.cost = El coste debe ser positivo y menor que 1000000
+manager.project.form.error.cost2 = La divisa introducida no es aceptada por el sistema
+validation.project.code = El código debe ser 3 mayúsculas y 4 números unidos por -
+
+manager.project.create = Crear
+manager.project.form.button.delete = Eliminar
+manager.project.form.button.update = Actualizar
+manager.project.form.button.publish = Publicar
+manager.project.form.button.create = Crear
