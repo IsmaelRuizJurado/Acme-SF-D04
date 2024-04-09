@@ -28,6 +28,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 # master.menu.any #######################################################
 master.menu.any = Cualquiera
 master.menu.any.project = Proyectos
+master.menu.any.sponsorship = Patrocinios
 
 # master.menu.administrator ###################################################
 
@@ -44,6 +45,12 @@ master.menu.manager = Mánager
 master.menu.manager.project = Mis proyectos
 master.menu.manager.user-story = Mis historias de usuario
 master.menu.manager.manager-dashboard = Panel de Mánager
+
+# master.menu.sponsor #######################################################
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.sponsorship = Mis patrocinios
+master.menu.sponsor.invoice = Mis facturas
+master.menu.sponsor.sponsor-dashboard = Panel de Patrocinador
 
 # master.menu.provider ########################################################
 
@@ -65,5 +72,7 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.become-manager = Hazte mánager
 master.menu.user-account.manager = Datos de mánager
+master.menu.user-account.become-sponsor = Hazte sponsor
+master.menu.user-account.sponsor = Datos de sponsor
 
 master.menu.list.banner = Listar Banners

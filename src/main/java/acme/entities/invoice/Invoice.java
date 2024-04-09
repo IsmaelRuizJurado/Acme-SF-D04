@@ -50,16 +50,18 @@ public class Invoice extends AbstractEntity {
 
 	@Valid
 	@NotNull
-	protected Money				tax;
+	protected Double			tax;
 
 	@URL
 	protected String			link;
+
+	protected boolean			draftMode;
 
 
 	@Transient
 	public Money totalAmount() {
 		double total;
-		total = this.quantity.getAmount() + this.tax.getAmount();
+		total = this.quantity.getAmount() + this.tax / 100 * this.quantity.getAmount();
 		Money totalAmount = new Money();
 		totalAmount.setAmount(total);
 		totalAmount.setCurrency(this.quantity.getCurrency());
