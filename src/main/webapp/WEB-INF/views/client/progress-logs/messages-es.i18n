@@ -1,0 +1,25 @@
+client.progress-log.list.title = Lista de tus actas de progreso
+client.progress-log.list.label.recordId = Id de registro
+client.progress-log.list.label.completeness = Progreso
+client.progress-log.list.label.responsiblePerson = Responsable
+
+client.progress-log.form.title = Detalles del acta
+client.progress-log.form.label.code = Código
+client.progress-log.form.label.providerName = Nombre de proveedor
+client.progress-log.form.label.customerName = Nombre de cliente
+client.progress-log.form.label.goals = Metas
+client.progress-log.form.label.budget = Presupuesto
+client.progress-log.form.label.draftMode = Borrador
+client.progress-log.form.label.money = Coste en divisa del sistema
+
+client.progress-log.form.error.nouserstory = Este contrato no tiene archivos de progreso
+
+client.progress-log.form.error.spam = El texto introducido es considerado Spam
+
+client.progress-log.form.error.budget = El presupuesto debe ser inferior a la mitad del coste del proyecto
+
+client.progress-log.create = Crear
+client.progress-log.form.button.delete = Eliminar
+client.progress-log.form.button.update = Actualizar
+client.progress-log.form.button.publish = Publicar
+client.progress-log.form.button.create = Crear
