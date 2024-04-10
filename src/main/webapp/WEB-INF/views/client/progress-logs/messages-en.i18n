@@ -1,0 +1,18 @@
+client.progress-logs.list.title = Your progress logs
+client.progress-logs.form.title = Your progress log
+
+client.progress-logs.list.label.recordId = record id
+client.progress-logs.list.label.completeness = Completeness
+client.progress-logs.list.label.responsiblePerson = ResponsiblePerson
+
+client.progress-logs.form.label.recordId = record Id
+client.progress-logs.form.label.completeness = completeness
+client.progress-logs.form.label.comment = comment
+client.progress-logs.form.label.registrationMoment = registration Moment
+client.progress-logs.form.label.responsiblePerson = responsible person
+
+client.progress-logs.create = Create
+client.progress-logs.form.button.delete = Delete
+client.progress-logs.form.button.update = Update
+client.progress-logs.form.button.publish = Publish
+client.progress-logs.form.button.create = Create
