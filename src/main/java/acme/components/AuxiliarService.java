@@ -37,6 +37,10 @@ public class AuxiliarService {
 		return currencies.contains(price.getCurrency());
 	}
 
+	public boolean validatePrice(final Double price, final Integer minAm, final Double maxAm) {
+		return price >= minAm && price < maxAm;
+	}
+
 	public boolean validateTextImput(final String input) {
 		final SystemConfiguration sc = this.repository.findSystemConfiguration();
 		final SpamFilter spamFilter = new SpamFilter(sc.getSpamWords(), sc.getSpamThreshold());

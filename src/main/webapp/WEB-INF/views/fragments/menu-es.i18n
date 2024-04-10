@@ -28,6 +28,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 # master.menu.any #######################################################
 master.menu.any = Cualquiera
 master.menu.any.project = Proyectos
+master.menu.any.contract = Contratos
 
 # master.menu.administrator ###################################################
 
@@ -55,6 +56,13 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.client ##########################################################
+
+master.menu.client = Cliente
+master.menu.client.contract = Lista de contratos
+master.menu.client.progress-log = Lista de actas de progreso
+master.menu.manager.manager-dashboard = Panel de Cliente
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -65,5 +73,7 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.become-manager = Hazte mánager
 master.menu.user-account.manager = Datos de mánager
+master.menu.user-account.become-client = Hazte cliente
+master.menu.user-account.client = Datos de cliente
 
 master.menu.list.banner = Listar Banners
