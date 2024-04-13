@@ -3,6 +3,7 @@ package acme.components;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,12 @@ public class AuxiliarService {
 		final SystemConfiguration sc = this.repository.findSystemConfiguration();
 		final SpamFilter spamFilter = new SpamFilter(sc.getSpamWords(), sc.getSpamThreshold());
 		return !spamFilter.isSpam(input);
+	}
+
+	public boolean validateDate(final Date date) {
+		final Date maxDate = new Date(200, 11, 31, 23, 59);
+		final Date minDate = new Date(100, 0, 1, 00, 00);
+		return MomentHelper.isAfterOrEqual(date, minDate) && MomentHelper.isBeforeOrEqual(date, maxDate);
 	}
 
 	public String translateMoney(final Money money, final String lang) {
