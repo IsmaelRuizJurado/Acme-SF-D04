@@ -3,6 +3,7 @@ package acme.components;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,12 @@ public class AuxiliarService {
 	@Autowired
 	private AuxiliarRepository repository;
 
+
+	public boolean validateDate(final Date date) {
+		final Date maxDate = new Date(200, 11, 31, 23, 59);
+		final Date minDate = new Date(100, 0, 1, 00, 00);
+		return MomentHelper.isAfterOrEqual(date, minDate) && MomentHelper.isBeforeOrEqual(date, maxDate);
+	}
 
 	public boolean validatePrice(final Money price, final Integer minAm, final Integer maxAm) {
 		return price.getAmount() >= minAm && price.getAmount() < maxAm;

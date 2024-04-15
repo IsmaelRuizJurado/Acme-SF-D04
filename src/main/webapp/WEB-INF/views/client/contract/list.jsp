@@ -9,3 +9,7 @@
 	<acme:list-column code="client.contract.list.label.providerName" path="providerName" width="40%" />
 	<acme:list-column code="client.contract.list.label.customerName" path="customerName" width="40%" />
 </acme:list>
+
+<jstl:if test="${masterId==null}">
+	<acme:button code="client.contract.create" action="/client/contract/create"/>
+</jstl:if>

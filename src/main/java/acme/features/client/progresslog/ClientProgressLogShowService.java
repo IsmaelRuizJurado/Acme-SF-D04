@@ -1,12 +1,9 @@
 
 package acme.features.client.progresslog;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.progress_logs.ProgressLogs;
@@ -28,21 +25,24 @@ public class ClientProgressLogShowService extends AbstractService<Client, Progre
 
 	@Override
 	public void load() {
-		Collection<ProgressLogs> objects;
-		final Principal principal = super.getRequest().getPrincipal();
-		final int userAccountId = principal.getAccountId();
-		objects = this.repository.findProgressLogsByClientId(userAccountId);
-		super.getBuffer().addData(objects);
+		ProgressLogs object;
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findProgressLogsById(id);
+		super.getBuffer().addData(object);
+
 	}
 
 	@Override
 	public void unbind(final ProgressLogs object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson");
-
+		dataset = super.unbind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson", "draftMode");
+		dataset.put("contractTitle", object.getContract().getCode());
 		super.getResponse().addData(dataset);
 	}
 }

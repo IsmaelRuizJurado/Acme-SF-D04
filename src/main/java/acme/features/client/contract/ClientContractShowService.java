@@ -50,11 +50,13 @@ public class ClientContractShowService extends AbstractService<Client, Contract>
 
 	@Override
 	public void unbind(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		Dataset dataset;
 		dataset = super.unbind(object, "id", "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "draftMode", "project", "client");
 		final List<ProgressLogs> progressLogs = (List<ProgressLogs>) this.repository.findProgressLogsByContract(object.getId());
 		dataset.put("hasProgressLogs", !progressLogs.isEmpty());
+		dataset.put("projectTitle", object.getProject().getCode());
 		dataset.put("money", this.auxiliarService.changeCurrency(object.getBudget()));
 		super.getResponse().addData(dataset);
 	}

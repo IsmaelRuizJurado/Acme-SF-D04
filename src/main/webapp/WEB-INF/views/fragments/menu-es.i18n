@@ -30,6 +30,11 @@ master.menu.any = Cualquiera
 master.menu.any.project = Proyectos
 master.menu.any.contract = Contratos
 
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.objective = Objetivos
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -39,6 +44,7 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.system-configuration = Mostrar configuración del sistema
+master.menu.client.administrator-dashboard = Panel
 
 # master.menu.manager #######################################################
 master.menu.manager = Mánager

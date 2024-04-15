@@ -1,18 +1,15 @@
 
 package acme.features.client.contract;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.components.AuxiliarService;
 import acme.entities.contract.Contract;
-import acme.entities.progress_logs.ProgressLogs;
 import acme.roles.Client;
 
 @Service
@@ -41,50 +38,69 @@ public class ClientContractUpdateService extends AbstractService<Client, Contrac
 	@Override
 	public void load() {
 		Contract object;
-		int id;
-
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findContractById(id);
-
+		object = new Contract();
+		object.setDraftMode(true);
 		super.getBuffer().addData(object);
 	}
 
 	@Override
 	public void bind(final Contract object) {
-		assert object != null;
-		super.bind(object, "code", "providerName", "customerName", "goals", "budget", "project", "draftMode");
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
+
+		Contract object2;
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		object2 = this.repository.findContractById(id);
+		object.setProject(object2.getProject());
+		object.setClient(object2.getClient());
+		super.bind(object, "code", "providerName", "instantiationMoment", "customerName", "goals", "budget");
 	}
 
 	@Override
 	public void validate(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Contract existing;
 			existing = this.repository.findContractByCode(object.getCode());
-			final Contract contract2 = object.getCode().equals("") || object.getCode().equals(null) ? null : this.repository.findContractById(object.getId());
+			final Contract contract2 = object.getCode().equals("") || object.getCode() == null ? null : this.repository.findContractById(object.getId());
 			super.state(existing == null || contract2.equals(existing), "code", "client.contract.form.error.code");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("cost"))
-			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "cost", "client.Contract.form.error.budget");
+		if (!super.getBuffer().getErrors().hasErrors("providerName"))
+			super.state(this.auxiliarService.validateTextImput(object.getProviderName()), "title", "client.contract.form.error.spam");
 
-		if (!super.getBuffer().getErrors().hasErrors("cost"))
-			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "manager.project.form.error.cost2");
+		if (!super.getBuffer().getErrors().hasErrors("instantiationMoment"))
+			super.state(MomentHelper.isBefore(object.getInstantiationMoment(), MomentHelper.getCurrentMoment()), "instantiationMoment", "client.contract.form.error.moment");
+
+		if (!super.getBuffer().getErrors().hasErrors("customerName"))
+			super.state(this.auxiliarService.validateTextImput(object.getCustomerName()), "title", "client.contract.form.error.spam");
+
+		if (!super.getBuffer().getErrors().hasErrors("goals"))
+			super.state(this.auxiliarService.validateTextImput(object.getGoals()), "title", "client.contract.form.error.spam");
+
+		if (!super.getBuffer().getErrors().hasErrors("budget")) {
+			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "cost", "client.contract.form.error.budget");
+			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "client.contract.form.error.budget2");
+		}
 	}
 
 	@Override
 	public void perform(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		this.repository.save(object);
 	}
 
 	@Override
 	public void unbind(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "draftMode", "project", "client");
-		final List<ProgressLogs> progressLogs = this.repository.findProgressLogsByContract(object.getId()).stream().collect(Collectors.toList());
-		dataset.put("hasProgressLogs", progressLogs.size() > 0);
-		dataset.put("money", this.auxiliarService.changeCurrency(object.getBudget()));
+		dataset = super.unbind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "project", "client", "draftMode");
+
+		dataset.put("projectTitle", object.getProject().getCode());
 		super.getResponse().addData(dataset);
 	}
 }
