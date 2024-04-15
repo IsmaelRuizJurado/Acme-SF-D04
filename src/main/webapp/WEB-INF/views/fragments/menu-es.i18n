@@ -49,6 +49,7 @@ master.menu.manager.manager-dashboard = Panel de Mánager
 # master.menu.developer #######################################################
 master.menu.developer = Desarrollador
 master.menu.developer.training-module = Mis modulos de entrenamiento
+master.menu.developer.training-session = Mis sesiones de entrenamiento
 master.menu.developer.developer-dashboard = Panel de Desarrollador
 
 # master.menu.provider ########################################################

@@ -20,7 +20,7 @@ developer.training_module.form.error.spam = The introduced text is considered Sp
 
 developer.training_module.training_session = Training Sessions
 
-developer.training_module.form.error.code = It exists a project with the same code
+developer.training_module.form.error.code = It exists a training module with the same code
 validation.project.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
 
 developer.training_module.create = Create

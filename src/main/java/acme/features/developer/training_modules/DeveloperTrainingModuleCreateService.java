@@ -46,7 +46,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("basicLevel"))
+		if (!super.getBuffer().getErrors().hasErrors("creationTime"))
 			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training-module.form.error.creationTime");
 		if (!super.getBuffer().getErrors().hasErrors("details"))
 			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training-module.form.error.spam");

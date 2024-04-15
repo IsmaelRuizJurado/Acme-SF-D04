@@ -20,7 +20,7 @@ developer.training_module.form.error.spam = El texto introducido es considerado 
 
 developer.training_module.training_session = Sesiones de Entrenamiento
 
-developer.training_module.form.error.code = Existe un proyecto con el mismo código
+developer.training_module.form.error.code = Existe un modulo de entrenamiento con el mismo código
 validation.training_module.code = El código debe ser entre 1 y 3 mayusculas y 3 numeros unidos por un -
 
 developer.training_module.create = Crear

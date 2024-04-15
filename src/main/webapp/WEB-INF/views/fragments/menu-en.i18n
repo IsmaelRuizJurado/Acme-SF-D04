@@ -49,6 +49,7 @@ master.menu.manager.manager-dashboard = Manager dashboard
 # master.menu.developer #######################################################
 master.menu.developer = Developer
 master.menu.developer.training-module = My training modules
+master.menu.developer.training-session = My training sessions
 master.menu.developer.developer-dashboard = Developer dashboard
 
 # master.menu.provider ########################################################

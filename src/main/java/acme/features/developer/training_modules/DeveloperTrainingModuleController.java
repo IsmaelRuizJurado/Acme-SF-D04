@@ -38,7 +38,7 @@ public class DeveloperTrainingModuleController extends AbstractController<Develo
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("delete", this.deleteService);
 		super.addBasicCommand("show", this.showService);
-		super.addBasicCommand("publish", this.publishService);
+		super.addCustomCommand("publish", "update", this.publishService);
 		super.addBasicCommand("update", this.updateService);
 	}
 
