@@ -1,0 +1,9 @@
+developer.developer-dashboard.form.title = Panel de Control del Desarrollador
+
+developer.developerDashboard.form.label.average-training-modules-time = Tiempo promedio de los módulos de entrenamiento:
+developer.developerDashboard.form.label.max-training-modules-time = Tiempo máximo de los módulos de entrenamiento:
+developer.developerDashboard.form.label.min-training-modules-time = Tiempo mínimo de los módulos de entrenamiento:
+developer.developerDashboard.form.label.lin-dev-training-modules-time = Desviación estándar del tiempo de los módulos de entrenamiento:
+
+developer.developerDashboard.form.label.training-modules.information = Gráfico sobre módulos de entrenamiento con fecha de actualización
+developer.developerDashboard.form.label.training-sessions.information = Gráfico sobre sesiones de entrenamiento con link
