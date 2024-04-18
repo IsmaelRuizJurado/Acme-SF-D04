@@ -9,6 +9,6 @@
 	<acme:input-textbox code="any.training-module.form.label.details" path="details"/>	
 	<acme:input-textbox code="any.training-module.form.label.basicLevel" path="basicLevel"/>	
 	<acme:input-moment code="any.training-module.form.label.updateMoment" path="updateMoment"/>	
-	<acme:input-textbox code="any.training-module.form.label.link" path="link"/>
-	<acme:input-textbox code="any.training-module.form.label.developer" path="developer"/>
+	<acme:input-textbox code="any.training-module.form.label.link" path="optionalLink"/>
+	<acme:input-textbox code="any.training-module.form.label.developer" path="degree"/>
 </acme:form>
