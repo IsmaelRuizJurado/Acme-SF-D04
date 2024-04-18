@@ -28,6 +28,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 # master.menu.any #######################################################
 master.menu.any = Any
 master.menu.any.project = Projects
+master.menu.any.claim = Claims
 
 # master.menu.administrator ###################################################
 
