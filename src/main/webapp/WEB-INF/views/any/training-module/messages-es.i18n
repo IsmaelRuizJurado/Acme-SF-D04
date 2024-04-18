@@ -1,0 +1,13 @@
+any.training-module.list.title = Módulos de entrenamiento publicados
+any.training-module.form.title = Detalles del modulo de entrenamiento
+authenticated.training-module.list.label.creationTime = Momento de creacion
+authenticated.training-module.list.label.details = Detalles
+authenticated.training-module.list.label.basicLevel = Nivel
+
+any.training-module.form.label.code = Código
+any.training-module.form.label.creationTime = Momento de creación
+any.training-module.form.label.details = Detalles
+any.training-module.form.label.basicLevel = Nivel
+any.training-module.form.label.updateMoment = Momento de actualización
+any.training-module.form.label.link = Enlace
+any.training-module.form.label.developer = Grado del desarrollador
