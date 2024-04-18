@@ -1,0 +1,13 @@
+
+authenticated.developer.form.title = Detalles de desarrollador
+
+authenticated.developer.form.label.degree = Título
+authenticated.developer.form.label.specialisation = Espcializacion
+authenticated.developer.form.label.skills = Habilidades
+authenticated.developer.form.label.email = Correo electronico
+authenticated.developer.form.label.link = Enlace
+
+authenticated.developer.form.button.create = Crear
+authenticated.developer.form.button.update = Actualizar
+
+authenticated.developer.form.error.spam = El texto introducido está considerado como Spam
