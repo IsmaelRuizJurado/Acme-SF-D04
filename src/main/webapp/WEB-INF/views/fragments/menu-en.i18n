@@ -28,6 +28,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 # master.menu.any #######################################################
 master.menu.any = Any
 master.menu.any.project = Projects
+master.menu.any.training-module = Training Modules
 master.menu.any.claim = Claims
 
 # master.menu.administrator ###################################################
@@ -45,6 +46,12 @@ master.menu.manager = Manager
 master.menu.manager.project = My projects
 master.menu.manager.user-story = My user stories
 master.menu.manager.manager-dashboard = Manager dashboard
+
+# master.menu.developer #######################################################
+master.menu.developer = Developer
+master.menu.developer.training-module = My training modules
+master.menu.developer.training-session = My training sessions
+master.menu.developer.developer-dashboard = Developer dashboard
 
 # master.menu.provider ########################################################
 
@@ -66,5 +73,7 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-manager = Become a manager
 master.menu.user-account.manager = Manager data
+master.menu.user-account.become-developer = Become a developer
+master.menu.user-account.developer = Developer data
 
 master.menu.list.banner = List Banners

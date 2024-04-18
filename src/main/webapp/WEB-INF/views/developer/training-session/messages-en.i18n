@@ -1,0 +1,31 @@
+developer.training-session.list.title = Your training session list
+developer.training_session.list.label.code = Code
+developer.training_session.list.label.location = Location
+developer.training_session.list.label.instructor = Instructor
+
+developer.training-session.form.title = Training session details
+developer.training_session.form.label.code = Code
+developer.training_session.form.label.startPeriod = Start Period
+developer.training_session.form.label.endPeriod = End Period
+developer.training_session.form.label.location = Location
+developer.training_session.form.label.instructor = Instructor
+developer.training_session.form.label.contactEmail = Contact Email
+developer.training_session.form.label.link = Link
+developer.training_session.form.label.draftMode = Draft Mode
+developer.training_session.form.label.developer = Developer
+
+developer.training_session.form.error.notrainingsession = This training session has no training sessions 
+developer.training_session.form.error.trainingsessionnp = Some training sessions of this training session are not published
+
+developer.training_session.form.error.spam = The introduced text is considered Spam
+
+developer.training_session.training_session = Training Sessions
+
+developer.training_session.form.error.code = It exists a training session with the same code
+validation.project.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
+
+developer.training_session.create = Create
+developer.training_session.form.button.delete = Delete
+developer.training_session.form.button.update = Update
+developer.training_session.form.button.publish = Publish
+developer.training_session.form.button.create = Create

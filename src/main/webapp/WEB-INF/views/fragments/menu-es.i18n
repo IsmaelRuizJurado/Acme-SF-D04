@@ -28,6 +28,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 # master.menu.any #######################################################
 master.menu.any = Cualquiera
 master.menu.any.project = Proyectos
+master.menu.any.training-module = Modulos de Entrenamiento
 
 # master.menu.administrator ###################################################
 
@@ -44,6 +45,12 @@ master.menu.manager = Mánager
 master.menu.manager.project = Mis proyectos
 master.menu.manager.user-story = Mis historias de usuario
 master.menu.manager.manager-dashboard = Panel de Mánager
+
+# master.menu.developer #######################################################
+master.menu.developer = Desarrollador
+master.menu.developer.training-module = Mis modulos de entrenamiento
+master.menu.developer.training-session = Mis sesiones de entrenamiento
+master.menu.developer.developer-dashboard = Panel de Desarrollador
 
 # master.menu.provider ########################################################
 

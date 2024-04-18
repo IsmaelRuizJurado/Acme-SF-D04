@@ -1,0 +1,30 @@
+developer.training-module.list.title = Lista de tus modulos de entrenamiento
+developer.training_module.list.label.creationTime = Hora de creacion
+developer.training_module.list.label.details = Detalles
+developer.training_module.list.label.basicLevel = Nivel
+
+developer.training-module.form.title = Detalles del Modulo de Entrenamiento
+developer.training_module.form.label.code = Codigo
+developer.training_module.form.label.creationTime = Fecha de creacion
+developer.training_module.form.label.details = Detalles
+developer.training_module.form.label.basicLevel = Nivel
+developer.training_module.form.label.updateMoment = Momento de la Actualizacion
+developer.training_module.form.label.link = Enlace
+developer.training_module.form.label.draftMode = Borrador
+developer.training_module.form.label.developer = Desarrollador
+
+developer.training_module.form.error.notrainingsession = Este modulo no tiene sesiones
+developer.training_module.form.error.trainingsessionnp = Algunas sesiones de este modulo no están publicadas
+
+developer.training_module.form.error.spam = El texto introducido es considerado Spam
+
+developer.training_module.training_session = Sesiones de Entrenamiento
+
+developer.training_module.form.error.code = Existe un modulo de entrenamiento con el mismo código
+validation.training_module.code = El código debe ser entre 1 y 3 mayusculas y 3 numeros unidos por un -
+
+developer.training_module.create = Crear
+developer.training_module.form.button.delete = Eliminar
+developer.training_module.form.button.update = Actualizar
+developer.training_module.form.button.publish = Publicar
+developer.training_module.form.button.create = Crear
