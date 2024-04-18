@@ -1,0 +1,26 @@
+auditor.audit-records.list.title = Lista de tus Registros de auditoría
+auditor.audit-records.list.label.code = Code
+auditor.audit-records.list.label.startPeriod = Periodo de inicio
+auditor.audit-records.list.label.endPeriod = Periodo final
+auditor.audit-records.list.label.mark = Marca
+auditor.audit-records.list.label.link = Link
+
+auditor.audit-records.form.title = Detalles de los Registros de auditoría
+auditor.audit-records.label.code = Código
+auditor.audit-records.form.label.startPeriod = Periodo de inicio
+auditor.audit-records.form.label.endPeriod = Periodo final
+auditor.audit-records.form.label.mark = Marca
+auditor.audit-records.form.label.link = Link
+
+auditor.audit-records.codeAudits = Code Audits
+
+
+auditor.audit-records.form.error.spam = EL texto introducido es considerado spam
+auditor.audit-records.form.error.code = Existe un registro de auditoria con el mismo codigo
+validation.audit-records.code = El código debe ser 3 letras mayusculas y 4 numeros unipos por -
+
+auditor.audit-records.create = Crear
+auditor.audit-records.form.button.delete = Eliminar
+auditor.audit-records.form.button.update = Actualizar
+auditor.audit-records.form.button.publish = Publicar
+auditor.audit-records.form.button.create = Crear
