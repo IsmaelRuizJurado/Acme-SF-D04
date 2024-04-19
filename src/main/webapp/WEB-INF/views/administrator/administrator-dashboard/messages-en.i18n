@@ -1,0 +1,13 @@
+administrator.administrator-dashboard.form.title= Administrator Dashboard
+
+admin.adminDashboard.form.label.numPrincipalsPerRole = Number of principals per role
+admin.adminDashboard.form.label.numAdmins = Number of administrators
+admin.adminDashboard.form.label.numManagers = Number of managers
+admin.adminDashboard.form.label.numClients = Number of clients
+admin.adminDashboard.form.label.numSponsors = Number of sponsors
+admin.adminDashboard.form.label.numConsumers = Number of consumers
+admin.adminDashboard.form.label.numDevs = Number of developers
+admin.adminDashboard.form.label.numProviders = Number of providers
+
+admin.adminDashboard.form.label.ratioCriticalObjectives = Critical objectives %
+admin.adminDashboard.form.label.ratioNonCriticalObjectives = Non critical objectives %
