@@ -5,18 +5,19 @@ auditor.audit-records.list.label.endPeriod = End Period
 auditor.audit-records.list.label.mark = Mark
 auditor.audit-records.list.label.link = Link
 
+
 auditor.audit-records.form.title = Audit Records Details
-auditor.audit-records.label.code = Code
+auditor.audit-records.form.label.code = Code
 auditor.audit-records.form.label.startPeriod = Start Period
 auditor.audit-records.form.label.endPeriod = End Period
 auditor.audit-records.form.label.mark = Mark
 auditor.audit-records.form.label.link = Link
+auditor.audit-records.form.label.codeAudits = Code Audits
 
-auditor.audit-records.codeAudits = Code Audits
 
 
-auditor.audit-records.form.error.spam = The introduced text is considered Spam
 auditor.audit-records.form.error.code = It exists a audit-records with the same code
+auditor.audit-records.form.error.period = The endPeriod should be at least one hour after startPeriod
 validation.audit-records.code = The code must be 3 capital letter and 4 numbers joined by -
 
 auditor.audit-records.create = Create

@@ -10,6 +10,8 @@
 	<acme:list-column code="auditor.audit-records.list.label.mark" path="mark" width="20%" />
 	<acme:list-column code="auditor.audit-records.list.label.link" path="link" width="20%" />
 	
+	
 </acme:list>
 
 <acme:button code="auditor.audit-records.create" action="/auditor/audit-records/create"/>
+

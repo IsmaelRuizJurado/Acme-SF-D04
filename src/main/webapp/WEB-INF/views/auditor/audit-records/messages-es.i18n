@@ -5,18 +5,19 @@ auditor.audit-records.list.label.endPeriod = Periodo final
 auditor.audit-records.list.label.mark = Marca
 auditor.audit-records.list.label.link = Link
 
+
 auditor.audit-records.form.title = Detalles de los Registros de auditoría
-auditor.audit-records.label.code = Código
+auditor.audit-records.form.label.code = Código
 auditor.audit-records.form.label.startPeriod = Periodo de inicio
 auditor.audit-records.form.label.endPeriod = Periodo final
 auditor.audit-records.form.label.mark = Marca
 auditor.audit-records.form.label.link = Link
+auditor.audit-records.form.label.codeAudits = Code Audits
 
-auditor.audit-records.codeAudits = Code Audits
 
 
-auditor.audit-records.form.error.spam = EL texto introducido es considerado spam
 auditor.audit-records.form.error.code = Existe un registro de auditoria con el mismo codigo
+auditor.audit-records.form.error.period = El periodo final debe ser almenos 1 hora mas tarde que el Periodo de inicio
 validation.audit-records.code = El código debe ser 3 letras mayusculas y 4 numeros unipos por -
 
 auditor.audit-records.create = Crear
