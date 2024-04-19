@@ -17,11 +17,12 @@ developer.training_module.form.error.notrainingsession = This training module ha
 developer.training_module.form.error.trainingsessionnp = Some training sessions of this training module are not published
 
 developer.training_module.form.error.spam = The introduced text is considered Spam
+developer.training_module.form.error.creationTime = Invalid date
 
 developer.training_module.training_session = Training Sessions
 
 developer.training_module.form.error.code = It exists a training module with the same code
-validation.project.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
+validation.training_module.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
 
 developer.training_module.create = Create
 developer.training_module.form.button.delete = Delete

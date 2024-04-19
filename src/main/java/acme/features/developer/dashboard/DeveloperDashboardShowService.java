@@ -40,25 +40,20 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 		userAccountId = principal.getAccountId();
 		final Developer developer = this.repository.findOneDeveloperByUserAccountId(userAccountId);
 
-		TrainingModule object;
-		int id;
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findTrainingModuleById(id);
-		List<TrainingSession> sessions;
-		sessions = this.repository.findTrainingSessionsByTrainingModule(object).stream().toList();
 		int totalSessionTime = 0;
 
-		for (TrainingSession session : sessions)
-			totalSessionTime += (int) (session.getStartPeriod().getTime() - session.getEndPeriod().getTime()) / 1000;
-		object.setEstimatedTotalTime(totalSessionTime);
-
 		//trainingModuleTimeStats
-		List<TrainingModule> trainingModules = this.repository.findAllModules();
+		List<TrainingModule> trainingModules = this.repository.findTrainingModulesByDeveloperId(developer.getId()).stream().toList();
 		double sumTotalTimes = 0.;
 		double maxTotalTimes = 0.;
 		double minTotalTimes = 0.;
 
 		for (TrainingModule module : trainingModules) {
+			List<TrainingSession> sessions;
+			sessions = this.repository.findTrainingSessionsByTrainingModule(module).stream().toList();
+			for (TrainingSession session : sessions)
+				totalSessionTime += (int) (session.getStartPeriod().getTime() - session.getEndPeriod().getTime()) / 1000;
+			module.setEstimatedTotalTime(totalSessionTime);
 			double totalTime = module.getEstimatedTotalTime();
 			sumTotalTimes += totalTime;
 			if (totalTime > maxTotalTimes)

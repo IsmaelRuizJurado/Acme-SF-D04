@@ -60,22 +60,22 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 	public void validate(final TrainingModule object) {
 		assert object != null;
 		final Collection<TrainingSession> trainingSessions = this.repository.findTrainingSessionsByTrainingModule(object);
-		super.state(!trainingSessions.isEmpty(), "*", "developer.training-module.form.error.notrainingsession");
+		super.state(!trainingSessions.isEmpty(), "*", "developer.training_module.form.error.notrainingsession");
 		if (!trainingSessions.isEmpty()) {
 			boolean publishedTrainingSessions;
-			publishedTrainingSessions = trainingSessions.stream().allMatch(x -> x.isDraftMode() == false);
-			super.state(publishedTrainingSessions, "*", "developer.training-module.form.error.trainingsessionnp");
+			publishedTrainingSessions = trainingSessions.stream().anyMatch(x -> !x.isDraftMode());
+			super.state(publishedTrainingSessions, "*", "developer.training_module.form.error.trainingsessionnp");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("creationTime"))
-			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training-module.form.error.spam");
+			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training_module.form.error.creationTime");
 		if (!super.getBuffer().getErrors().hasErrors("details"))
-			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training-module.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training_module.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule existing;
 			existing = this.repository.findTrainingModuleByCode(object.getCode());
 			final TrainingModule module2 = object.getCode().equals("") || object.getCode().equals(null) ? null : this.repository.findTrainingModuleById(object.getId());
 
-			super.state(existing == null || module2.equals(existing), "code", "developer.training-module.form.error.code");
+			super.state(existing == null || module2.equals(existing), "code", "developer.training_module.form.error.code");
 		}
 	}
 

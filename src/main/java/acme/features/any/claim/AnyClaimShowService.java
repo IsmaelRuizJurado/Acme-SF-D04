@@ -15,17 +15,20 @@ public class AnyClaimShowService extends AbstractService<Any, Claim> {
 	@Autowired
 	protected AnyClaimRepository repository;
 
-	/*
-	 * @Override
-	 * public void authorise() {
-	 * Claim object;
-	 * int id;
-	 * id = super.getRequest().getData("id", int.class);
-	 * object = this.repository.findClaimById(id);
-	 * super.getResponse().setAuthorised(!object.isDraftMode());
-	 * }
-	 */
 
+	@Override
+	public void authorise() {
+		boolean status;
+		int claimId;
+		Claim claim;
+
+		claimId = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(claimId);
+		status = claim != null;
+
+		super.getResponse().setAuthorised(status);
+
+	}
 
 	@Override
 	public void load() {

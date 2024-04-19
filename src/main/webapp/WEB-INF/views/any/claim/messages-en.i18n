@@ -2,8 +2,11 @@
 any.claim.list.title = Claims
 any.claim.form.title = Claim details
 authenticated.claim.list.label.instantiationMoment = Instantiation Moment
-authenticated.claim.list.label.descripiton = Description
+authenticated.claim.list.label.description = Description
 authenticated.claim.list.label.department = Department
+
+any.claim.form.error.spam = The introduced text is considered Spam
+any.claim.form.error.instantiationMoment = Invalid date
 
 any.claim.form.label.code = Code
 any.claim.form.label.instantiationMoment = Instantiation Moment
@@ -12,3 +15,6 @@ any.claim.form.label.description = Description
 any.claim.form.label.department = Department
 any.claim.form.label.email = Email
 any.claim.form.label.link = Link
+
+any.claim.list.button.publish = Publish
+any.claim.form.button.publish = Publish

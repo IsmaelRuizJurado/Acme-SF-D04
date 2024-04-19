@@ -1,5 +1,5 @@
 
-package acme.features.any.claim;
+package acme.features.any.training_module;
 
 import javax.annotation.PostConstruct;
 
@@ -8,26 +8,21 @@ import org.springframework.stereotype.Controller;
 
 import acme.client.controllers.AbstractController;
 import acme.client.data.accounts.Any;
-import acme.entities.claim.Claim;
+import acme.entities.training_module.TrainingModule;
 
 @Controller
-public class AnyClaimController extends AbstractController<Any, Claim> {
+public class AnyTrainingModuleController extends AbstractController<Any, TrainingModule> {
 
 	@Autowired
-	protected AnyClaimListService		listService;
+	protected AnyTrainingModuleListService	listService;
 
 	@Autowired
-	protected AnyClaimShowService		showService;
-
-	@Autowired
-	protected AnyClaimPublishService	publishService;
+	protected AnyTrainingModuleShowService	showService;
 
 
 	@PostConstruct
-	void initialise() {
+	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
-		super.addCustomCommand("publish", "create", this.publishService);
 	}
-
 }

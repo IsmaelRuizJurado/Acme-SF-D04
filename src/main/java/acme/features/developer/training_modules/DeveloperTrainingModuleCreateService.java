@@ -47,16 +47,16 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 	public void validate(final TrainingModule object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("creationTime"))
-			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training-module.form.error.creationTime");
+			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training_module.form.error.creationTime");
 		if (!super.getBuffer().getErrors().hasErrors("details"))
-			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training-module.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training_module.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule existing;
 			existing = this.repo.findTrainingModuleByCode(object.getCode());
 			super.state(existing == null, "code", "developer.training-module.form.error.code");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
-			super.state(this.auxiliarService.validateDate(object.getUpdateMoment()), "updateMoment", "developer.training-module.form.error.updateMoment");
+			super.state(this.auxiliarService.validateDate(object.getUpdateMoment()), "updateMoment", "developer.training_module.form.error.updateMoment");
 	}
 
 	@Override

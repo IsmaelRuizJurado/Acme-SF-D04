@@ -38,4 +38,7 @@ public interface DeveloperDashboardRepository extends AbstractRepository {
 	@Query("select tm from TrainingModule tm")
 	List<TrainingModule> findAllModules();
 
+	@Query("select tm from TrainingModule tm where tm.developer.userAccount.id = :id")
+	Collection<TrainingModule> findTrainingModulesByDeveloperId(int id);
+
 }

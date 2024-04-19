@@ -17,6 +17,7 @@ developer.training_module.form.error.notrainingsession = Este modulo no tiene se
 developer.training_module.form.error.trainingsessionnp = Algunas sesiones de este modulo no están publicadas
 
 developer.training_module.form.error.spam = El texto introducido es considerado Spam
+developer.training_module.form.error.creationTime = Fecha invalida
 
 developer.training_module.training_session = Sesiones de Entrenamiento
 
