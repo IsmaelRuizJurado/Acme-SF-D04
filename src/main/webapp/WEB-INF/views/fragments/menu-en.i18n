@@ -48,6 +48,7 @@ master.menu.manager.manager-dashboard = Manager dashboard
 # master.menu.auditor ######################################################
 master.menu.auditor = Auditor
 master.menu.auditor.audit-records = My Audit Records
+master.menu.auditor.code-audits= My Code Audits
 
 
 # master.menu.provider ########################################################
