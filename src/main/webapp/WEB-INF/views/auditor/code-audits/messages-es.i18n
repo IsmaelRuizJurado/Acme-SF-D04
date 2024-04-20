@@ -1,0 +1,28 @@
+auditor.code-audits.list.title = Tus Auditorias de código
+auditor.code-audits.list.label.code = Código
+auditor.code-audits.list.label.executionDate = Fecha de ejecucion
+auditor.code-audits.list.label.type = Tipo
+auditor.code-audits.list.label.correctiveActions = Acciones correctivas
+auditor.code-audits.list.label.link = Link
+
+
+auditor.code-audits.form.title = Detalles de auditorias de código
+auditor.code-audits.form.label.code = Codigo
+auditor.code-audits.form.label.executionDate = Fecha de ejecucion
+auditor.code-audits.form.label.type = Tipo
+auditor.code-audits.form.label.correctiveActions = Acciones correctivas
+auditor.code-audits.form.label.link = Link
+auditor.code-audits.form.label.auditor = Auditor
+
+
+
+
+auditor.code-audits.form.error.code = Existe un registro de auditoria con el mismo codigo
+auditor.code-audits.form.error.spam = Este texto es considerado spam.
+validation.code-audits.code = El código debe ser 3 letras mayusculas y 4 numeros unipos por -
+
+auditor.code-audits.create = Crear
+auditor.code-audits.form.button.delete = Eliminar
+auditor.code-audits.form.button.update = Actualizar
+auditor.code-audits.form.button.publish = Publicar
+auditor.code-audits.form.button.create = Crear

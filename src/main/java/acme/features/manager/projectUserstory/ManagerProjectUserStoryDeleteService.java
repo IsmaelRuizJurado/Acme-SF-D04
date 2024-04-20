@@ -82,7 +82,7 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 		Dataset dataset;
 		dataset = super.unbind(object, "userStory", "project");
 		final int userstoryId = super.getRequest().getData("userStoryId", int.class);
-		dataset.put("lectureId", super.getRequest().getData("userStoryId", int.class));
+		dataset.put("userStoryId", super.getRequest().getData("userStoryId", int.class));
 		Collection<Project> projects;
 		projects = this.repository.findProjectsByUserStory(object.getUserStory());
 		final UserStory userstory = this.repository.findOneUserStoryById(userstoryId);
@@ -105,4 +105,5 @@ public class ManagerProjectUserStoryDeleteService extends AbstractService<Manage
 		dataset.put("proyectos", projects);
 		super.getResponse().addData(dataset);
 	}
+
 }

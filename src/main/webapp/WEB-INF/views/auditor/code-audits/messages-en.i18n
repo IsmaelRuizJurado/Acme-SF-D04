@@ -1,0 +1,27 @@
+auditor.code-audits.list.title = Your Code Audits
+auditor.code-audits.list.label.code = Code
+auditor.code-audits.list.label.executionDate = Execution Date
+auditor.code-audits.list.label.type = Type
+auditor.code-audits.list.label.correctiveActions = Corrective Actions
+auditor.code-audits.list.label.link = Link
+
+
+auditor.code-audits.form.title = Code Audits Details
+auditor.code-audits.form.label.code = Code
+auditor.code-audits.form.label.executionDate = Execution Date
+auditor.code-audits.form.label.type = Type
+auditor.code-audits.form.label.correctiveActions = Corrective Actions
+auditor.code-audits.form.label.link = Link
+auditor.code-audits.form.label.auditor = Auditor
+
+
+
+auditor.code-audits.form.error.code = It exists a code-audits with the same code
+auditor.code-audits.form.error.spam = This text is considered spam.
+validation.code-audits.code = The code must be 3 capital letter and 4 numbers joined by -
+
+auditor.code-audits.create = Create
+auditor.code-audits.form.button.delete = Delete
+auditor.code-audits.form.button.update = Update
+auditor.code-audits.form.button.publish = Publish
+auditor.code-audits.form.button.create = Create 
