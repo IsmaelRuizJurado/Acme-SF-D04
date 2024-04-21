@@ -1,0 +1,20 @@
+
+authenticated.objective.list.title = Objectives list
+authenticated.objective.list.label.title = Title
+authenticated.objective.list.label.description = Description
+authenticated.objective.list.label.link =  Link
+
+authenticated.objective.form.title = Objective details
+authenticated.objective.form.label.instantiationMoment = Instantiation Moment
+authenticated.objective.form.label.startPeriod = Start Date
+authenticated.objective.form.label.endPeriod = End Date
+authenticated.objective.form.label.title = Title
+authenticated.objective.form.label.link = Link
+authenticated.objective.form.label.description= Description
+authenticated.objective.form.label.priority = priority
+authenticated.objective.form.label.critical = critical
+authenticated.objective.create = Create Objective
+authenticated.objective.form.button.create = Create
+authenticated.objective.form.spam = The introduced text is considered Spam
+authenticated.objective.form.error.startPeriod = The startPeriod must begin any moment after instantiation moment
+authenticated.objective.form.error.endPeriod = The endPeriod must be after the start period
