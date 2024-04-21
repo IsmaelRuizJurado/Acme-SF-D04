@@ -37,10 +37,8 @@ public class AuthenticatedObjectiveListService extends AbstractService<Authentic
 		assert object != null;
 
 		Dataset dataset;
-		boolean admin = super.getRequest().getPrincipal().getAuthorities().toString().contains("AUTH_Administrator");
 
 		dataset = super.unbind(object, "title", "description", "link");
-		super.getResponse().addGlobal("administrator", admin);
 		super.getResponse().addData(dataset);
 	}
 }

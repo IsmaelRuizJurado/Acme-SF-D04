@@ -1,12 +1,12 @@
 
-package acme.features.authenticated.objective;
+package acme.features.administrator.objective;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Authenticated;
+import acme.client.data.accounts.Administrator;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
@@ -16,10 +16,10 @@ import acme.entities.objective.Objective;
 import acme.entities.objective.PrioType;
 
 @Service
-public class AuthenticatedObjectiveCreateService extends AbstractService<Authenticated, Objective> {
+public class AdministratorObjectiveCreateService extends AbstractService<Administrator, Objective> {
 
 	@Autowired
-	protected AuthenticatedObjectiveRepository	repository;
+	protected AdministratorObjectiveRepository	repository;
 
 	@Autowired
 	protected AuxiliarService					auxiliarService;
@@ -42,7 +42,7 @@ public class AuthenticatedObjectiveCreateService extends AbstractService<Authent
 	@Override
 	public void bind(final Objective object) {
 		assert object != null;
-		super.bind(object, "instantiationMoment", "title", "description", "priority", "critical", "startPeriod", "endPeriod", "link");
+		super.bind(object, "instantiationMoment", "title", "description", "priority", "critical", "startPeriod", "endPeriod", "link", "confirmation");
 
 	}
 
@@ -51,15 +51,13 @@ public class AuthenticatedObjectiveCreateService extends AbstractService<Authent
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod"))
 			super.state(MomentHelper.isAfter(object.getStartPeriod(), object.getInstantiationMoment()), "startPeriod", "administrator.objective.form.error.startPeriod");
-
+		super.state(object.isConfirmation(), "confirmation", "administrator.objective.form.error.confirmation");
 		if (!super.getBuffer().getErrors().hasErrors("endPeriod") && !super.getBuffer().getErrors().hasErrors("startPeriod"))
-			super.state(object.getEndPeriod().after(object.getStartPeriod()), "endDisplayPeriod", "administrator.objective.form.error.endPeriod");
+			super.state(object.getEndPeriod().after(object.getStartPeriod()), "endPeriod", "administrator.objective.form.error.endPeriod");
 		if (!super.getBuffer().getErrors().hasErrors("title"))
-			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "slogan", "administrator.objective.form.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "title", "administrator.objective.form.spam");
 		if (!super.getBuffer().getErrors().hasErrors("description"))
-			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "description", "administrator.objective.form.spam");
-		if (!super.getBuffer().getErrors().hasErrors("link"))
-			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "link", "administrator.objective.form.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getDescription()), "description", "administrator.objective.form.spam");
 	}
 	@Override
 	public void perform(final Objective object) {
@@ -71,7 +69,7 @@ public class AuthenticatedObjectiveCreateService extends AbstractService<Authent
 	public void unbind(final Objective object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "instantiationMoment", "title", "description", "priority", "critical", "startPeriod", "endPeriod", "link");
+		dataset = super.unbind(object, "instantiationMoment", "title", "description", "priority", "critical", "startPeriod", "endPeriod", "link", "confirmation");
 
 		final SelectChoices choices;
 		choices = SelectChoices.from(PrioType.class, object.getPriority());

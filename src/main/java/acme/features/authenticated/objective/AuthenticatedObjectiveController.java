@@ -14,19 +14,15 @@ import acme.entities.objective.Objective;
 public class AuthenticatedObjectiveController extends AbstractController<Authenticated, Objective> {
 
 	@Autowired
-	protected AuthenticatedObjectiveCreateService	createService;
+	protected AuthenticatedObjectiveListService	listService;
 
 	@Autowired
-	protected AuthenticatedObjectiveListService		listService;
-
-	@Autowired
-	protected AuthenticatedObjectiveShowService		showService;
+	protected AuthenticatedObjectiveShowService	showService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
-		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("show", this.showService);
 	}
 

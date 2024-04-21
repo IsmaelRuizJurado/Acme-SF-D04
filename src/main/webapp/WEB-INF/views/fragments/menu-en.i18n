@@ -43,6 +43,8 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+master.menu.list.banner = List banners
+master.menu.create.objective = Create objective
 master.menu.administrator.system-configuration = Show system configuration
 master.menu.client.administrator-dashboard = Dashboard
 
@@ -83,5 +85,3 @@ master.menu.user-account.become-manager = Become a manager
 master.menu.user-account.manager = Manager data
 master.menu.user-account.become-client = Become a client
 master.menu.user-account.client = Client
-
-master.menu.list.banner = List Banners

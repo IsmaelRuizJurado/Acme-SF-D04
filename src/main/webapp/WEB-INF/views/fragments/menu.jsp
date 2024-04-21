@@ -45,6 +45,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show" access="isAuthenticated()"/>
 			<acme:menu-suboption code="master.menu.list.banner" action="/administrator/banner/list" access="isAuthenticated()"/>
+			<acme:menu-suboption code="master.menu.create.objective" action="/administrator/objective/create" access="isAuthenticated()"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.client.administrator-dashboard" action="/administrator/administrator-dashboard/show"/>
 		</acme:menu-option>

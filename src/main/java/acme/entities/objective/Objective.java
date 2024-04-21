@@ -58,6 +58,10 @@ public class Objective extends AbstractEntity {
 	@URL
 	private String				link;
 
+	@NotNull
+	@Transient
+	private boolean				confirmation;
+
 
 	@NotNull
 	@Transient
