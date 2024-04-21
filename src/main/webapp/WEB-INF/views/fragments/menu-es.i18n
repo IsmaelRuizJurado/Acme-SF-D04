@@ -91,3 +91,5 @@ master.menu.user-account.become-manager = Hazte mánager
 master.menu.user-account.manager = Datos de mánager
 master.menu.user-account.become-client = Hazte cliente
 master.menu.user-account.client = Datos de cliente
+master.menu.user-account.become-auditor = Hazte Auditor
+master.menu.user-account.auditor = Auditor
