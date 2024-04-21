@@ -1,8 +1,6 @@
 
 package acme.features.auditor.audit_records;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,11 +23,11 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 
 	@Override
 	public void load() {
-		Collection<AuditRecords> objects;
+		AuditRecords object;
 		int id;
 		id = super.getRequest().getData("id", int.class);
-		objects = this.repository.findAuditRecordByAuditorId(id);
-		super.getBuffer().addData(objects);
+		object = this.repository.findAuditRecordById(id);
+		super.getBuffer().addData(object);
 	}
 
 	@Override

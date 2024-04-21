@@ -84,9 +84,10 @@ public class AuditorAuditRecordsCreateService extends AbstractService<Auditor, A
 		Collection<CodeAudits> codeaudits;
 		int id = super.getRequest().getPrincipal().getActiveRoleId();
 		codeaudits = this.repository.findCodeAuditsByAuditor(id);
+		
 		for (final CodeAudits c : codeaudits)
 			choices2.add(Integer.toString(c.getId()), c.getCode(), false);
-
+		
 		dataset.put("codeauditslist", choices2);
 		super.getResponse().addData(dataset);
 	}
