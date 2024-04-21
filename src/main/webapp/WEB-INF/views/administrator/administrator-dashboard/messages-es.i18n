@@ -1,0 +1,10 @@
+administrator.administrator-dashboard.form.title= Panel de administrador
+
+admin.adminDashboard.form.label.numPrincipalsPerRole = Numero de personas por rol
+admin.adminDashboard.form.label.numAdmins = Numero de administradores
+admin.adminDashboard.form.label.numManagers = Numero de gerentes
+admin.adminDashboard.form.label.numClients = Numero de clientes
+admin.adminDashboard.form.label.numSponsors = Numero de patrocinadores
+admin.adminDashboard.form.label.numConsumers = Numero de consumidores
+admin.adminDashboard.form.label.numDevs = Numero de desarrolladores
+admin.adminDashboard.form.label.numProviders = Numero de proveedores
