@@ -54,6 +54,13 @@ master.menu.manager.project = Mis proyectos
 master.menu.manager.user-story = Mis historias de usuario
 master.menu.manager.manager-dashboard = Panel de Mánager
 
+# master.menu.auditor ######################################################
+master.menu.auditor = Auditor
+master.menu.auditor.audit-records = Mis registros de auditorias
+master.menu.auditor.code-audits= My auditorias de codigo
+master.menu.auditor.auditor-dashboard = Panel del Auditor 
+
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor

@@ -54,6 +54,13 @@ master.menu.manager.project = My projects
 master.menu.manager.user-story = My user stories
 master.menu.manager.manager-dashboard = Manager dashboard
 
+# master.menu.auditor ######################################################
+master.menu.auditor = Auditor
+master.menu.auditor.audit-records = My Audit Records
+master.menu.auditor.code-audits= My Code Audits
+master.menu.auditor.auditor-dashboard = Auditor Dashboard
+
+
 
 # master.menu.provider ########################################################
 
