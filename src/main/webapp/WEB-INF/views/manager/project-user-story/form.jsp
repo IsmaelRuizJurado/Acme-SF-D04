@@ -43,10 +43,10 @@
 	<acme:input-select code="manager.projectUserStory.form.label.project" path="project" choices="${projects}"/>	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'delete') && !proyectos.isEmpty()}">
-			<acme:submit code="manager.projectUserStory.form.button.delete" action="/manager/project-userStory/delete?userStoryId=${userStoryId}"/>
+			<acme:submit code="manager.projectUserStory.form.button.delete" action="/manager/project-user-story/delete?userStoryId=${userStoryId}"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="manager.projectUserStory.form.button.create" action="/manager/project-userStory/create?userStoryId=${userStoryId}"/>
+			<acme:submit code="manager.projectUserStory.form.button.create" action="/manager/project-user-story/create?userStoryId=${userStoryId}"/>
 		</jstl:when>		
 	</jstl:choose>
 </acme:form>
