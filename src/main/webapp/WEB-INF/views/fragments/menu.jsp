@@ -47,6 +47,12 @@
 			<acme:menu-suboption code="master.menu.manager.user-story" action="/manager/user-story/list-all"/>
 			<acme:menu-suboption code="master.menu.manager.manager-dashboard" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.audit-records" action="/auditor/audit-records/list"/>
+			<acme:menu-suboption code="master.menu.auditor.code-audits" action="/auditor/code-audits/list"/>
+			
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
