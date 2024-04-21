@@ -35,6 +35,22 @@
 		<td>
 			<acme:print value="${trainingModuleTimeStats.getDeviation()}"/>
 		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="developer.developerDashboard.form.label.training-modules-with-update-moment"/>
+		</th>
+		<td>
+			<acme:print value="${numTrainingModulesWithUpdateMoment}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="developer.developerDashboard.form.label.training-sessions-with-link"/>
+		</th>
+		<td>
+			<acme:print value="${numTrainingSessionsWithLink}"/>
+		</td>
 	</tr>	
 </table>
 
