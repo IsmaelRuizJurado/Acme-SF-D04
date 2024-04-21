@@ -1,0 +1,17 @@
+any.code-audits.list.title = Published code-auditss
+any.code-audits.form.title = Code audits details
+any.code-audits.list.label.code = Code
+any.code-audits.list.label.executionDate = Execution Date
+any.code-audits.list.label.type = Type
+any.code-audits.list.label.correctiveActions = Corrective Actions
+any.code-audits.list.label.link = Link
+
+
+any.code-audits.form.label.code = Code
+any.code-audits.form.label.executionDate =executionDate
+any.code-audits.form.label.type = type
+any.code-audits.form.label.goals = Goals
+any.code-audits.form.label.correctiveActions =Corrective Actions
+any.code-audits.form.label.link = link
+
+any.code-audits.audit-records =Audit Records

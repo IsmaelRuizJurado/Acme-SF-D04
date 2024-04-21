@@ -29,6 +29,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 master.menu.any = Cualquiera
 master.menu.any.project = Proyectos
 master.menu.any.contract = Contratos
+master.menu.any.code-audits = Auditorias de Código
 
 # master.menu.authenticated #######################################################
 
@@ -53,6 +54,13 @@ master.menu.manager = Mánager
 master.menu.manager.project = Mis proyectos
 master.menu.manager.user-story = Mis historias de usuario
 master.menu.manager.manager-dashboard = Panel de Mánager
+
+# master.menu.auditor ######################################################
+master.menu.auditor = Auditor
+master.menu.auditor.audit-records = Mis registros de auditorias
+master.menu.auditor.code-audits= My auditorias de codigo
+master.menu.auditor.auditor-dashboard = Panel del Auditor 
+
 
 # master.menu.provider ########################################################
 

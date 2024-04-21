@@ -1,0 +1,16 @@
+auditor.auditor-dashboard.form.title= Auditor Dashboard
+
+auditor.auditorDashboard.form.label.average-audit-record = Average Audit records:
+auditor.auditorDashboard.form.label.min-audit-record = Maximum Audit records:
+auditor.auditorDashboard.form.label.max-audit-record = Minimum Audit records:
+auditor.auditorDashboard.form.label.dev-audit-record = Standard deviation of the Audit records:
+auditor.auditorDashboard.form.label.average-audit-record-period = Average Time:
+auditor.auditorDashboard.form.label.min-audit-record-period = Min time:
+auditor.auditorDashboard.form.label.max-audit-record-period =Max Time:
+
+
+auditor.auditorDashboard.form.label.projects.information = Graphic about Audit records:
+auditor.auditorDashboard.form.label.audit-records.type.information = Graphic about the priorities of the Audit records:
+
+auditor.auditorDashboard.form.label.static-audits = Number of user CodeAudits with priority "static":
+auditor.auditorDashboard.form.label.dimanic-audits = Number of user CodeAudits with priority "dinamic":

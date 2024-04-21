@@ -1,0 +1,16 @@
+any.audit-records.list.title = Published audit-recordss
+any.audit-records.form.title = Code audits details
+any.audit-records.list.label.code = Code
+any.audit-records.list.label.startPeriod = startPeriod
+any.audit-records.list.label.endPeriod = endPeriod
+any.audit-records.list.label.mark = mark
+any.audit-records.list.label.link = Link
+
+
+any.audit-records.form.label.code = Code
+any.audit-records.form.label.startPeriod = startPeriod
+any.audit-records.form.label.endPeriod = endPeriod
+any.audit-records.form.label.goals = Goals
+any.audit-records.form.label.mark = mark
+any.audit-records.form.label.link = link
+
