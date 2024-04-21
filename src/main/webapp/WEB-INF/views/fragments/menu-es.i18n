@@ -29,6 +29,7 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 master.menu.any = Cualquiera
 master.menu.any.project = Proyectos
 master.menu.any.contract = Contratos
+master.menu.any.code-audits = Auditorias de Código
 
 # master.menu.authenticated #######################################################
 
