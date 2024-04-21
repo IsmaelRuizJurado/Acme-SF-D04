@@ -49,6 +49,7 @@ master.menu.manager.manager-dashboard = Panel de Mánager
 master.menu.auditor = Auditor
 master.menu.auditor.audit-records = Mis registros de auditorias
 master.menu.auditor.code-audits= My auditorias de codigo
+master.menu.auditor.auditor-dashboard = Panel del Auditor 
 
 
 # master.menu.provider ########################################################

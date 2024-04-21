@@ -10,4 +10,4 @@ audit-record-08,WXY-234,2004/10/21 03:30,2010/10/24 05:00,A,"https://www.zara.co
 audit-record-09,ZAB-678,2005/10/22 04:00,2010/10/24 05:00,B,null,code-audit-09
 audit-record-10,CDE-123,2005/10/23 04:30,2010/10/24 06:00,C,"https://www.zara.com/es/",code-audit-10
 audit-record-11,FGH-567,2010/10/24 05:00,2010/10/24 06:30,F,"https://www.zara.com/es/",code-audit-11
-audit-record-12,IJK-912,2020/02/29 05:30,2020/03/01 06:30,FMINUS,null,code-audit-12
+audit-record-12,IJK-912,2020/02/29 05:30,2020/03/01 06:30,FMINUS,null,code-audit-01
