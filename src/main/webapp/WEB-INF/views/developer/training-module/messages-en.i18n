@@ -1,0 +1,31 @@
+developer.training-module.list.title = Your training module list
+developer.training_module.list.label.creationTime = Creation Time
+developer.training_module.list.label.details = Details
+developer.training_module.list.label.basicLevel = Basic Level
+
+developer.training-module.form.title = Training Module details
+developer.training_module.form.label.code = Code
+developer.training_module.form.label.creationTime = Creation Time
+developer.training_module.form.label.details = Details
+developer.training_module.form.label.basicLevel = Level
+developer.training_module.form.label.updateMoment = Update Moment
+developer.training_module.form.label.link = Link
+developer.training_module.form.label.draftMode = Draft Mode
+developer.training_module.form.label.developer = Developer
+
+developer.training_module.form.error.notrainingsession = This training module has no training sessions 
+developer.training_module.form.error.trainingsessionnp = Some training sessions of this training module are not published
+
+developer.training_module.form.error.spam = The introduced text is considered Spam
+developer.training_module.form.error.creationTime = Invalid date
+
+developer.training_module.training_session = Training Sessions
+
+developer.training_module.form.error.code = It exists a training module with the same code
+validation.training_module.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
+
+developer.training_module.create = Create
+developer.training_module.form.button.delete = Delete
+developer.training_module.form.button.update = Update
+developer.training_module.form.button.publish = Publish
+developer.training_module.form.button.create = Create

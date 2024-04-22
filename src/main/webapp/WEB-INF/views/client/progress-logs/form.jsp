@@ -7,8 +7,14 @@
 	<acme:input-textbox code="client.progress-logs.form.label.recordId" path="recordId"/>	
 	<acme:input-textbox code="client.progress-logs.form.label.completeness" path="completeness"/>	
 	<acme:input-textbox code="client.progress-logs.form.label.comment" path="comment"/>	
-	<acme:input-textbox code="client.progress-logs.form.label.registrationMoment" path="registrationMoment"/>	
+	<acme:input-moment code="client.progress-logs.form.label.registrationMoment" path="registrationMoment"/>	
 	<acme:input-textbox code="client.progress-logs.form.label.responsiblePerson" path="responsiblePerson"/>
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+	<acme:input-textbox code="client.progress-logs.form.label.contract" path="contractTitle" readonly="true"/>	
+	</jstl:if>
+	<jstl:if test="${_command == 'create'}">
+	<acme:input-select code="client.progress-logs.form.label.contract" path="contract" choices="${contractsList}"/>	
+	</jstl:if>
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true }">
 			<acme:submit code="client.progress-logs.form.button.update" action="/client/progress-logs/update"/>
