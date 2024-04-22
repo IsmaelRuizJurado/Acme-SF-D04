@@ -52,6 +52,12 @@
 			<acme:menu-suboption code="master.menu.create.objective" action="/administrator/objective/create" access="isAuthenticated()"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.client.administrator-dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.risk" action="/administrator/risk/list"/>
+			
+			
+			
+			
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">

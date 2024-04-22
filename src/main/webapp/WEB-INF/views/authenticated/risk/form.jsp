@@ -12,6 +12,4 @@
 	<acme:input-moment code="authenticated.risk.form.label.probability" path="probability" />
 	<acme:input-moment code="authenticated.risk.form.label.description" path="description" />
 	<acme:input-moment code="authenticated.risk.form.label.link" path="link" />
-	
-	
 </acme:form>

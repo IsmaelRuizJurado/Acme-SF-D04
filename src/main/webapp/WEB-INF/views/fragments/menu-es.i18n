@@ -49,6 +49,8 @@ master.menu.list.banner = Listar banners
 master.menu.create.objective = Crear objetivo
 master.menu.administrator.system-configuration = Mostrar configuración del sistema
 master.menu.client.administrator-dashboard = Panel
+master.menu.administrator.risk =Riesgos
+
 
 # master.menu.manager #######################################################
 master.menu.manager = Mánager
