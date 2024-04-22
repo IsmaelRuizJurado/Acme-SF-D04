@@ -7,6 +7,7 @@ authenticated.claim.list.label.department = Department
 
 any.claim.form.error.spam = The introduced text is considered Spam
 any.claim.form.error.instantiationMoment = Invalid date
+any.claim.form.error.confirmation = The publish operation needs confirmation
 
 any.claim.form.label.code = Code
 any.claim.form.label.instantiationMoment = Instantiation Moment
@@ -15,6 +16,7 @@ any.claim.form.label.description = Description
 any.claim.form.label.department = Department
 any.claim.form.label.email = Email
 any.claim.form.label.link = Link
+any.claim.form.label.confirmation = Confirmation
 
 any.claim.list.button.publish = Publish
 any.claim.form.button.publish = Publish
