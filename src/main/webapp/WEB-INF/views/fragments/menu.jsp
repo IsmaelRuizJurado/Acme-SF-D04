@@ -31,6 +31,11 @@
 			<acme:menu-suboption code="master.menu.any.sponsorship" action="/any/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.objective" action="/authenticated/objective/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.notice" action="/authenticated/notice/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>

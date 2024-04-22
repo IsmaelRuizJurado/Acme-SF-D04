@@ -1,0 +1,14 @@
+authenticated.notice.form.button.create= Create
+authenticated.notice.form.title= Notice
+authenticated.notice.form.label.title= Title
+authenticated.notice.form.label.message= Message
+authenticated.notice.form.label.author=Author
+authenticated.notice.form.label.email= Email
+authenticated.notice.form.label.link= Link
+authenticated.notice.form.label.confirmation= Confirmation
+
+authenticated.notice.list.label.title= Title
+authenticated.notice.list.label.message= Message
+authenticated.notice.list.label.link= Link
+authenticated.notice.list.title= List of Notices
+authenticated.notice.create= Create
