@@ -1,0 +1,19 @@
+any.claim.list.title = Reclamaciones
+any.claim.form.title = Detalles de las reclamaciones
+authenticated.claim.list.label.instantiationMoment = Momento de creacion 
+authenticated.claim.list.label.descripiton = Descripcion
+authenticated.claim.list.label.department = Departamento
+
+any.claim.form.error.spam = El texto introducido esta considerado como spam
+any.claim.form.error.instantiationMoment = Fecha invalida
+
+any.claim.form.label.code = Codigo
+any.claim.form.label.instantiationMoment = Momento de creacion 
+any.claim.form.label.heading = Cabecera
+any.claim.form.label.description = Descripcion
+any.claim.form.label.department = Departamento
+any.claim.form.label.email = Correo Electronico
+any.claim.form.label.link = Link
+
+any.claim.list.button.publish = Publicar
+any.claim.form.button.publish = Publicar

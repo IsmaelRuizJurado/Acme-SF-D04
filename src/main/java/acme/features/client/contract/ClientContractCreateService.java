@@ -1,11 +1,15 @@
 
 package acme.features.client.contract;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
 import acme.entities.contract.Contract;
 import acme.entities.project.Project;
@@ -40,46 +44,61 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 
 	@Override
 	public void bind(final Contract object) {
-		assert object != null;
-		super.bind(object, "code", "providerName", "customerName", "goals", "budget", "draftMode");
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
+		super.bind(object, "code", "providerName", "instantiationMoment", "customerName", "goals", "budget", "project");
 	}
 
 	@Override
 	public void validate(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 
-		if (!super.getBuffer().getErrors().hasErrors("project")) {
-			Project project = this.repository.findprojectByCode(object.getProject().getCode());
-			object.setProject(project);
-		}
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Contract existing;
 			existing = this.repository.findContractByCode(object.getCode());
 			super.state(existing == null, "code", "client.contract.form.error.code");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("cost"))
-			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "cost", "client.Contract.form.error.budget");
 
-		if (!super.getBuffer().getErrors().hasErrors("cost"))
-			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "manager.project.form.error.cost2");
+		if (!super.getBuffer().getErrors().hasErrors("providerName"))
+			super.state(this.auxiliarService.validateTextImput(object.getProviderName()), "title", "client.contract.form.error.spam");
 
+		if (!super.getBuffer().getErrors().hasErrors("instantiationMoment"))
+			super.state(MomentHelper.isBefore(object.getInstantiationMoment(), MomentHelper.getCurrentMoment()), "instantiationMoment", "client.contract.form.error.moment");
+
+		if (!super.getBuffer().getErrors().hasErrors("customerName"))
+			super.state(this.auxiliarService.validateTextImput(object.getCustomerName()), "title", "client.contract.form.error.spam");
+
+		if (!super.getBuffer().getErrors().hasErrors("goals"))
+			super.state(this.auxiliarService.validateTextImput(object.getGoals()), "title", "client.contract.form.error.spam");
+
+		if (!super.getBuffer().getErrors().hasErrors("budget")) {
+			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "cost", "client.contract.form.error.budget");
+			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "client.contract.form.error.cost2");
+		}
 	}
 
 	@Override
 	public void perform(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		this.repository.save(object);
 	}
 
 	@Override
 	public void unbind(final Contract object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		Dataset dataset;
 		dataset = super.unbind(object, "code", "instantiationMoment", "providerName", "customerName", "goals", "budget", "project", "client", "draftMode");
-		//final SelectChoices choices;
-		//choices = SelectChoices.from(Project.class, object.getProject());
-		//dataset.put("type", choices.getSelected().getKey());
-		//dataset.put("types", choices);
+
+		final SelectChoices choices = new SelectChoices();
+		Collection<Project> projects;
+		projects = this.repository.findPublishedProjects();
+		for (final Project p : projects)
+			choices.add(Integer.toString(p.getId()), p.getCode() + " - " + p.getTitle(), false);
+
+		dataset.put("projects", choices);
 		super.getResponse().addData(dataset);
 	}
 }

@@ -9,18 +9,18 @@ client.contract.form.label.providerName = Nombre de proveedor
 client.contract.form.label.customerName = Nombre de cliente
 client.contract.form.label.goals = Metas
 client.contract.form.label.budget = Presupuesto
+client.contract.form.label.instantiationMoment = Fecha de creacion
 client.contract.form.label.draftMode = Borrador
 client.contract.form.label.money = Coste en divisa del sistema
-client.contract.form.label.projectCode = codigo del proyecto
+client.contract.form.label.projectCode = Proyecto
 
 client.contract.progressLogs = Actas de progreso
 
-client.contract.form.error.nouserstory = Este contrato no tiene archivos de progreso
-
 client.contract.form.error.spam = El texto introducido es considerado Spam
-
 client.contract.form.error.budget = El presupuesto debe ser inferior a la mitad del coste del proyecto
 client.contract.form.error.budget2 = La moneda introducida no es aceptada por el sistema
+client.contract.form.error.moment = Debe estar en el pasado
+
 client.contract.create = Crear
 client.contract.form.button.delete = Eliminar
 client.contract.form.button.update = Actualizar

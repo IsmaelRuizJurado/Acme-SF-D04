@@ -30,7 +30,7 @@ public interface ManagerProjectUserStoryRepository extends AbstractRepository {
 	@Query("select us from UserStory us where us.id = :id")
 	UserStory findOneUserStoryById(int id);
 
-	@Query("select p from Project p inner join ProjectUserStory pus on p = pus.project inner join UserStory us on pus.userStory = us where us = :userStory and p.draftMode =true")
+	@Query("select p from Project p inner join ProjectUserStory pus on p = pus.project inner join UserStory us on pus.userStory = us where us = :userStory and p.draftMode = true")
 	Collection<Project> findProjectsByUserStory(UserStory userStory);
 
 	@Query("select p from Project p where p.manager = :manager and p.draftMode = true")

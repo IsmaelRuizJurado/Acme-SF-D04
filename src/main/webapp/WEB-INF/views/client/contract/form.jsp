@@ -5,11 +5,18 @@
 
 <acme:form>
 	<acme:input-textbox code="client.contract.form.label.code" path="code"/>	
+	<acme:input-moment code="client.contract.form.label.instantiationMoment" path="instantiationMoment"/>	
 	<acme:input-textbox code="client.contract.form.label.providerName" path="providerName"/>	
 	<acme:input-textbox code="client.contract.form.label.customerName" path="customerName"/>	
-	<acme:input-textbox code="client.contract.form.label.goals" path="goals"/>	
-	<acme:input-textbox code="client.contract.form.label.projectCode" path="projectCode"/>	
-	<acme:input-money code="client.contract.form.label.budget" path="budget"/>
+	<acme:input-textbox code="client.contract.form.label.goals" path="goals"/>
+	<acme:input-money code="client.contract.form.label.budget" path="budget"/>	
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+	<acme:input-textbox code="client.contract.form.label.project" path="projectTitle" readonly="true"/>	
+	</jstl:if>
+	<jstl:if test="${_command == 'create'}">
+	<acme:input-select code="client.contract.form.label.project" path="project" choices="${projects}"/>	
+	</jstl:if>
+	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 			<acme:input-money code="client.contract.form.label.money" path="money" readonly="true"/>	

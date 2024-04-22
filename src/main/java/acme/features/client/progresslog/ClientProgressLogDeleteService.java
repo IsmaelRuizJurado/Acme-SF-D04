@@ -43,24 +43,30 @@ public class ClientProgressLogDeleteService extends AbstractService<Client, Prog
 
 	@Override
 	public void bind(final ProgressLogs object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		super.bind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson");
 	}
 
 	@Override
 	public void validate(final ProgressLogs object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode(), "draftMode", "client.progressLogs.form.error.draftMode");
 	}
 
 	@Override
 	public void perform(final ProgressLogs object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		this.repository.delete(object);
 	}
 
 	@Override
 	public void unbind(final ProgressLogs object) {
-		assert object != null;
+		if (object == null)
+			throw new IllegalArgumentException("No object found");
 		Dataset dataset;
 		dataset = super.unbind(object, "recordId", "completeness", "comment", "registrationMoment", "responsiblePerson", "draftMode", "contract");
 		super.getResponse().addData(dataset);
