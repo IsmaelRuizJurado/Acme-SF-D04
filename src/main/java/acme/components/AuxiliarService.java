@@ -29,7 +29,7 @@ public class AuxiliarService {
 
 
 	public boolean validatePrice(final Money price, final Integer minAm, final Integer maxAm) {
-		return price.getAmount() >= minAm && price.getAmount() < maxAm;
+		return price.getAmount() >= minAm && price.getAmount() <= maxAm;
 	}
 
 	public boolean validateCurrency(final Money price) {
