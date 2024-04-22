@@ -54,6 +54,12 @@ public class AuxiliarService {
 		return !spamFilter.isSpam(input);
 	}
 
+	public boolean validateDate(final Date date) {
+		final Date maxDate = new Date(200, 11, 31, 23, 59);
+		final Date minDate = new Date(100, 0, 1, 00, 00);
+		return MomentHelper.isAfterOrEqual(date, minDate) && MomentHelper.isBeforeOrEqual(date, maxDate);
+	}
+
 	public String translateMoney(final Money money, final String lang) {
 		String res;
 		res = "";
