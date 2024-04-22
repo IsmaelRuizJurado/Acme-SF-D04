@@ -9,14 +9,9 @@
 	<acme:input-moment code="auditor.audit-records.form.label.endPeriod" path="endPeriod"/>	
 	<acme:input-select code="auditor.audit-records.form.label.mark" path="mark" choices="${marks}"/>	
 	<acme:input-url code="auditor.audit-records.form.label.link" path="link"/>
-	
-	
-	<jstl:if test = "${acme:anyOf(_command, 'show|update|delete|publish')  }">
-	<acme:input-textbox code="auditor.audit-records.form.label.codeAudits" path="codeAudits" readonly="true"/>
-	</jstl:if>
-	<jstl:if test="${_command == 'create'}">
 	<acme:input-select code="auditor.audit-records.form.label.codeAudits" path="codeAudits" choices="${codeauditslist}"/>	
-	</jstl:if>
+	
+	
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')  }">

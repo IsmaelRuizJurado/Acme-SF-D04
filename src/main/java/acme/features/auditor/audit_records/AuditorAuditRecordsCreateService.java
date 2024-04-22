@@ -38,7 +38,7 @@ public class AuditorAuditRecordsCreateService extends AbstractService<Auditor, A
 	@Override
 	public void bind(final AuditRecords object) {
 		assert object != null;
-		super.bind(object, "code", "startPeriod", "endPeriod", "mark", "link");
+		super.bind(object, "code", "startPeriod", "endPeriod", "mark", "link", "codeAudits");
 	}
 
 	@Override
@@ -84,9 +84,9 @@ public class AuditorAuditRecordsCreateService extends AbstractService<Auditor, A
 		int id = super.getRequest().getPrincipal().getActiveRoleId();
 		codeaudits = this.repository.findCodeAuditsByAuditor(id);
 
-		SelectChoices choices2;
-		choices2 = SelectChoices.from(codeaudits, "code", object.getCodeAudits());
-
+		final SelectChoices choices2;
+		choices2 = SelectChoices.from(codeaudits, "id", object.getCodeAudits());
+		dataset.put("codeaudit", choices2.getSelected().getKey());
 		dataset.put("codeauditslist", choices2);
 		super.getResponse().addData(dataset);
 	}
