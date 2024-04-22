@@ -2,8 +2,6 @@
 package acme.features.auditor.audit_records;
 
 import java.util.Collection;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,16 +50,7 @@ public class AuditorAuditRecordsUpdateService extends AbstractService<Auditor, A
 	@Override
 	public void validate(final AuditRecords object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("period")) {
-			Date startPeriod = object.getStartPeriod();
-			Date endPeriod = object.getEndPeriod();
-			if (startPeriod != null && endPeriod != null) {
-				long diffInMillis = endPeriod.getTime() - startPeriod.getTime();
-				long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillis);
-				super.state(diffInHours >= 1, "period", "auditor.audit-records.form.error.period");
-			}
 
-		}
 	}
 
 	@Override

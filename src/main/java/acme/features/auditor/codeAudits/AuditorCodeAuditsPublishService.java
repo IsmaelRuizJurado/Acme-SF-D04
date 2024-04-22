@@ -47,11 +47,7 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 	public void validate(final CodeAudits object) {
 
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			CodeAudits existing;
-			existing = this.repository.findCodeAuditsByCode(object.getCode());
-			super.state(existing == null, "code", "auditor.code-audits.form.error.code");
-		}
+
 		if (!super.getBuffer().getErrors().hasErrors("correctiveActions"))
 			super.state(this.auxiliarService.validateTextImput(object.getCorrectiveActions()), "correctiveActions", "developer.training_module.form.error.spam");
 
@@ -73,10 +69,7 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
 		dataset.put("type", choices.getSelected().getKey());
 		dataset.put("types", choices);
-		/*
-		 * final List<AuditRecords> auditRecords = this.repository.findAuditRecordsByCodeAudits(object).stream().collect(Collectors.toList());
-		 * dataset.put("hasAuditRecords", auditRecords.size() > 0);
-		 */
+
 		super.getResponse().addData(dataset);
 
 	}

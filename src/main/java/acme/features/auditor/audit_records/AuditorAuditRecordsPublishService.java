@@ -53,11 +53,6 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 		if (object == null)
 			throw new IllegalArgumentException("No Audit Records found");
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			AuditRecords existing = this.repository.findAuditRecordsByCode(object.getCode());
-			super.state(existing == null, "code", "auditor.audit-records.form.error.code");
-		}
-
 		if (!super.getBuffer().getErrors().hasErrors("period")) {
 			Date startPeriod = object.getStartPeriod();
 			Date endPeriod = object.getEndPeriod();
@@ -72,6 +67,7 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 
 	@Override
 	public void perform(final AuditRecords object) {
+		object.setDraftMode(false);
 		this.repository.save(object);
 
 	}
