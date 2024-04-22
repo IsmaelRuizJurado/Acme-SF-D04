@@ -1,0 +1,17 @@
+
+administrator.objective.form.title = Objective details
+administrator.objective.form.label.instantiationMoment = Instantiation Moment
+administrator.objective.form.label.startPeriod = Start Date
+administrator.objective.form.label.endPeriod = End Date
+administrator.objective.form.label.title = Title
+administrator.objective.form.label.link = Link
+administrator.objective.form.label.description= Description
+administrator.objective.form.label.priority = Priority
+administrator.objective.form.label.critical = Critical
+administrator.objective.form.label.confirmation = Confirmation
+administrator.objective.create = Create Objective
+administrator.objective.form.button.create = Create
+administrator.objective.form.spam = The introduced text is considered Spam
+administrator.objective.form.error.startPeriod = The startPeriod must begin any moment after instantiation moment
+administrator.objective.form.error.endPeriod = The endPeriod must be after the start period
+administrator.objective.form.error.confirmation = The creation operation needs confirmation

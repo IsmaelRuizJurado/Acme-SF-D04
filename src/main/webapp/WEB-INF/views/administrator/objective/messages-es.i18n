@@ -1,0 +1,17 @@
+
+administrator.objective.form.title = Detalles del objetivo
+administrator.objective.form.label.instantiationMoment = Momento de instanciacion
+administrator.objective.form.label.startPeriod = Fecha de inicio
+administrator.objective.form.label.endPeriod = Fecha de fin
+administrator.objective.form.label.title = Titulo
+administrator.objective.form.label.link = Enlace
+administrator.objective.form.label.description= Descripcion
+administrator.objective.form.label.priority = Prioridad
+administrator.objective.form.label.critical = Critico
+administrator.objective.form.label.confirmation = Confirmación
+administrator.objective.create = Crear objetivo
+administrator.objective.form.button.create = Crear
+administrator.objective.form.spam = El texto introducido es considerado Spam
+administrator.objective.form.error.startPeriod = La fecha de inicio debe ser posterior a la fecha de instanciacion
+administrator.objective.form.error.endPeriod = La fecha final debe de ser despues de la fecha de inicio
+administrator.objective.form.error.confirmation = La operación de creación requiere confirmación
