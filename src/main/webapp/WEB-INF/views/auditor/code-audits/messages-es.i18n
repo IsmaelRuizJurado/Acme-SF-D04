@@ -19,7 +19,9 @@ auditor.code-audits.form.label.auditor = Auditor
 
 auditor.code-audits.form.error.code = Existe un registro de auditoria con el mismo codigo
 auditor.code-audits.form.error.spam = Este texto es considerado spam.
-validation.code-audits.code = El código debe ser 3 letras mayusculas y 4 numeros unipos por -
+validation.code-audits.code = El código debe ser 3 letras mayúsculas y 4 numeros unidos por -
+auditor.code-audits.form.error.draftMode = No puedes eliminar una auditoria publicada
+
 
 auditor.code-audits.create = Crear
 auditor.code-audits.form.button.delete = Eliminar

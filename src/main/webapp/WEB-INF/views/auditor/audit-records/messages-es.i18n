@@ -19,6 +19,8 @@ auditor.audit-records.form.label.codeAudits = Code Audits
 auditor.audit-records.form.error.code = Existe un registro de auditoria con el mismo codigo
 auditor.audit-records.form.error.period = El periodo final debe ser almenos 1 hora mas tarde que el Periodo de inicio
 validation.audit-records.code = El código debe ser 3 letras mayusculas y 4 numeros unipos por -
+auditor.audit-records.form.error.draftMode = No puedes eliminar un audit record publicado
+
 
 auditor.audit-records.create = Crear
 auditor.audit-records.form.button.delete = Eliminar

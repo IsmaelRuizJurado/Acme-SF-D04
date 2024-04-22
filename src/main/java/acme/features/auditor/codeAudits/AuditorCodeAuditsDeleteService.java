@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.entities.audit_records.AuditRecords;
 import acme.entities.code_audits.CodeAudits;
+import acme.entities.code_audits.CodeAuditsType;
 import acme.roles.Auditor;
 
 @Service
@@ -42,6 +44,8 @@ public class AuditorCodeAuditsDeleteService extends AbstractService<Auditor, Cod
 	@Override
 	public void validate(final CodeAudits object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode(), "draftMode", "auditor.code-audits.form.error.draftMode");
 	}
 
 	@Override
@@ -58,6 +62,10 @@ public class AuditorCodeAuditsDeleteService extends AbstractService<Auditor, Cod
 		assert object != null;
 		Dataset dataset;
 		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "link");
+		final SelectChoices choices;
+		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
+		dataset.put("type", choices.getSelected().getKey());
+		dataset.put("types", choices);
 		super.getResponse().addData(dataset);
 	}
 

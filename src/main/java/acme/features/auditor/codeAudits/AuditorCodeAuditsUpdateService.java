@@ -34,6 +34,7 @@ public class AuditorCodeAuditsUpdateService extends AbstractService<Auditor, Cod
 		int id;
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findCodeAuditsById(id);
+		object.setDraftMode(true);
 		super.getBuffer().addData(object);
 	}
 

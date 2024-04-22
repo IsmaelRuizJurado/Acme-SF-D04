@@ -54,7 +54,7 @@ public class CodeAudits extends AbstractEntity {
 	@URL
 	private String				link;
 
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 

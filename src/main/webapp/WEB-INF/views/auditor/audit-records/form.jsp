@@ -12,10 +12,10 @@
 	
 	
 	<jstl:if test = "${acme:anyOf(_command, 'show|update|delete|publish')  }">
-	<acme:input-textbox code="auditor.audit-records.form.label.codeAudits" path="Code Audits" readonly="true"/>
+	<acme:input-textbox code="auditor.audit-records.form.label.codeAudits" path="codeAudits" readonly="true"/>
 	</jstl:if>
 	<jstl:if test="${_command == 'create'}">
-	<acme:input-select code="auditor.audit-records.form.label.codeAudits" path="Code Audits" choices="${codeauditslist}"/>	
+	<acme:input-select code="auditor.audit-records.form.label.codeAudits" path="codeAudits" choices="${codeauditslist}"/>	
 	</jstl:if>
 	
 	<jstl:choose>	 
