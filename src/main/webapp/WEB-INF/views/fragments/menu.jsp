@@ -29,17 +29,14 @@
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.project" action="/any/project/list"/>
 			<acme:menu-suboption code="master.menu.any.sponsorship" action="/any/sponsorship/list"/>
-			<acme:menu-suboption code="master.menu.any.training-module" action="/any/training-module/list"/>
-			<acme:menu-suboption code="master.menu.any.claim" action="/any/claim/list"/>
 			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
 		</acme:menu-option>
 		
-		
-
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.objective" action="/authenticated/objective/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.notice" action="/authenticated/notice/list"/>
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
@@ -50,9 +47,6 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show" access="isAuthenticated()"/>
 			<acme:menu-suboption code="master.menu.list.banner" action="/administrator/banner/list" access="isAuthenticated()"/>
-			<acme:menu-suboption code="master.menu.create.objective" action="/administrator/objective/create" access="isAuthenticated()"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.client.administrator-dashboard" action="/administrator/administrator-dashboard/show"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
@@ -60,16 +54,9 @@
 			<acme:menu-suboption code="master.menu.manager.user-story" action="/manager/user-story/list-all"/>
 			<acme:menu-suboption code="master.menu.manager.manager-dashboard" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
-    
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.sponsorship" action="/sponsor/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.sponsor.sponsor-dashboard" action="/sponsor/sponsor-dashboard/show"/>
-    </acme:menu-option>
-		
-		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
-			<acme:menu-suboption code="master.menu.developer.training-module" action="/developer/training-module/list"/>
-			<acme:menu-suboption code="master.menu.developer.training-session" action="/developer/training-session/list-all"/>
-			<acme:menu-suboption code="master.menu.developer.developer-dashboard" action="/developer/developer-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.client" access="hasRole('Client')">
@@ -101,8 +88,6 @@
 			<acme:menu-suboption code="master.menu.user-account.manager" action="/authenticated/manager/update" access="hasRole('Manager')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create" access="!hasRole('Sponsor')"/>
 			<acme:menu-suboption code="master.menu.user-account.sponsor" action="/authenticated/sponsor/update" access="hasRole('Sponsor')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-developer" action="/authenticated/developer/create" access="!hasRole('Developer')"/>
-			<acme:menu-suboption code="master.menu.user-account.developer" action="/authenticated/developer/update" access="hasRole('Developer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-client" action="/authenticated/client/create" access="!hasRole('Client')"/>
 			<acme:menu-suboption code="master.menu.user-account.client" action="/authenticated/client/update" access="hasRole('Client')"/>
 		</acme:menu-option>
