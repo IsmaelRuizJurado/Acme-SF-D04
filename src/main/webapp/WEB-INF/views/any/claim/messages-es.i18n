@@ -6,7 +6,7 @@ authenticated.claim.list.label.department = Departamento
 
 any.claim.form.error.spam = El texto introducido esta considerado como spam
 any.claim.form.error.instantiationMoment = Fecha invalida
-
+any.claim.form.error.confirmation = La operación de publicar requiere confirmación
 any.claim.form.label.code = Codigo
 any.claim.form.label.instantiationMoment = Momento de creacion 
 any.claim.form.label.heading = Cabecera
@@ -14,6 +14,7 @@ any.claim.form.label.description = Descripcion
 any.claim.form.label.department = Departamento
 any.claim.form.label.email = Correo Electronico
 any.claim.form.label.link = Link
+any.claim.form.label.confirmation = Confirmación
 
 any.claim.list.button.publish = Publicar
 any.claim.form.button.publish = Publicar

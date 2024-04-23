@@ -42,13 +42,17 @@ public class AnyClaimPublishService extends AbstractService<Any, Claim> {
 	public void bind(final Claim object) {
 		assert object != null;
 
-		super.bind(object, "instantiationMoment", "description", "department");
+		super.bind(object, "code", "instantiationMoment", "heading", "description", "department", "email", "link", "confirmation");
 	}
 
 	@Override
 	public void validate(final Claim object) {
 		assert object != null;
-
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Claim existing;
+			existing = this.repository.findClaimByCode(object.getCode());
+			super.state(existing == null, "code", "any.claim.form.error.code");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("instantiationMoment"))
 			super.state(this.auxiliarService.validateDate(object.getInstantiationMoment()), "instantiationMoment", "any.claim.form.error.instantiationMoment");
 
@@ -61,16 +65,8 @@ public class AnyClaimPublishService extends AbstractService<Any, Claim> {
 		if (!super.getBuffer().getErrors().hasErrors("heading"))
 			super.state(this.auxiliarService.validateTextImput(object.getHeading()), "heading", "any.claim.form.error.spam");
 
-		if (!super.getBuffer().getErrors().hasErrors("email"))
-			super.state(this.auxiliarService.validateTextImput(object.getEmail()), "email", "any.claim.form.error.spam");
+		super.state(object.isConfirmation(), "confirmation", "any.claim.form.error.confirmation");
 
-		if (!super.getBuffer().getErrors().hasErrors("link"))
-			super.state(this.auxiliarService.validateTextImput(object.getLink()), "link", "any.claim.form.error.spam");
-
-		boolean confirmation;
-
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
 	}
 
 	@Override
@@ -87,7 +83,7 @@ public class AnyClaimPublishService extends AbstractService<Any, Claim> {
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "instantiationMoment", "heading", "description", "department", "email", "link");
+		dataset = super.unbind(object, "code", "instantiationMoment", "heading", "description", "department", "email", "link", "confirmation");
 
 		super.getResponse().addData(dataset);
 	}

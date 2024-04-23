@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -64,6 +65,10 @@ public class Claim extends AbstractEntity {
 	private String				link;
 
 	private boolean				draftMode;
+
+	@NotNull
+	@Transient
+	private boolean				confirmation;
 
 	// Derived attributes -----------------------------------------------------
 
