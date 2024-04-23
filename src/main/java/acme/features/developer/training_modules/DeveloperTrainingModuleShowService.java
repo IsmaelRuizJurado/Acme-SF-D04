@@ -2,7 +2,6 @@
 package acme.features.developer.training_modules;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,7 +57,7 @@ public class DeveloperTrainingModuleShowService extends AbstractService<Develope
 		choices = SelectChoices.from(Level.class, object.getBasicLevel());
 		dataset.put("basicLevel", choices.getSelected().getKey());
 		dataset.put("levels", choices);
-		final List<TrainingSession> trainingSessions = this.repository.findTrainingSessionsByTrainingModule(object).stream().collect(Collectors.toList());
+		final List<TrainingSession> trainingSessions = this.repository.findTrainingSessionsByTrainingModule(object).stream().toList();
 		dataset.put("hasTrainingSessions", !trainingSessions.isEmpty());
 		super.getResponse().addData(dataset);
 	}

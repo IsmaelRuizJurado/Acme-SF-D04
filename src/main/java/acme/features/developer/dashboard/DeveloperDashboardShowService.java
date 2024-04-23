@@ -34,27 +34,24 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 	public void load() {
 		final DeveloperDashboard dashboard = new DeveloperDashboard();
 
-		Principal principal;
-		int userAccountId;
-		principal = super.getRequest().getPrincipal();
-		userAccountId = principal.getAccountId();
+		final Principal principal = super.getRequest().getPrincipal();
+		final int userAccountId = principal.getAccountId();
+
 		final Developer developer = this.repository.findOneDeveloperByUserAccountId(userAccountId);
 
-		int totalSessionTime = 0;
-
 		//trainingModuleTimeStats
-		List<TrainingModule> trainingModules = this.repository.findTrainingModulesByDeveloperId(developer.getId()).stream().toList();
+		final List<TrainingModule> trainingModules = this.repository.findTrainingModulesByDeveloperId(userAccountId).stream().toList();
 		double sumTotalTimes = 0.;
-		double maxTotalTimes = 0.;
-		double minTotalTimes = 0.;
+		double maxTotalTimes = Double.MIN_VALUE;
+		double minTotalTimes = Double.MAX_VALUE;
 
 		for (TrainingModule module : trainingModules) {
-			List<TrainingSession> sessions;
-			sessions = this.repository.findTrainingSessionsByTrainingModule(module).stream().toList();
+			List<TrainingSession> sessions = this.repository.findTrainingSessionsByTrainingModule(module).stream().toList();
+			int totalSessionTime = 0;
 			for (TrainingSession session : sessions)
-				totalSessionTime += (int) (session.getStartPeriod().getTime() - session.getEndPeriod().getTime()) / 1000;
+				totalSessionTime += (session.getEndPeriod().getTime() - session.getStartPeriod().getTime()) / 60000;
 			module.setEstimatedTotalTime(totalSessionTime);
-			double totalTime = module.getEstimatedTotalTime();
+			int totalTime = module.getEstimatedTotalTime();
 			sumTotalTimes += totalTime;
 			if (totalTime > maxTotalTimes)
 				maxTotalTimes = totalTime;
