@@ -7,6 +7,9 @@ authenticated.notice.form.label.email= Email
 authenticated.notice.form.label.link= Link
 authenticated.notice.form.label.confirmation= Confirmacion
 
+authenticated.notice.form.spam = El texto introducido es considerado Spam
+authenticated.notice.form.error.confirmation = La operación de creación requiere confirmación
+
 authenticated.notice.list.label.title= Titulo
 authenticated.notice.list.label.message= Mensaje
 authenticated.notice.list.label.link= Link

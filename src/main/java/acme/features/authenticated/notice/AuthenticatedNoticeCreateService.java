@@ -49,6 +49,7 @@ public class AuthenticatedNoticeCreateService extends AbstractService<Authentica
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("title"))
 			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "title", "authenticated.notice.form.spam");
+		super.state(object.isConfirmation(), "confirmation", "authenticated.notice.form.error.confirmation");
 		if (!super.getBuffer().getErrors().hasErrors("author"))
 			super.state(this.auxiliarService.validateTextImput(object.getAuthor()), "author", "authenticated.notice.form.spam");
 		if (!super.getBuffer().getErrors().hasErrors("message"))

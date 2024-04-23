@@ -10,9 +10,9 @@
 	<acme:input-textbox code="authenticated.notice.form.label.author" path="author" />
 	<acme:input-email code="authenticated.notice.form.label.email" path="email" />
 	<acme:input-url code="authenticated.notice.form.label.link" path="link" />
-	<acme:input-checkbox code="authenticated.notice.form.label.confirmation" path="confirmation" />
 	
 	<jstl:if test="${_command == 'create'}">
+		<acme:input-checkbox code="authenticated.notice.form.label.confirmation" path="confirmation" />
 		<acme:submit code="authenticated.notice.form.button.create" action="/authenticated/notice/create"/>
 	</jstl:if>	
 </acme:form>

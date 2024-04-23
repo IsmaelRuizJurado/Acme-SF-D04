@@ -36,6 +36,7 @@ master.menu.any.contract = Contratos
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.objective = Objetivos
+master.menu.authenticated.notice = Avisos
 
 # master.menu.administrator ###################################################
 
