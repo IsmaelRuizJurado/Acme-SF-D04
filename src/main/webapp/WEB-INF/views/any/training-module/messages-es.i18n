@@ -11,4 +11,6 @@ any.training-module.form.label.basicLevel = Nivel
 any.training-module.form.label.updateMoment = Momento de actualización
 any.training-module.form.label.link = Enlace
 any.training-module.form.label.developer = Grado del desarrollador
+developer.training-module.form.label.project = Proyecto
+any.training-module.form.label.estimatedTotalTime = Tiempo total
 

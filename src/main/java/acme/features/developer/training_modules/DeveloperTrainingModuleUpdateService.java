@@ -1,6 +1,7 @@
 
 package acme.features.developer.training_modules;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
@@ -47,7 +49,8 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findTrainingModuleById(id);
-
+		Date moment = MomentHelper.getCurrentMoment();
+		object.setUpdateMoment(moment);
 		super.getBuffer().addData(object);
 	}
 
@@ -60,8 +63,6 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("creationTime"))
-			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training_module.form.error.creationTime");
 		if (!super.getBuffer().getErrors().hasErrors("details"))
 			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training_module.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
@@ -90,6 +91,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		dataset.put("levels", choices);
 		final List<TrainingSession> trainingSessions = this.repository.findTrainingSessionsByTrainingModule(object).stream().collect(Collectors.toList());
 		dataset.put("hasTrainingSessions", trainingSessions.size() > 0);
+		dataset.put("project", object.getProject().getCode());
 		super.getResponse().addData(dataset);
 	}
 

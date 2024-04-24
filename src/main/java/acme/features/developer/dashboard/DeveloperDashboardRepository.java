@@ -29,8 +29,8 @@ public interface DeveloperDashboardRepository extends AbstractRepository {
 	@Query("select count(ts) from TrainingSession ts where ts.developer = :developer and ts.optionalLink is not null and ts.draftMode=false")
 	Optional<Integer> findNumOfTrainingSessionsWithLink(Developer developer);
 
-	@Query("select ts from TrainingSession ts where ts.trainingModule = :trainingModule")
-	Collection<TrainingSession> findTrainingSessionsByTrainingModule(TrainingModule trainingModule);
+	@Query("select ts from TrainingSession ts join ts.trainingModule tm where tm = :trainingModule and tm.draftMode = false")
+	Collection<TrainingSession> findTrainingSessionsByTrainingModuleAndPublished(TrainingModule trainingModule);
 
 	@Query("select tm from TrainingModule tm where tm.id = :id")
 	TrainingModule findTrainingModuleById(int id);
@@ -38,7 +38,7 @@ public interface DeveloperDashboardRepository extends AbstractRepository {
 	@Query("select tm from TrainingModule tm")
 	List<TrainingModule> findAllModules();
 
-	@Query("select tm from TrainingModule tm where tm.developer.userAccount.id = :id")
-	Collection<TrainingModule> findTrainingModulesByDeveloperId(int id);
+	@Query("select tm from TrainingModule tm where tm.developer.userAccount.id = :id and tm.draftMode = false")
+	Collection<TrainingModule> findTrainingModulesByDeveloperIdAndPublished(int id);
 
 }

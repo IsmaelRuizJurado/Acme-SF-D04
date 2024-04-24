@@ -37,7 +37,8 @@ public class DeveloperTrainingModuleListService extends AbstractService<Develope
 	public void unbind(final TrainingModule object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "creationTime", "details", "basicLevel");
+		dataset = super.unbind(object, "code", "details", "basicLevel");
+		dataset.put("projectCode", object.getProject().getCode());
 		super.getResponse().addData(dataset);
 	}
 }

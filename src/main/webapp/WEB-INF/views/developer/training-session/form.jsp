@@ -14,16 +14,19 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+			<acme:input-textbox code="developer.training_session.form.label.trainingModule" path="trainingModuleCode" readonly="true"/>	
 			<acme:submit code="developer.training_session.form.button.update" action="/developer/training-session/update"/>
 			<acme:submit code="developer.training_session.form.button.delete" action="/developer/training-session/delete"/>
 			<acme:submit code="developer.training_session.form.button.publish" action="/developer/training-session/publish"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true }">
+			<acme:input-textbox code="developer.training_session.form.label.trainingModule" path="trainingModuleCode" readonly="true"/>
 			<acme:submit code="developer.training_session.form.button.update" action="/developer/training-session/update"/>
 			<acme:submit code="developer.training_session.form.button.delete" action="/developer/training-session/delete"/>
 			<acme:submit code="developer.training_session.form.button.publish" action="/developer/training-session/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
+			<acme:input-select code="developer.training_session.form.label.trainingModule" path="trainingModule" choices="${modules}"/>
 			<acme:submit code="developer.training_session.form.button.create" action="/developer/training-session/create"/>
 		</jstl:when>		
 	</jstl:choose>

@@ -63,7 +63,7 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 		super.state(!trainingSessions.isEmpty(), "*", "developer.training_module.form.error.notrainingsession");
 		if (!trainingSessions.isEmpty()) {
 			boolean publishedTrainingSessions;
-			publishedTrainingSessions = trainingSessions.stream().anyMatch(x -> !x.isDraftMode());
+			publishedTrainingSessions = trainingSessions.stream().allMatch(x -> !x.isDraftMode());
 			super.state(publishedTrainingSessions, "*", "developer.training_module.form.error.trainingsessionnp");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("creationTime"))
@@ -97,6 +97,7 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 		dataset.put("levels", choices);
 		final List<TrainingSession> trainingSessions = this.repository.findTrainingSessionsByTrainingModule(object).stream().collect(Collectors.toList());
 		dataset.put("hasTrainingSessions", trainingSessions.size() > 0);
+		dataset.put("project", object.getProject().getCode());
 		super.getResponse().addData(dataset);
 	}
 }

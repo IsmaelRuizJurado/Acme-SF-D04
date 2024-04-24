@@ -52,6 +52,7 @@ public class DeveloperTrainingSessionListService extends AbstractService<Develop
 		super.getResponse().addGlobal("masterId", masterId);
 		dataset.put("masterId", masterId);
 		final TrainingModule tm = this.repository.findTrainingModuleById(masterId);
+		dataset.put("module", tm.getCode());
 		final boolean showCreate = tm.getDraftMode();
 		super.getResponse().addGlobal("showCreate", showCreate);
 		super.getResponse().addData(dataset);
@@ -61,11 +62,14 @@ public class DeveloperTrainingSessionListService extends AbstractService<Develop
 	public void unbind(final Collection<TrainingSession> object) {
 		assert object != null;
 		int masterId;
+
 		masterId = super.getRequest().getData("masterId", int.class);
-		super.getResponse().addGlobal("masterId", masterId);
 		final TrainingModule tm = this.repository.findTrainingModuleById(masterId);
+
 		final boolean showCreate = tm.getDraftMode();
 		super.getResponse().addGlobal("showCreate", showCreate);
+
+		super.getResponse().addGlobal("masterId", masterId);
 	}
 
 }

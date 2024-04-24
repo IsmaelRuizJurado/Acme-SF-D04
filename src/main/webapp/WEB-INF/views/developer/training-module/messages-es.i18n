@@ -1,7 +1,8 @@
 developer.training-module.list.title = Lista de tus modulos de entrenamiento
-developer.training_module.list.label.creationTime = Hora de creacion
+developer.training_module.list.label.code = Codigo
 developer.training_module.list.label.details = Detalles
 developer.training_module.list.label.basicLevel = Nivel
+developer.training_module.list.label.project = Codigo del proyecto
 
 developer.training-module.form.title = Detalles del Modulo de Entrenamiento
 developer.training_module.form.label.code = Codigo
@@ -12,6 +13,8 @@ developer.training_module.form.label.updateMoment = Momento de la Actualizacion
 developer.training_module.form.label.link = Enlace
 developer.training_module.form.label.draftMode = Borrador
 developer.training_module.form.label.developer = Desarrollador
+developer.training_module.form.label.project = Proyecto
+developer.training_module.form.label.totalTime = Tiempo Total	
 
 developer.training_module.form.error.notrainingsession = Este modulo no tiene sesiones
 developer.training_module.form.error.trainingsessionnp = Algunas sesiones de este modulo no están publicadas

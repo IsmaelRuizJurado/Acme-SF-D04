@@ -1,11 +1,14 @@
 
 package acme.features.developer.training_sessions;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
 import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
@@ -38,20 +41,32 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 	@Override
 	public void bind(final TrainingSession object) {
 		assert object != null;
-		super.bind(object, "code", "startPeriod", "endPeriod", "location", "instructor", "contactEmail", "optionalLink");
+		super.bind(object, "code", "startPeriod", "endPeriod", "location", "instructor", "contactEmail", "optionalLink", "trainingModule");
 	}
 
 	@Override
 	public void validate(final TrainingSession object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("startPeriod"))
+		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			super.state(this.auxiliarService.validateDate(object.getStartPeriod()), "startPeriod", "developer.training-session.form.error.startPeriod");
+			super.state(object.getStartPeriod().after(object.getTrainingModule().getCreationTime()), "startPeriod", "developer.training-session.form.error.startPeriod");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("location"))
 			super.state(this.auxiliarService.validateTextImput(object.getLocation()), "location", "developer.training-session.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("instructor"))
 			super.state(this.auxiliarService.validateTextImput(object.getInstructor()), "instructor", "developer.training-session.form.error.spam");
-		if (!super.getBuffer().getErrors().hasErrors("endPeriod"))
+		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
 			super.state(this.auxiliarService.validateDate(object.getEndPeriod()), "endPeriod", "developer.training-session.form.error.endPeriod");
+			super.state(TimeUnit.DAYS.convert(Math.abs(object.getEndPeriod().getTime() - object.getStartPeriod().getTime()), TimeUnit.MILLISECONDS) >= 7, "endPeriod", "developer.training-session.form.error.endPeriod");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			TrainingSession existing;
+			existing = this.repository.findTrainingSessionByCode(object.getCode());
+			super.state(existing == null, "code", "developer.training-module.form.error.code");
+		}
+
 	}
 
 	@Override
@@ -64,7 +79,11 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 	public void unbind(final TrainingSession object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "startPeriod", "endPeriod", "location", "instructor", "contactEmail", "optionalLink", "draftMode", "developer");
+		dataset = super.unbind(object, "code", "startPeriod", "endPeriod", "location", "instructor", "contactEmail", "optionalLink", "draftMode", "trainingModule", "developer");
+		final SelectChoices choices;
+		choices = SelectChoices.from(this.repository.findTrainingModulesNotPublishedByDeveloperId(super.getRequest().getPrincipal().getAccountId()), "code", object.getTrainingModule());
+		dataset.put("module", choices.getSelected().getKey());
+		dataset.put("modules", choices);
 		super.getResponse().addData(dataset);
 	}
 }
