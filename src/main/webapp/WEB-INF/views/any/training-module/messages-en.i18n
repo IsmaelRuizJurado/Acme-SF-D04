@@ -1,9 +1,10 @@
 
 any.training-module.list.title = Published training modules
 any.training-module.form.title = Training Module details
-authenticated.training-module.list.label.creationTime = Creation Time
+authenticated.training-module.list.label.code = Code
 authenticated.training-module.list.label.details = Details
 authenticated.training-module.list.label.basicLevel = Level
+authenticated.training-module.list.label.projectCode = Project Code
 
 any.training-module.form.label.code = Code
 any.training-module.form.label.creationTime = Creation Time

@@ -10,14 +10,14 @@
 	<acme:input-url code="developer.training_module.form.label.link" path="link"/>
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:input-moment code="developer.training_module.form.label.creationTime" path="creationTime"/>
+			<acme:input-moment code="developer.training_module.form.label.creationTime" path="creationTime" readonly="true"/>
 			<acme:input-moment code="developer.training_module.form.label.updateMoment" path="updateMoment"/>
 			<acme:input-textbox code="developer.training_module.form.label.totalTime" path="estimatedTotalTime"/>
 			<acme:input-textbox code="developer.training_module.form.label.project" path="project" readonly="true"/>	
 			<acme:button code="developer.training_module.training_session" action="/developer/training-session/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true && hasTrainingSessions}">
-			<acme:input-moment code="developer.training_module.form.label.creationTime" path="creationTime"/>
+			<acme:input-moment code="developer.training_module.form.label.creationTime" path="creationTime" readonly="true"/>
 			<acme:input-moment code="developer.training_module.form.label.updateMoment" path="updateMoment"/>	
 			<acme:input-textbox code="developer.training_module.form.label.project" path="project" readonly="true"/>	
 			<acme:button code="developer.training_module.training_session" action="/developer/training-session/list?masterId=${id}"/>
@@ -26,7 +26,7 @@
 			<acme:submit code="developer.training_module.form.button.publish" action="/developer/training-module/publish"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true }">
-			<acme:input-moment code="developer.training_module.form.label.creationTime" path="creationTime"/>
+			<acme:input-moment code="developer.training_module.form.label.creationTime" path="creationTime" readonly="true"/>
 			<acme:input-moment code="developer.training_module.form.label.updateMoment" path="updateMoment"/>
 			<acme:input-textbox code="developer.training_module.form.label.project" path="project" readonly="true"/>	
 			<acme:button code="developer.training_module.training_session" action="/developer/training-session/list?masterId=${id}"/>
