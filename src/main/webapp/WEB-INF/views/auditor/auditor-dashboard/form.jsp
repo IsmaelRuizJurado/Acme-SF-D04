@@ -76,7 +76,7 @@
 <jstl:choose>
 <jstl:when test="${numAuditRecord.getMaximum()>0.0}">
 
-	<h3><acme:message code="auditor.auditorDashboard.form.label.audit-records.informationn"/></h3>
+	<h3><acme:message code="auditor.auditorDashboard.form.label.audit-records.information"/></h3>
 	<div>
 		<canvas id="canvas2"></canvas>
 	</div>
