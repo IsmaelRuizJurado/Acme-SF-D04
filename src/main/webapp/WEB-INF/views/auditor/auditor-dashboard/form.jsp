@@ -75,11 +75,10 @@
 
 <jstl:choose>
 <jstl:when test="${numAuditRecord.getMaximum()>0.0}">
-						
-		
-	<h3><acme:message code="auditor.auditorDashboard.form.label.projects.information"/></h3>
+
+	<h3><acme:message code="auditor.auditorDashboard.form.label.audit-records.informationn"/></h3>
 	<div>
-		<canvas id="canvas"></canvas>
+		<canvas id="canvas2"></canvas>
 	</div>
 
 	<script type="text/javascript">
@@ -98,6 +97,70 @@
 						],
 						backgroundColor: [
 						      'rgb(40, 180, 99)',
+						      'rgb(54, 162, 235)',
+						      'rgb(255, 205, 86)',
+						      'rgb(230, 170, 243)'
+					    ]
+					}
+				]
+			};
+			
+			
+			var options = {
+					scales : {
+						yAxes : [
+							{
+								ticks : {
+									suggestedMin : 0.0,
+									suggestedMax : 10.0
+								}
+							}
+						]
+					},
+					legend : {
+						display : false
+					}
+				};
+			
+			var canvas, context;
+			canvas = document.getElementById("canvas2");
+			context = canvas.getContext("2d");
+			new Chart(context, {
+				type : "bar",
+				data : data,
+				options : options
+			});
+		});
+	</script>
+
+</jstl:when>
+</jstl:choose>
+
+<jstl:choose>
+<jstl:when test="${auditingTimePeriod.getMaximum()>0.0}">
+						
+		
+	<h3><acme:message code="auditor.auditorDashboard.form.label.audit-records.time.information"/></h3>
+	<div>
+		<canvas id="canvas"></canvas>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var data = {
+				labels : [
+						"AVERAGE", "MAX", "MIN","DEVIATION"
+				],
+				datasets : [
+					{
+						data : [
+							<jstl:out value="${auditingTimePeriod.getAverage()}"/>, 
+							<jstl:out value="${auditingTimePeriod.getMaximum()}"/>, 
+							<jstl:out value="${auditingTimePeriod.getMinimum()}"/>,
+							<jstl:out value="${auditingTimePeriod.getDeviation()}"/>
+						],
+						backgroundColor: [
+						      'rgb(40, 180, 99)',
 					    	  'rgb(54, 162, 235)',
 					    	  'rgb(255, 205, 86)',
 					      	  'rgb(230, 170, 243)'
@@ -111,7 +174,7 @@
 						{
 							ticks : {
 								suggestedMin : 0.0,
-								suggestedMax : 50.0
+								suggestedMax : 100.0
 							}
 						}
 					]

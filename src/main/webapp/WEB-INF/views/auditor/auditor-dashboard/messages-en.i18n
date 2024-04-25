@@ -9,7 +9,8 @@ auditor.auditorDashboard.form.label.min-audit-record-period = Min time:
 auditor.auditorDashboard.form.label.max-audit-record-period =Max Time:
 
 
-auditor.auditorDashboard.form.label.projects.information = Graphic about Audit records:
+auditor.auditorDashboard.form.label.audit-records.information = Graphic about Audit records:
+auditor.auditorDashboard.form.label.audit-records.time.information= Graphic about time period of audits records:
 auditor.auditorDashboard.form.label.audit-records.type.information = Graphic about the types of the Code Audits:
 
 auditor.auditorDashboard.form.label.static-audits = Number of  CodeAudits with type "static":

@@ -26,7 +26,7 @@ public interface AuditorDashboardRepository extends AbstractRepository {
 	@Query("SELECT a FROM AuditRecords a WHERE a.codeAudits.auditor.userAccount.id = :id")
 	Collection<AuditRecords> findAuditRecordsByAuditorId(int id);
 
-	@Query("SELECT c FROM CodeAudits c WHERE c.auditor.userAccount.id = :id")
+	@Query("SELECT c FROM CodeAudits c WHERE c.auditor.id = :id")
 	Collection<CodeAudits> findCodeAuditsByAuditorId(int id);
 
 	@Query("SELECT avg ( SELECT count(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id) FROM CodeAudits c WHERE c.auditor.id =:id ")
@@ -38,10 +38,9 @@ public interface AuditorDashboardRepository extends AbstractRepository {
 	@Query("SELECT min( SELECT count(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id) FROM CodeAudits c WHERE c.auditor.id =:id ")
 	Optional<Double> findMinNumOfAuditRecords(int id);
 
-	/*
-	 * @Query("SELECT STDDEV (SELECT COUNT(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id) FROM CodeAudits c WHERE c.auditor.id = :id")
-	 * Optional<Double> findDevNumOfAuditRecords(@Param("id") int id);
-	 */
+	//@Query("SELECT stddev(SELECT count(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id) FROM CodeAudits c WHERE c.auditor.id =:id")
+	//Optional<Double> findDevNumOfAuditRecords(int id);
+
 	@Query("SELECT count(c) FROM CodeAudits c WHERE c.auditor.id=:id and c.type =:type ")
 	Optional<Integer> findCodeAuditByType(int id, CodeAuditsType type);
 
