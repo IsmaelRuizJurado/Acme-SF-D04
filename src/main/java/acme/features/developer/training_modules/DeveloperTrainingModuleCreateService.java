@@ -1,10 +1,13 @@
 
 package acme.features.developer.training_modules;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
@@ -34,20 +37,20 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		final Developer developer = this.repo.findOneDeveloperById(super.getRequest().getPrincipal().getActiveRoleId());
 		object.setDeveloper(developer);
 		object.setDraftMode(true);
+		Date moment = MomentHelper.getCurrentMoment();
+		object.setCreationTime(moment);
 		super.getBuffer().addData(object);
 	}
 
 	@Override
 	public void bind(final TrainingModule object) {
 		assert object != null;
-		super.bind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "link");
+		super.bind(object, "code", "details", "basicLevel", "link", "project");
 	}
 
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("creationTime"))
-			super.state(this.auxiliarService.validateDate(object.getCreationTime()), "creationTime", "developer.training_module.form.error.creationTime");
 		if (!super.getBuffer().getErrors().hasErrors("details"))
 			super.state(this.auxiliarService.validateTextImput(object.getDetails()), "details", "developer.training_module.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
@@ -55,8 +58,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 			existing = this.repo.findTrainingModuleByCode(object.getCode());
 			super.state(existing == null, "code", "developer.training-module.form.error.code");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
-			super.state(this.auxiliarService.validateDate(object.getUpdateMoment()), "updateMoment", "developer.training_module.form.error.updateMoment");
+
 	}
 
 	@Override
@@ -69,11 +71,15 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 	public void unbind(final TrainingModule object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "optionalLink", "estimatedTotalTime", "draftMode", "developer");
+		dataset = super.unbind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "optionalLink", "estimatedTotalTime", "draftMode", "developer", "project");
 		final SelectChoices choices;
 		choices = SelectChoices.from(Level.class, object.getBasicLevel());
 		dataset.put("basicLevel", choices.getSelected().getKey());
 		dataset.put("levels", choices);
+		final SelectChoices choices2;
+		choices2 = SelectChoices.from(this.repo.findPublishedProjects(), "code", object.getProject());
+		dataset.put("project", choices.getSelected().getKey());
+		dataset.put("projects", choices2);
 		super.getResponse().addData(dataset);
 	}
 

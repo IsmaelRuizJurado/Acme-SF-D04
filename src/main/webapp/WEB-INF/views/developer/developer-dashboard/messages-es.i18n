@@ -1,8 +1,8 @@
 developer.developer-dashboard.form.title = Panel de Control del Desarrollador
 
-developer.developerDashboard.form.label.average-training-modules-time = Tiempo promedio de los módulos de entrenamiento en minutos:
-developer.developerDashboard.form.label.max-training-modules-time = Tiempo máximo de los módulos de entrenamiento en minutos:
-developer.developerDashboard.form.label.min-training-modules-time = Tiempo mínimo de los módulos de entrenamiento en minutos:
-developer.developerDashboard.form.label.lin-dev-training-modules-time = Desviación estándar del tiempo de los módulos de entrenamiento en minutos:
+developer.developerDashboard.form.label.average-training-modules-time = Tiempo promedio de los módulos de entrenamiento en horas:
+developer.developerDashboard.form.label.max-training-modules-time = Tiempo máximo de los módulos de entrenamiento en horas:
+developer.developerDashboard.form.label.min-training-modules-time = Tiempo mínimo de los módulos de entrenamiento en horas:
+developer.developerDashboard.form.label.lin-dev-training-modules-time = Desviación estándar del tiempo de los módulos de entrenamiento en horas:
 developer.developerDashboard.form.label.training-modules-with-update-moment = Modulos de entrenamiento con fecha de actualizacion:
 developer.developerDashboard.form.label.training-sessions-with-link = Sesiones de entrenamiento con enlace: 

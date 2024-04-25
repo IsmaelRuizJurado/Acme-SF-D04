@@ -5,9 +5,10 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="developer.training_module.list.label.creationTime" path="creationTime"  width="40%"/>
-	<acme:list-column code="developer.training_module.list.label.details" path="details" width="40%" />
+	<acme:list-column code="developer.training_module.list.label.code" path="code"  width="25%"/>
+	<acme:list-column code="developer.training_module.list.label.details" path="details" width="35%" />
 	<acme:list-column code="developer.training_module.list.label.basicLevel" path="basicLevel" width="20%" />
+	<acme:list-column code="developer.training_module.list.label.project" path="projectCode" width="20%"/>
 
 
 </acme:list>

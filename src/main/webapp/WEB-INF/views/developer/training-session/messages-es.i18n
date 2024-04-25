@@ -2,6 +2,7 @@ developer.training-session.list.title = Tu lista de sesiones de entrenamiento
 developer.training_session.list.label.code = Código
 developer.training_session.list.label.location = Ubicación
 developer.training_session.list.label.instructor = Instructor
+developer.training_session.list.label.module = Modulo de entrenamiento
 
 developer.training-session.form.title = Detalles de la sesión de entrenamiento
 developer.training_session.form.label.code = Código
@@ -12,12 +13,15 @@ developer.training_session.form.label.instructor = Instructor
 developer.training_session.form.label.contactEmail = Correo de contacto
 developer.training_session.form.label.link = Enlace
 developer.training_session.form.label.draftMode = Modo borrador
+developer.training_session.form.label.trainingModule = Modulo de entrenamiento
 developer.training_session.form.label.developer = Desarrollador
 
 developer.training_session.form.error.notrainingsession = Esta sesión de entrenamiento no tiene sesiones de entrenamiento
 developer.training_session.form.error.trainingsessionnp = Algunas sesiones de entrenamiento de esta sesión de entrenamiento no están publicadas
 
 developer.training_session.form.error.spam = El texto introducido se considera spam
+developer.training-session.form.error.startPeriod = Introduce una fecha valida
+developer.training-session.form.error.endPeriod = Introduce una fecha valida
 
 developer.training_session.training_session = Sesiones de entrenamiento
 
@@ -29,3 +33,5 @@ developer.training_session.form.button.delete = Borrar
 developer.training_session.form.button.update = Actualizar
 developer.training_session.form.button.publish = Publicar
 developer.training_session.form.button.create = Crear
+
+developer.training-session.list.button.create = Crear

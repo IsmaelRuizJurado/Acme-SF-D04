@@ -39,8 +39,8 @@ public class AnyTrainingModuleListService extends AbstractService<Any, TrainingM
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "creationTime", "details", "basicLevel");
-
+		dataset = super.unbind(object, "code", "details", "basicLevel");
+		dataset.put("projectCode", object.getProject().getCode());
 		super.getResponse().addData(dataset);
 	}
 }

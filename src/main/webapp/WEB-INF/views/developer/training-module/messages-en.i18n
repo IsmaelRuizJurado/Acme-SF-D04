@@ -1,7 +1,8 @@
 developer.training-module.list.title = Your training module list
-developer.training_module.list.label.creationTime = Creation Time
+developer.training_module.list.label.code = Code
 developer.training_module.list.label.details = Details
 developer.training_module.list.label.basicLevel = Basic Level
+developer.training_module.list.label.project = Project Code
 
 developer.training-module.form.title = Training Module details
 developer.training_module.form.label.code = Code
@@ -12,6 +13,8 @@ developer.training_module.form.label.updateMoment = Update Moment
 developer.training_module.form.label.link = Link
 developer.training_module.form.label.draftMode = Draft Mode
 developer.training_module.form.label.developer = Developer
+developer.training_module.form.label.project = Project
+developer.training_module.form.label.totalTime = Total Time
 
 developer.training_module.form.error.notrainingsession = This training module has no training sessions 
 developer.training_module.form.error.trainingsessionnp = Some training sessions of this training module are not published

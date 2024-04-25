@@ -40,28 +40,40 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 		final Developer developer = this.repository.findOneDeveloperByUserAccountId(userAccountId);
 
 		//trainingModuleTimeStats
-		final List<TrainingModule> trainingModules = this.repository.findTrainingModulesByDeveloperId(userAccountId).stream().toList();
-		double sumTotalTimes = 0.;
-		double maxTotalTimes = Double.MIN_VALUE;
-		double minTotalTimes = Double.MAX_VALUE;
+		final List<TrainingModule> trainingModules = this.repository.findTrainingModulesByDeveloperIdAndPublished(userAccountId).stream().toList();
+		double sumTotalTimes;
+		double maxTotalTimes;
+		double minTotalTimes;
+		double averageTrainingModuleTime;
+		double devTrainingModuleTime;
+		if (trainingModules.isEmpty()) {
+			sumTotalTimes = 0.;
+			maxTotalTimes = 0;
+			minTotalTimes = 0;
+			averageTrainingModuleTime = 0.;
+			devTrainingModuleTime = 0;
+		} else {
+			sumTotalTimes = 0.;
+			maxTotalTimes = Double.NEGATIVE_INFINITY;
+			minTotalTimes = Double.POSITIVE_INFINITY;
+			for (TrainingModule module : trainingModules) {
+				List<TrainingSession> sessions = this.repository.findTrainingSessionsByTrainingModuleAndPublished(module).stream().toList();
+				int totalSessionTime = 0;
+				for (TrainingSession session : sessions)
+					totalSessionTime += (session.getEndPeriod().getTime() - session.getStartPeriod().getTime()) / 1440000;
+				module.setEstimatedTotalTime(totalSessionTime);
+				int totalTime = module.getEstimatedTotalTime();
+				sumTotalTimes += totalTime;
+				if (totalTime > maxTotalTimes)
+					maxTotalTimes = totalTime;
+				if (totalTime < minTotalTimes)
+					minTotalTimes = totalTime;
+			}
 
-		for (TrainingModule module : trainingModules) {
-			List<TrainingSession> sessions = this.repository.findTrainingSessionsByTrainingModule(module).stream().toList();
-			int totalSessionTime = 0;
-			for (TrainingSession session : sessions)
-				totalSessionTime += (session.getEndPeriod().getTime() - session.getStartPeriod().getTime()) / 60000;
-			module.setEstimatedTotalTime(totalSessionTime);
-			int totalTime = module.getEstimatedTotalTime();
-			sumTotalTimes += totalTime;
-			if (totalTime > maxTotalTimes)
-				maxTotalTimes = totalTime;
-			if (totalTime < minTotalTimes)
-				minTotalTimes = totalTime;
+			averageTrainingModuleTime = sumTotalTimes / trainingModules.size();
+
+			devTrainingModuleTime = Math.sqrt(trainingModules.stream().mapToDouble(module -> Math.pow(module.getEstimatedTotalTime() - averageTrainingModuleTime, 2)).sum() / trainingModules.size());
 		}
-
-		double averageTrainingModuleTime = sumTotalTimes / trainingModules.size();
-
-		double devTrainingModuleTime = Math.sqrt(trainingModules.stream().mapToDouble(module -> Math.pow(module.getEstimatedTotalTime() - averageTrainingModuleTime, 2)).sum() / trainingModules.size());
 
 		final Stats trainingModuleTimeStats = new Stats();
 		trainingModuleTimeStats.setAverage(averageTrainingModuleTime);

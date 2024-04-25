@@ -1,14 +1,18 @@
 
 package acme.features.any.training_module;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Any;
+import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.components.AuxiliarService;
 import acme.entities.training_module.TrainingModule;
+import acme.entities.training_session.TrainingSession;
 
 @Service
 public class AnyTrainingModuleShowService extends AbstractService<Any, TrainingModule> {
@@ -37,6 +41,17 @@ public class AnyTrainingModuleShowService extends AbstractService<Any, TrainingM
 		int id;
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findTrainingModuleById(id);
+		final Principal principal = super.getRequest().getPrincipal();
+		final int userAccountId = principal.getAccountId();
+		final List<TrainingModule> trainingModules = this.repository.findPublishedTrainingModules().stream().toList();
+
+		for (TrainingModule module : trainingModules) {
+			List<TrainingSession> sessions = this.repository.findTrainingSessionsByTrainingModule(module).stream().toList();
+			int totalSessionTime = 0;
+			for (TrainingSession session : sessions)
+				totalSessionTime += (session.getEndPeriod().getTime() - session.getStartPeriod().getTime()) / 1440000;
+			module.setEstimatedTotalTime(totalSessionTime);
+		}
 		super.getBuffer().addData(object);
 	}
 
@@ -44,7 +59,7 @@ public class AnyTrainingModuleShowService extends AbstractService<Any, TrainingM
 	public void unbind(final TrainingModule object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "optionalLink");
+		dataset = super.unbind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "optionalLink", "estimatedTotalTime", "project");
 		dataset.put("degree", object.getDeveloper().getDegree());
 		super.getResponse().addData(dataset);
 	}
