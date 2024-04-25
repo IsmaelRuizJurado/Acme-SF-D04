@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Any;
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.components.AuxiliarService;
@@ -41,8 +40,6 @@ public class AnyTrainingModuleShowService extends AbstractService<Any, TrainingM
 		int id;
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findTrainingModuleById(id);
-		final Principal principal = super.getRequest().getPrincipal();
-		final int userAccountId = principal.getAccountId();
 		final List<TrainingModule> trainingModules = this.repository.findPublishedTrainingModules().stream().toList();
 
 		for (TrainingModule module : trainingModules) {

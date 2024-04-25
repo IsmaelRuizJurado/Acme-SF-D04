@@ -1,8 +1,6 @@
 
 package acme.forms;
 
-import javax.persistence.Transient;
-
 import acme.client.data.AbstractForm;
 import acme.datatypes.Stats;
 import lombok.Getter;
@@ -21,7 +19,6 @@ public class DeveloperDashboard extends AbstractForm {
 
 	private Integer				numTrainingSessionsWithLink;
 
-	@Transient
 	private Stats				trainingModuleTimeStats;
 
 	// Derived attributes -----------------------------------------------------
