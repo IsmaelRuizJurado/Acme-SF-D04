@@ -28,14 +28,8 @@ public class AuxiliarService {
 	private AuxiliarRepository repository;
 
 
-	public boolean validateDate(final Date date) {
-		final Date maxDate = new Date(200, 11, 31, 23, 59);
-		final Date minDate = new Date(100, 0, 1, 00, 00);
-		return MomentHelper.isAfterOrEqual(date, minDate) && MomentHelper.isBeforeOrEqual(date, maxDate);
-	}
-
 	public boolean validatePrice(final Money price, final Integer minAm, final Integer maxAm) {
-		return price.getAmount() >= minAm && price.getAmount() < maxAm;
+		return price.getAmount() >= minAm && price.getAmount() <= maxAm;
 	}
 
 	public boolean validateCurrency(final Money price) {
@@ -52,6 +46,12 @@ public class AuxiliarService {
 		final SystemConfiguration sc = this.repository.findSystemConfiguration();
 		final SpamFilter spamFilter = new SpamFilter(sc.getSpamWords(), sc.getSpamThreshold());
 		return !spamFilter.isSpam(input);
+	}
+
+	public boolean validateDate(final Date date) {
+		final Date maxDate = new Date(200, 11, 31, 23, 59);
+		final Date minDate = new Date(100, 0, 1, 00, 00);
+		return MomentHelper.isAfterOrEqual(date, minDate) && MomentHelper.isBeforeOrEqual(date, maxDate);
 	}
 
 	public String translateMoney(final Money money, final String lang) {

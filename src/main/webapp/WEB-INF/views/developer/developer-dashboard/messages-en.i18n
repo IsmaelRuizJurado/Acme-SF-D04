@@ -1,0 +1,8 @@
+developer.developer-dashboard.form.title = Developer Dashboard
+
+developer.developerDashboard.form.label.average-training-modules-time = Average time of the training modules in hours:
+developer.developerDashboard.form.label.max-training-modules-time = Maximum time of the training modules in hours:
+developer.developerDashboard.form.label.min-training-modules-time = Minimum time of the training modules in hours:
+developer.developerDashboard.form.label.lin-dev-training-modules-time = Standard deviation of the time of the training modules in hours:
+developer.developerDashboard.form.label.training-modules-with-update-moment = Training Modules with Update Moment:
+developer.developerDashboard.form.label.training-sessions-with-link = Training Sessions with link: 

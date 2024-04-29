@@ -24,7 +24,7 @@
 	<name>Acme SF</name>
 	<description>Acme Software Factory, by group C1.003</description>
 
-	<artifactId>Acme-SF-D03</artifactId>
+	<artifactId>Acme-SF-D04</artifactId>
 	
 	<packaging>war</packaging>
 	
@@ -41,6 +41,11 @@
     		<groupId>com.squareup.okhttp3</groupId>
     		<artifactId>okhttp</artifactId>
     	</dependency>
+		<dependency>
+			<groupId>Acme</groupId>
+			<artifactId>Acme-Framework</artifactId>
+			<version>24.1.0</version>
+		</dependency>
 	</dependencies>
 	
 </project>

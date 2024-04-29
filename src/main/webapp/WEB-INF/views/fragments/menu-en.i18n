@@ -28,6 +28,9 @@ master.menu.anonymous.favourite-link-angela = 49048001H: López Oliva, Ángela
 # master.menu.any #######################################################
 master.menu.any = Any
 master.menu.any.project = Projects
+master.menu.any.sponsorship = Sponsorship
+master.menu.any.training-module = Training Modules
+master.menu.any.claim = Claims
 master.menu.any.contract = Contracts
 master.menu.any.code-audits = CodeAudits
 
@@ -36,6 +39,7 @@ master.menu.any.code-audits = CodeAudits
 master.menu.authenticated = Authenticated
 master.menu.authenticated.objective = Objectives
 master.menu.authenticated.risk = Risks
+master.menu.authenticated.notice = Notices
 
 # master.menu.administrator ###################################################
 
@@ -63,7 +67,17 @@ master.menu.auditor.audit-records = My Audit Records
 master.menu.auditor.code-audits= My Code Audits
 master.menu.auditor.auditor-dashboard = Auditor Dashboard
 
+# master.menu.sponsor #######################################################
+master.menu.sponsor = Sponsor
+master.menu.sponsor.sponsorship = My sponsorship
+master.menu.sponsor.invoice = My invoices
+master.menu.sponsor.sponsor-dashboard = Sponsor dashboard
 
+# master.menu.developer #######################################################
+master.menu.developer = Developer
+master.menu.developer.training-module = My training modules
+master.menu.developer.training-session = My training sessions
+master.menu.developer.developer-dashboard = Developer dashboard
 
 # master.menu.provider ########################################################
 
@@ -93,6 +107,10 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-manager = Become a manager
 master.menu.user-account.manager = Manager data
+master.menu.user-account.become-sponsor = Become a sponsor
+master.menu.user-account.sponsor = Sponsor data
+master.menu.user-account.become-developer = Become a developer
+master.menu.user-account.developer = Developer data
 master.menu.user-account.become-client = Become a client
 master.menu.user-account.client = Client
 master.menu.user-account.become-auditor = Become a Auditor

@@ -1,39 +1,39 @@
-key,code,registration_time,due_date,quantity,tax,link,key:sponsorship
-invoice-01,IN-0000-0000,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-02,IN-0000-0001,2021/08/21 00:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-03,IN-0000-0002,2021/08/21 23:59,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-04,IN-0000-0003,2021/01/01 00:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-05,IN-0000-0004,2021/12/31 23:59,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-06,IN-0000-0005,2021/08/21 12:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-07,IN-0000-0006,2021/08/21 11:59,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-08,IN-0000-0007,2021/02/28 23:59,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-09,IN-0000-0008,2021/08/21 07:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-10,IN-0000-0009,2021/08/21 23:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-11,IN-0000-0010,2021/08/21 17:00,2022/08/21 00:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-12,IN-0000-0011,2021/08/21 17:00,2022/08/21 23:59,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-13,IN-0000-0012,2021/08/21 17:00,2022/01/01 00:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-14,IN-0000-0013,2021/08/21 17:00,2022/01/01 00:01,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-15,IN-0000-0014,2021/08/21 17:00,2022/12/31 23:59,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-16,IN-0000-0015,2021/08/21 17:00,2022/12/30 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-17,IN-0000-0016,2021/08/21 17:00,2022/02/28 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-18,IN-0000-0017,2021/08/21 17:00,2021/09/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-19,IN-0000-0018,2021/08/21 17:00,2021/09/21 17:01,EUR 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-20,IN-0000-0019,2021/08/21 17:00,2022/08/21 17:00,EUR 0.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-21,IN-0000-0020,2021/08/21 17:00,2022/08/21 17:00,"EUR 150,000.0",EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-22,IN-0000-0021,2021/08/21 17:00,2022/08/21 17:00,EUR 0.01,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-23,IN-0000-0022,2021/08/21 17:00,2022/08/21 17:00,EUR 00.02,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-24,IN-0000-0023,2021/08/21 17:00,2022/08/21 17:00,EUR 1000000.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-25,IN-0000-0024,2021/08/21 17:00,2022/08/21 17:00,EUR 999999.99,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-26,IN-0000-0025,2021/08/21 17:00,2022/08/21 17:00,USD 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-27,IN-0000-0026,2021/08/21 17:00,2022/08/21 17:00,GBP 10.0,EUR 10.0,https://es.linkedin.com,sponsorship-01
-invoice-28,IN-0000-0027,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 0.0,https://es.linkedin.com,sponsorship-01
-invoice-29,IN-0000-0028,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,"EUR 150,000.0",https://es.linkedin.com,sponsorship-01
-invoice-30,IN-0000-0029,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 0.01,https://es.linkedin.com,sponsorship-01
-invoice-31,IN-0000-0030,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 00.02,https://es.linkedin.com,sponsorship-01
-invoice-32,IN-0000-0031,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 1000000.0,https://es.linkedin.com,sponsorship-01
-invoice-33,IN-0000-0032,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 999999.99,https://es.linkedin.com,sponsorship-01
-invoice-34,IN-0000-0033,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,USD 10.0,https://es.linkedin.com,sponsorship-01
-invoice-35,IN-0000-0034,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,GBP 10.0,https://es.linkedin.com,sponsorship-01
-invoice-36,IN-0000-0035,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,null,sponsorship-01
-invoice-37,IN-0000-0036,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,ftp://user:pass@acme.org,sponsorship-01
-invoice-38,IN-0000-0037,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,EUR 10.0,https://es.linkedin.com/a?b,sponsorship-02
+key,code,registration_time,due_date,quantity,tax,link,draft_mode,key:sponsorship
+invoice-01,IN-0000-0000,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-02,IN-0000-0001,2021/08/21 00:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-03,IN-0000-0002,2021/08/21 23:59,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-04,IN-0000-0003,2021/01/01 00:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-05,IN-0000-0004,2021/12/31 23:59,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-06,IN-0000-0005,2021/08/21 12:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-07,IN-0000-0006,2021/08/21 11:59,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-08,IN-0000-0007,2021/02/28 23:59,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-09,IN-0000-0008,2021/08/21 07:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-10,IN-0000-0009,2021/08/21 23:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-11,IN-0000-0010,2021/08/21 17:00,2022/08/21 00:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-12,IN-0000-0011,2021/08/21 17:00,2022/08/21 23:59,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-13,IN-0000-0012,2021/08/21 17:00,2022/01/01 00:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-14,IN-0000-0013,2021/08/21 17:00,2022/01/01 00:01,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-15,IN-0000-0014,2021/08/21 17:00,2022/12/31 23:59,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-16,IN-0000-0015,2021/08/21 17:00,2022/12/30 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-17,IN-0000-0016,2021/08/21 17:00,2022/02/28 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-18,IN-0000-0017,2021/08/21 17:00,2021/09/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-19,IN-0000-0018,2021/08/21 17:00,2021/09/21 17:01,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-20,IN-0000-0019,2021/08/21 17:00,2022/08/21 17:00,EUR 0.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-21,IN-0000-0020,2021/08/21 17:00,2022/08/21 17:00,"EUR 150,000.0",10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-22,IN-0000-0021,2021/08/21 17:00,2022/08/21 17:00,EUR 0.01,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-23,IN-0000-0022,2021/08/21 17:00,2022/08/21 17:00,EUR 00.02,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-24,IN-0000-0023,2021/08/21 17:00,2022/08/21 17:00,EUR 1000000.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-25,IN-0000-0024,2021/08/21 17:00,2022/08/21 17:00,EUR 999999.99,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-26,IN-0000-0025,2021/08/21 17:00,2022/08/21 17:00,USD 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-27,IN-0000-0026,2021/08/21 17:00,2022/08/21 17:00,GBP 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-28,IN-0000-0027,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,0.0,https://es.linkedin.com,true,sponsorship-01
+invoice-29,IN-0000-0028,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,"150,000.0",https://es.linkedin.com,true,sponsorship-01
+invoice-30,IN-0000-0029,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,0.01,https://es.linkedin.com,true,sponsorship-01
+invoice-31,IN-0000-0030,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,00.02,https://es.linkedin.com,true,sponsorship-01
+invoice-32,IN-0000-0031,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,1000000.0,https://es.linkedin.com,true,sponsorship-01
+invoice-33,IN-0000-0032,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,999999.99,https://es.linkedin.com,true,sponsorship-01
+invoice-34,IN-0000-0033,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-35,IN-0000-0034,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com,true,sponsorship-01
+invoice-36,IN-0000-0035,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,10.0,null,true,sponsorship-01
+invoice-37,IN-0000-0036,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,10.0,ftp://user:pass@acme.org,true,sponsorship-01
+invoice-38,IN-0000-0037,2021/08/21 17:00,2022/08/21 17:00,EUR 10.0,10.0,https://es.linkedin.com/a?b,true,sponsorship-02

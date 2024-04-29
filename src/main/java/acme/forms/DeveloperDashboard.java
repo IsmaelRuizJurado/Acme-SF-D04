@@ -19,7 +19,7 @@ public class DeveloperDashboard extends AbstractForm {
 
 	private Integer				numTrainingSessionsWithLink;
 
-	private Stats				trainingModulesTimeStats;
+	private Stats				trainingModuleTimeStats;
 
 	// Derived attributes -----------------------------------------------------
 
