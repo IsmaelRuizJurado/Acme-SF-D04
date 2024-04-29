@@ -31,11 +31,13 @@ master.menu.any.project = Proyectos
 master.menu.any.sponsorship = Patrocinios
 master.menu.any.training-module = Modulos de Entrenamiento
 master.menu.any.contract = Contratos
+master.menu.any.code-audits = Auditorias de Código
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.objective = Objetivos
+master.menu.authenticated.risk = Riesgos
 master.menu.authenticated.notice = Avisos
 
 # master.menu.administrator ###################################################
@@ -50,12 +52,20 @@ master.menu.list.banner = Listar banners
 master.menu.create.objective = Crear objetivo
 master.menu.administrator.system-configuration = Mostrar configuración del sistema
 master.menu.client.administrator-dashboard = Panel
+master.menu.administrator.risk =Riesgos
+
 
 # master.menu.manager #######################################################
 master.menu.manager = Mánager
 master.menu.manager.project = Mis proyectos
 master.menu.manager.user-story = Mis historias de usuario
 master.menu.manager.manager-dashboard = Panel de Mánager
+
+# master.menu.auditor ######################################################
+master.menu.auditor = Auditor
+master.menu.auditor.audit-records = Mis registros de auditorias
+master.menu.auditor.code-audits= My auditorias de codigo
+master.menu.auditor.auditor-dashboard = Panel del Auditor 
 
 # master.menu.sponsor #######################################################
 master.menu.sponsor = Patrocinador
@@ -99,3 +109,5 @@ master.menu.user-account.become-sponsor = Hazte sponsor
 master.menu.user-account.sponsor = Datos de sponsor
 master.menu.user-account.become-client = Hazte cliente
 master.menu.user-account.client = Datos de cliente
+master.menu.user-account.become-auditor = Hazte Auditor
+master.menu.user-account.auditor = Auditor

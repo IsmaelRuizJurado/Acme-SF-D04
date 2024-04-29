@@ -30,6 +30,7 @@
 			<acme:menu-suboption code="master.menu.any.project" action="/any/project/list"/>
 			<acme:menu-suboption code="master.menu.any.sponsorship" action="/any/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.any.contract" action="/any/contract/list"/>
+			<acme:menu-suboption code="master.menu.any.code-audits" action="/any/code-audits/list"/>
 			<acme:menu-suboption code="master.menu.any.training-module" action="/any/training-module/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.claim" action="/any/claim/list"/>
@@ -37,6 +38,7 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.objective" action="/authenticated/objective/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.risk" action="/authenticated/risk/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.notice" action="/authenticated/notice/list"/>
 		</acme:menu-option>
 
@@ -53,24 +55,33 @@
 			<acme:menu-suboption code="master.menu.create.objective" action="/administrator/objective/create" access="isAuthenticated()"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.client.administrator-dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.risk" action="/administrator/risk/list"/>
+			
+			
+			
+			
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
 			<acme:menu-suboption code="master.menu.manager.project" action="/manager/project/list"/>
 			<acme:menu-suboption code="master.menu.manager.user-story" action="/manager/user-story/list-all"/>
 			<acme:menu-suboption code="master.menu.manager.manager-dashboard" action="/manager/manager-dashboard/show"/>
-		</acme:menu-option>
+		</acme:menu-option>		
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.audit-records" action="/auditor/audit-records/list"/>
+			<acme:menu-suboption code="master.menu.auditor.code-audits" action="/auditor/code-audits/list"/>
+			<acme:menu-suboption code="master.menu.auditor.auditor-dashboard" action="/auditor/auditor-dashboard/show"/>
+    </acme:menu-option>
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.sponsorship" action="/sponsor/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.sponsor.sponsor-dashboard" action="/sponsor/sponsor-dashboard/show"/>
 		</acme:menu-option>
-
 		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
 			<acme:menu-suboption code="master.menu.developer.training-module" action="/developer/training-module/list"/>
 			<acme:menu-suboption code="master.menu.developer.training-session" action="/developer/training-session/list-all"/>
 			<acme:menu-suboption code="master.menu.developer.developer-dashboard" action="/developer/developer-dashboard/show"/>
 		</acme:menu-option>
-
 		<acme:menu-option code="master.menu.client" access="hasRole('Client')">
 			<acme:menu-suboption code="master.menu.client.contract" action="/client/contract/list"/>
 			<acme:menu-suboption code="master.menu.client.progress-log" action="/client/progress-logs/list-all"/>
@@ -105,6 +116,8 @@
 			<acme:menu-suboption code="master.menu.user-account.developer" action="/authenticated/developer/update" access="hasRole('Developer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-client" action="/authenticated/client/create" access="!hasRole('Client')"/>
 			<acme:menu-suboption code="master.menu.user-account.client" action="/authenticated/client/update" access="hasRole('Client')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/authenticated/system/sign-out" access="isAuthenticated()"/>

@@ -1,0 +1,15 @@
+
+administrator.risk.list.title = Lista de Riesgos
+administrator.risk.list.label.reference = Referencia
+administrator.risk.list.label.identificationDate =Fecha de Identificacion 
+administrator.risk.list.label.link = Link
+
+administrator.risk.form.title = Dellates de Riesgos
+administrator.risk.form.label.reference = Referencia
+administrator.risk.form.label.identificationDate = Fecha de Identificacion
+administrator.risk.form.label.impact = Impacto
+administrator.risk.form.label.probability = Probabilidad
+administrator.risk.form.label.description = Descripcion
+administrator.risk.form.label.link = Link
+
+administrator.risk.form.button.delete= Eliminar Riesgo 
