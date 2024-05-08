@@ -54,8 +54,11 @@ public class ClientProgressLogCreateService extends AbstractService<Client, Prog
 		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
 			ProgressLogs existing;
 			existing = this.repository.findProgressLogsByRecordId(object.getRecordId());
-			super.state(existing == null, "code", "client.progressLogs.form.error.recordId");
+			super.state(existing == null, "recordId", "client.progressLogs.form.error.recordId");
 		}
+
+		if (!super.getBuffer().getErrors().hasErrors("completeness"))
+			super.state(object.getCompleteness() <= 100 && 0 <= object.getCompleteness(), "completeness", "client.progressLogs.form.error.completeness");
 
 		if (!super.getBuffer().getErrors().hasErrors("registrationMoment"))
 			super.state(MomentHelper.isBefore(object.getRegistrationMoment(), MomentHelper.getCurrentMoment()), "instantiationMoment", "client.progressLogs.form.error.registrationMoment");
@@ -81,7 +84,7 @@ public class ClientProgressLogCreateService extends AbstractService<Client, Prog
 		final SelectChoices choices = new SelectChoices();
 		Collection<Contract> contracts;
 		int id = super.getRequest().getPrincipal().getActiveRoleId();
-		contracts = this.repository.findContractsByClient(id);
+		contracts = this.repository.findPublishedContractsByClient(id);
 		for (final Contract c : contracts)
 			choices.add(Integer.toString(c.getId()), c.getCode(), false);
 

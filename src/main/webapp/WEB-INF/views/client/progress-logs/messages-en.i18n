@@ -12,7 +12,7 @@ client.progress-logs.form.label.registrationMoment = registration Moment
 client.progress-logs.form.label.responsiblePerson = responsible person
 client.progress-logs.form.label.contract = Contract
 
-client.progressLogs.form.error.recordId = The record Id must be 2 letters-2 letters-4  numbers
+client.progressLogs.form.error.recordId = This id already exists
 client.progressLogs.form.error.draftMode =  You cannot update or delete a progress Logs already published
 client.progressLogs.form.error.moment = Must be in the past
 client.progressLogs.form.error.spam = Considered spam

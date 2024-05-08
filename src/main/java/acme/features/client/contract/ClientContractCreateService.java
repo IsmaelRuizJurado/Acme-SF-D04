@@ -72,10 +72,10 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 		if (!super.getBuffer().getErrors().hasErrors("goals"))
 			super.state(this.auxiliarService.validateTextImput(object.getGoals()), "title", "client.contract.form.error.spam");
 
-		if (!super.getBuffer().getErrors().hasErrors("budget")) {
-			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "cost", "client.contract.form.error.budget");
-			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "client.contract.form.error.cost2");
-		}
+		if (!super.getBuffer().getErrors().hasErrors("budget"))
+			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "budget", "client.contract.form.error.budget");
+		if (!super.getBuffer().getErrors().hasErrors("budget"))
+			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "client.contract.form.error.budget2");
 	}
 
 	@Override

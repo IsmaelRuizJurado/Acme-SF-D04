@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.contract.Contract;
 import acme.entities.progress_logs.ProgressLogs;
 
 @Service
@@ -22,7 +23,11 @@ public class AnyProgressLogsListService extends AbstractService<Any, ProgressLog
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		Contract object;
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
+		object = this.repository.findContractById(masterId);
+		super.getResponse().setAuthorised(!object.isDraftMode());
 	}
 
 	@Override

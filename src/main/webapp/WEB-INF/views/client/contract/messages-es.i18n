@@ -19,6 +19,7 @@ client.contract.progressLogs = Actas de progreso
 client.contract.form.error.spam = El texto introducido es considerado Spam
 client.contract.form.error.budget = El presupuesto debe ser inferior a la mitad del coste del proyecto
 client.contract.form.error.budget2 = La moneda introducida no es aceptada por el sistema
+client.contract.form.error.code = Este codigo ya existe
 client.contract.form.error.moment = Debe estar en el pasado
 
 client.contract.create = Crear
