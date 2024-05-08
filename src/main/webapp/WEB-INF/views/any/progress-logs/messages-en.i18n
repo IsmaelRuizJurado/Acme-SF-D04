@@ -5,8 +5,10 @@ any.progress-logs.list.label.completeness = completeness
 any.progress-logs.list.label.responsiblePerson = responsible Person
 
 any.progress-logs.form.title = Progress Logs details
-any.progress-logs.form.label.recordId = record ID
-any.progress-logs.form.label.completeness = completeness
-any.progress-logs.form.label.responsiblePerson = responsible Person
+any.progress-logs.form.label.recordId = Record ID
+any.progress-logs.form.label.completeness = Completeness
+any.progress-logs.form.label.responsiblePerson = Responsible person
 any.progress-logs.form.label.comment = Comment
-any.progress-logs.form.label.registrationMoment = register time
+any.progress-logs.form.label.registrationMoment = Register time
+
+client.progressLogs.form.error.completeness = Must be between 0 and 100

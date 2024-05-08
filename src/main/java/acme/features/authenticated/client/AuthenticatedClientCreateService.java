@@ -66,6 +66,11 @@ public class AuthenticatedClientCreateService extends AbstractService<Authentica
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("identification"))
 			super.state(this.auxiliarService.validateTextImput(object.getIdentification()), "identification", "authenticated.client.form.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("identification")) {
+			Client existing;
+			existing = this.repository.findClientByIdentification(object.getIdentification());
+			super.state(existing == null, "code", "authenticated.client.form.error.identification");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("companyName"))
 			super.state(this.auxiliarService.validateTextImput(object.getCompanyName()), "companyName", "authenticated.client.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("type"))

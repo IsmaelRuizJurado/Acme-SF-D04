@@ -12,7 +12,7 @@ client.progress-logs.form.label.registrationMoment = Registro
 client.progress-logs.form.label.responsiblePerson = Responsable
 client.progress-logs.form.label.contract = Contrato
 
-client.progressLogs.form.error.recordId = El registro se debe de componer por 2 letras- 2 letras-4 numeros
+client.progressLogs.form.error.recordId = Este registro ya existe
 client.progressLogs.form.error.draftMode =  No puedes editar o eliminar un acta ya publicada
 client.progressLogs.form.error.moment = Debe de estar en el pasado
 client.progressLogs.form.error.spam = Se considera spam

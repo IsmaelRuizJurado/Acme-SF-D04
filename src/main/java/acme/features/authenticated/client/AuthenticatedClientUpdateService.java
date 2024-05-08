@@ -57,6 +57,16 @@ public class AuthenticatedClientUpdateService extends AbstractService<Authentica
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("identification"))
 			super.state(this.auxiliarService.validateTextImput(object.getIdentification()), "identification", "authenticated.client.form.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("identification")) {
+			Client existing;
+			existing = this.repository.findClientByIdentification(object.getIdentification());
+			Client client2;
+			if (object.getIdentification() == "" || object.getIdentification() == null)
+				client2 = null;
+			else
+				client2 = this.repository.findClientByIdentification(object.getIdentification());
+			super.state(existing == null || client2.getId() != existing.getId(), "identification", "authenticated.client.form.error.identification");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("companyName"))
 			super.state(this.auxiliarService.validateTextImput(object.getCompanyName()), "companyName", "authenticated.client.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("type"))
@@ -87,7 +97,7 @@ public class AuthenticatedClientUpdateService extends AbstractService<Authentica
 
 	@Override
 	public void onSuccess() {
-		if (super.getRequest().getMethod().equals("POST"))
+		if (super.getRequest().getMethod().equals("PUT"))
 			PrincipalHelper.handleUpdate();
 	}
 }
