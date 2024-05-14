@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="client.progress-logs.form.label.recordId" path="recordId"/>	
+	<acme:input-textbox code="client.progress-logs.form.label.recordId" path="recordId" placeholder="PG-XX-0000"/>	
 	<acme:input-textbox code="client.progress-logs.form.label.completeness" path="completeness"/>	
 	<acme:input-textbox code="client.progress-logs.form.label.comment" path="comment"/>	
 	<acme:input-moment code="client.progress-logs.form.label.registrationMoment" path="registrationMoment"/>	
