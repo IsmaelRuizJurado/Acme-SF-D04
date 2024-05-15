@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the project Acme SF, developed by the group C1.003 of DP2
+This is the project Acme SF, developed by the group C1.003 of DP2.
 
 To get this project up and running, please follow the guideline in the theory/lab materials,
 taking into account that you must link the appropriate version of the Acme-Framework excluding 
