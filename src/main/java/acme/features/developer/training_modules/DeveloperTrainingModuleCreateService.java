@@ -11,6 +11,7 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
+import acme.entities.project.Project;
 import acme.entities.training_module.Level;
 import acme.entities.training_module.TrainingModule;
 import acme.roles.Developer;
@@ -56,7 +57,13 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule existing;
 			existing = this.repo.findTrainingModuleByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.code");
+			super.state(existing == null, "code", "developer.training_module.form.error.code");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("project")) {
+			Project published;
+			published = this.repo.findPublishedProjectById(object.getProject().getId());
+			super.state(published != null, "project", "developer.training_module.form.error.project");
 		}
 
 	}

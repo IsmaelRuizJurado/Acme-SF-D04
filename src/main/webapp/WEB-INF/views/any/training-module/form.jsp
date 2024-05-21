@@ -12,5 +12,5 @@
 	<acme:input-url code="any.training-module.form.label.link" path="optionalLink"/>	
 	<acme:input-textbox code="any.training-module.form.label.developer" path="degree"/>
 	<acme:input-textbox code="any.training-module.form.label.estimatedTotalTime" path="estimatedTotalTime" readonly="true"/>
-	<acme:input-textbox code="developer.training-module.form.label.project" path="project" readonly="true"/>
+	<acme:input-textbox code="developer.training-module.form.label.project" path="projectCode" readonly="true"/>
 </acme:form>

@@ -57,7 +57,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 	@Override
 	public void bind(final TrainingModule object) {
 		assert object != null;
-		super.bind(object, "code", "creationTime", "details", "basicLevel");
+		super.bind(object, "code", "details", "basicLevel");
 	}
 
 	@Override
