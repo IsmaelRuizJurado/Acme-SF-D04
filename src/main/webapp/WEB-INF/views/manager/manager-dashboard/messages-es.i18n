@@ -1,20 +1,15 @@
-manager.manager-dashboard.form.title= Panel de Mánager
+manager.manager-dashboard.form.title = Panel de indicadores del mánager
 
-manager.managerDashboard.form.label.average-project-cost = Media del coste de los proyectos:
-manager.managerDashboard.form.label.max-project-cost = Máximo del coste de los proyectos:
-manager.managerDashboard.form.label.min-project-cost = Mínimo del coste de los proyectos:
-manager.managerDashboard.form.label.lin-dev-project-cost = Desviación típica del coste de los proyectos:
+manager.dashboard.form.title.general-indicators = Indicadores generales
 
-manager.managerDashboard.form.label.average-userstory-cost = Media del coste de las historias de usuario:
-manager.managerDashboard.form.label.max-userstory-cost = Máximo del coste de las historias de usuario:
-manager.managerDashboard.form.label.min-userstory-cost = Mínimo del coste de las historias de usuario:
-manager.managerDashboard.form.label.lin-dev-userstory-cost = Desviación típica del coste de las historias de usuario:
+manager.dashboard.form.label.average-project-cost =  Media de los costes de los proyectos
+manager.dashboard.form.label.max-project-cost =  Maximo costes de los proyectos
+manager.dashboard.form.label.min-project-cost =  Mínimo costes de los proyectos
+manager.dashboard.form.label.deviation-project-cost =  Desviación de los costes de los proyectos
 
-manager.managerDashboard.form.label.projects.information = Gráfica sobre el coste de los proyectos
-manager.managerDashboard.form.label.userstories.information = Gráfica sobre el coste estimado por hora de las historias de usuario
-manager.managerDashboard.form.label.userstories.type.information = Gráfica sobre las prioridades de las historias de usuario
+manager.dashboard.form.label.average-us-cost =  Media de los costes de las historias de usuario
+manager.dashboard.form.label.max-us-cost =  Máximo coste de las historias de usuario
+manager.dashboard.form.label.min-us-cost =  Mínimo coste de las historias de usuario
+manager.dashboard.form.label.deviation-us-cost =  Desviación de los costes de las historias de usuario
 
-manager.managerDashboard.form.label.must-userstory = Número de historias de usuario con prioridad "must":
-manager.managerDashboard.form.label.should-userstory = Número de historias de usuario con prioridad "should":
-manager.managerDashboard.form.label.could-userstory = Número de historias de usuario con prioridad "could":
-manager.managerDashboard.form.label.wont-userstory = Número de historias de usuario con prioridad "wont":
+manager.dashboard.form.title.priority = Historias de Usuario por prioridad

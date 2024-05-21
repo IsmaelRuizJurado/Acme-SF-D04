@@ -1,10 +1,9 @@
 
 package acme.forms;
 
-import java.util.Map;
+import java.util.List;
 
 import acme.client.data.AbstractForm;
-import acme.datatypes.Stats;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,20 +11,27 @@ import lombok.Setter;
 @Setter
 public class ManagerDashboard extends AbstractForm {
 
-	// Serialisation identifier -----------------------------------------------
+	private static final long	serialVersionUID	= 1L;
 
-	protected static final long		serialVersionUID	= 1L;
+	Integer						mustNumber;
 
-	// Attributes -------------------------------------------------------------
+	Integer						shouldNumber;
 
-	private Map<String, Integer>	totalUserStoriesByPriority;
+	Integer						couldNumber;
 
-	private Stats					userStoriesCostStats;
+	Integer						wontNumber;
 
-	private Stats					projectCostStats;
+	List<Object[]>				averageUsCost;
 
-	// Derived attributes -----------------------------------------------------
+	List<Object[]>				desviationUsCost;
 
-	// Relationships ----------------------------------------------------------
+	List<Object[]>				minUsCost;
+
+	List<Object[]>				maxUsCost;
+
+	List<Object[]>				averageProjectCost;
+	List<Object[]>				deviationProjectCost;
+	List<Object[]>				minProjectCost;
+	List<Object[]>				maxProjectCost;
 
 }

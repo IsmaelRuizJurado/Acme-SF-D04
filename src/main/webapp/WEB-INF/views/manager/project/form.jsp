@@ -4,9 +4,9 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="manager.project.form.label.code" path="code"/>	
+	<acme:input-textbox code="manager.project.form.label.code" path="code" placeholder="AAA-0123"/>	
 	<acme:input-textbox code="manager.project.form.label.title" path="title"/>	
-	<acme:input-textbox code="manager.project.form.label.abstractt" path="abstractt"/>	
+	<acme:input-textarea code="manager.project.form.label.abstractt" path="abstractt"/>	
 	<acme:input-money code="manager.project.form.label.cost" path="cost"/>	
 	<acme:input-url code="manager.project.form.label.link" path="link"/>
 	<jstl:choose>	 

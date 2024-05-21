@@ -2,6 +2,7 @@
 package acme.components;
 
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -52,6 +53,26 @@ public class AuxiliarService {
 		final Date maxDate = new Date(200, 11, 31, 23, 59);
 		final Date minDate = new Date(100, 0, 1, 00, 00);
 		return MomentHelper.isAfterOrEqual(date, minDate) && MomentHelper.isBeforeOrEqual(date, maxDate);
+	}
+
+	public static List<Object[]> removeCommas(final List<Object[]> originalList) {
+		List<Object[]> newList = new ArrayList<>();
+
+		for (Object[] objArr : originalList) {
+			Object[] newObjArr = new Object[objArr.length];
+
+			for (int i = 0; i < objArr.length; i++)
+				if (objArr[i] instanceof String)
+					// Reemplazar la coma en la cadena y añadir al nuevo array
+					newObjArr[i] = ((String) objArr[i]).replace(",", " ");
+				else
+					// Copiar el objeto tal cual si no es una cadena
+					newObjArr[i] = objArr[i];
+			// Añadir el nuevo array a la nueva lista
+			newList.add(newObjArr);
+		}
+
+		return newList;
 	}
 
 	public String translateMoney(final Money money, final String lang) {
