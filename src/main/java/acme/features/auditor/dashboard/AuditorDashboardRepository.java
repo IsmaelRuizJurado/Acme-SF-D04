@@ -38,8 +38,11 @@ public interface AuditorDashboardRepository extends AbstractRepository {
 	@Query("SELECT min( SELECT count(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id) FROM CodeAudits c WHERE c.auditor.id =:id ")
 	Optional<Double> findMinNumOfAuditRecords(int id);
 
-	//@Query("SELECT stddev(SELECT count(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id) FROM CodeAudits c WHERE c.auditor.id =:id")
-	//Optional<Double> findDevNumOfAuditRecords(int id);
+	@Query("SELECT stddev((SELECT count(ar) FROM AuditRecords ar WHERE ar.codeAudits.id = c.id)) FROM CodeAudits c WHERE c.auditor.id =:id")
+	Double findDevNumOfAuditRecords(int id);
+
+	@Query("SELECT stddev(time_to_sec(timediff(ar.startPeriod,ar.endPeriod))/60) from AuditRecords ar where ar.codeAudits.auditor.id = :auditorId")
+	Double findDeviationTimePerAuditRecordByAuditorId(int auditorId);
 
 	@Query("SELECT count(c) FROM CodeAudits c WHERE c.auditor.id=:id and c.type =:type ")
 	Optional<Integer> findCodeAuditByType(int id, CodeAuditsType type);

@@ -31,7 +31,14 @@
 		</td>
 	</tr>
 	<tr>
-	
+		<th scope="row">
+			<acme:message code="auditor.auditorDashboard.form.label.dev-audit-record"/>
+		</th>
+		<td>
+			<acme:print value="${numAuditRecord.getDeviation()}"/>
+		</td>
+	</tr>
+	<tr>
 	<th scope="row">
 			<acme:message code="auditor.auditorDashboard.form.label.average-audit-record-period"/>
 		</th>
@@ -53,6 +60,14 @@
 		</th>
 		<td>
 			<acme:print value="${auditingTimePeriod.getMaximum()}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="auditor.auditorDashboard.form.label.dev-audit-record-period"/>
+		</th>
+		<td>
+			<acme:print value="${auditingTimePeriod.getDeviation()}"/>
 		</td>
 	</tr>
 	<tr>

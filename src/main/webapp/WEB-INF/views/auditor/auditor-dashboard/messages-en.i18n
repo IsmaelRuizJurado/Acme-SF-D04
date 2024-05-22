@@ -4,9 +4,12 @@ auditor.auditorDashboard.form.label.average-audit-record = Average Audit records
 auditor.auditorDashboard.form.label.min-audit-record = Minimum Audit records:
 auditor.auditorDashboard.form.label.max-audit-record = Maximum Audit records:
 auditor.auditorDashboard.form.label.dev-audit-record = Deviation of the Audit records:
+
 auditor.auditorDashboard.form.label.average-audit-record-period = Average Time:
 auditor.auditorDashboard.form.label.min-audit-record-period = Min time:
-auditor.auditorDashboard.form.label.max-audit-record-period =Max Time:
+auditor.auditorDashboard.form.label.max-audit-record-period = Max Time:
+auditor.auditorDashboard.form.label.dev-audit-record-period = Dev Time:
+
 
 
 auditor.auditorDashboard.form.label.audit-records.information = Graphic about Audit records:

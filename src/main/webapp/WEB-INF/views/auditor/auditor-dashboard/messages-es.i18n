@@ -4,9 +4,12 @@ auditor.auditorDashboard.form.label.average-audit-record = Media del número de 
 auditor.auditorDashboard.form.label.min-audit-record = Maximo del número de registros de auditoria:
 auditor.auditorDashboard.form.label.max-audit-record = Minimo del número de registros de auditoria:
 auditor.auditorDashboard.form.label.dev-audit-record = Desviación del número de registros de auditoria:
+
 auditor.auditorDashboard.form.label.average-audit-record-period = Tiempo medio:
 auditor.auditorDashboard.form.label.min-audit-record-period = Tiempo mínimo:
 auditor.auditorDashboard.form.label.max-audit-record-period = Tiempo maximo:
+auditor.auditorDashboard.form.label.dev-audit-record-period = Desviación del Tiempo:
+
 
 
 auditor.auditorDashboard.form.label.audit-records.information = Gráfica sobre los registros de auditorias:

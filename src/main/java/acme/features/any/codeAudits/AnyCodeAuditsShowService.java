@@ -25,7 +25,11 @@ public class AnyCodeAuditsShowService extends AbstractService<Any, CodeAudits> {
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		CodeAudits object;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		object = this.repostory.findCodeAuditById(id);
+		super.getResponse().setAuthorised(!object.isDraftMode());
 	}
 
 	@Override
