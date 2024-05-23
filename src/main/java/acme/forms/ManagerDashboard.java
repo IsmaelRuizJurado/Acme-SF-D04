@@ -22,11 +22,8 @@ public class ManagerDashboard extends AbstractForm {
 	Integer						wontNumber;
 
 	List<Object[]>				averageUsCost;
-
 	List<Object[]>				desviationUsCost;
-
 	List<Object[]>				minUsCost;
-
 	List<Object[]>				maxUsCost;
 
 	List<Object[]>				averageProjectCost;

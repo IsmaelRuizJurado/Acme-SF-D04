@@ -13,16 +13,14 @@ sponsor.invoice.form.label.tax = Tax
 sponsor.invoice.form.label.type = Type
 sponsor.invoice.form.label.totalAmount = Total Amount the system currency
 
-sponsor.invoice.form.error.noInvoices = This sponsorship has no invoices
-sponsor.invoice.form.error.invoicesnp = Some invoices of this sponsorship is not published
-
 sponsor.sponsorship.form.error.spam = The introduced text is considered Spam
 
 sponsor.invoice.form.error.code = It exists a invoice with the same code
-sponsor.invoice.form.error.cost = The cost must be positive and lower than 1000000
-sponsor.invoice.form.error.cost2 = The introduced currency is not accepted by the system
-sponsor.invoice.form.error.end-period= The end period is incorrect
-sponsor.invoice.form.error.start-period= The start period is incorrect
+sponsor.invoice.form.error.quantity = The quantity must be positive and lower than 1000000
+sponsor.invoice.form.error.quantity2 = The introduced currency is not accepted by the system
+sponsor.invoice.form.error.dates = This date is not valid
+sponsor.invoice.form.error.start-period = The registration time must be in the present
+sponsor.invoice.form.error.end-period = The due date must be one month ahead of the registration time
 validation.invoice.code = The code must be 3 capital letter and 4 numbers joined by -
 
 sponsor.invoice.create = Create

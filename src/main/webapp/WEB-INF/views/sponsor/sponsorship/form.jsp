@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="sponsor.sponsorship.form.label.code" path="code"/>
-	<jstl:if test="${acme:anyOf(_command, 'show|update|delete')}">
+	<acme:input-textbox code="sponsor.sponsorship.form.label.code" path="code" placeholder="ABC-000"/>
+	<jstl:if test="${acme:anyOf(_command, 'show|update|delete|publish')}">
 		<acme:input-moment code="sponsor.sponsorship.form.label.moment" path="moment" readonly="true"/>	
 	</jstl:if>	
 	<acme:input-moment code="sponsor.sponsorship.form.label.startPeriod" path="startPeriod"/>	
