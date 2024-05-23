@@ -7,8 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.code_audits.CodeAudits;
+import acme.entities.contract.Contract;
 import acme.entities.project.Project;
 import acme.entities.project_user_story.ProjectUserStory;
+import acme.entities.sponsorship.Sponsorship;
+import acme.entities.training_module.TrainingModule;
 import acme.entities.user_story.UserStory;
 import acme.roles.Manager;
 
@@ -23,6 +27,18 @@ public interface ManagerProjectRepository extends AbstractRepository {
 
 	@Query("select pus from ProjectUserStory pus where pus.project = :project")
 	Collection<ProjectUserStory> findProjectUserStoriesByProject(Project project);
+
+	@Query("select ca from CodeAudits ca where ca.project = :project")
+	Collection<CodeAudits> findCodeAuditsByProject(Project project);
+
+	@Query("select s from Sponsorship s where s.project = :project")
+	Collection<Sponsorship> findSponsorshipsByProject(Project project);
+
+	@Query("select tm from TrainingModule tm where tm.project = :project")
+	Collection<TrainingModule> findTrainingModulesByProject(Project project);
+
+	@Query("select c from Contract c where c.project = :project")
+	Collection<Contract> findContractsByProject(Project project);
 
 	@Query("select m from Manager m where m.id = :id")
 	Manager findOneManagerById(int id);

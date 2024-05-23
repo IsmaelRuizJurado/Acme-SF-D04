@@ -1,50 +1,49 @@
 
 package acme.features.manager.dashboard;
 
-import java.util.Optional;
+import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.client.data.accounts.UserAccount;
 import acme.client.repositories.AbstractRepository;
+import acme.entities.project.Project;
 import acme.entities.user_story.Priority;
-import acme.roles.Manager;
 
 @Repository
 public interface ManagerDashboardRepository extends AbstractRepository {
 
-	@Query("select count(us) from UserStory us where us.manager = :manager and us.priority = :priority and us.draftMode=false")
-	Optional<Integer> findNumOfUserStoriesByPriority(Manager manager, Priority priority);
+	//User Story
+	@Query("select count(u) from UserStory u where u.priority = :priority and u.draftMode =false and u.manager.id = :id")
+	Integer countUSbyPriority(Priority priority, int id);
 
-	@Query("select avg(p.cost.amount) from Project p where p.manager = :manager and p.draftMode=false")
-	Optional<Double> findAverageProjectCost(Manager manager);
+	@Query("select u.estimatedCostPerHour.currency, avg(u.estimatedCostPerHour.amount) from UserStory u where  u.manager.id = :id and u.draftMode =false group by u.estimatedCostPerHour.currency")
+	List<Object[]> averageEstimationUserStories(int id);
 
-	@Query("select max(p.cost.amount) from Project p where p.manager = :manager and p.draftMode=false")
-	Optional<Double> findMaxProjectCost(Manager manager);
+	@Query("select u.estimatedCostPerHour.currency, STDDEV(u.estimatedCostPerHour.amount) from UserStory u where u.manager.id = :id and u.draftMode =false group by u.estimatedCostPerHour.currency")
+	List<Object[]> deviationEstimationUserStories(int id);
 
-	@Query("select min(p.cost.amount) from Project p where p.manager = :manager and p.draftMode=false")
-	Optional<Double> findMinProjectCost(Manager manager);
+	@Query("select u.estimatedCostPerHour.currency, min(u.estimatedCostPerHour.amount)from UserStory u where u.manager.id = :id and u.draftMode =false group by u.estimatedCostPerHour.currency")
+	List<Object[]> minEstimationUserStories(int id);
 
-	@Query("select stddev(p.cost.amount) from Project p where p.manager = :manager and p.draftMode=false")
-	Optional<Double> findLinearDevProjectCost(Manager manager);
+	@Query("select u.estimatedCostPerHour.currency, max(u.estimatedCostPerHour.amount) from UserStory u where u.manager.id = :id and u.draftMode =false group by u.estimatedCostPerHour.currency")
+	List<Object[]> maxEstimationUserStories(int id);
 
-	@Query("select m from Manager m where m.userAccount.id = :id")
-	Manager findOneManagerByUserAccountId(int id);
+	//Project
+	@Query("select p.cost.currency, avg(p.cost.amount) from Project p where  p.manager.id = :id and p.draftMode =false group by p.cost.currency")
+	List<Object[]> averageProjectCost(int id);
 
-	@Query("select ua from UserAccount ua where ua.id = :id")
-	UserAccount findOneUserAccountById(int id);
+	@Query("select p.cost.currency, STDDEV(p.cost.amount) from Project p where p.manager.id = :id and p.draftMode =false  group by p.cost.currency")
+	List<Object[]> deviationProjectCost(int id);
 
-	@Query("select avg(us.estimatedCostPerHour.amount) from UserStory us where us.manager = :manager and us.draftMode=false")
-	Optional<Double> findAverageUserStoryCost(Manager manager);
+	@Query("select s.cost.currency, min(s.cost.amount) from Project s where s.manager.id = :id and s.draftMode = false group by s.cost.currency")
+	List<Object[]> minProjectCost(int id);
 
-	@Query("select max(us.estimatedCostPerHour.amount) from UserStory us where us.manager = :manager and us.draftMode=false")
-	Optional<Double> findMaxUserStoryCost(Manager manager);
+	@Query("select s.cost.currency, max(s.cost.amount) from Project s where s.manager.id = :id and s.draftMode = false group by s.cost.currency")
+	List<Object[]> maxProjectCost(int id);
 
-	@Query("select min(us.estimatedCostPerHour.amount) from UserStory us where us.manager = :manager and us.draftMode=false")
-	Optional<Double> findMinUserStoryCost(Manager manager);
-
-	@Query("select stddev(us.estimatedCostPerHour.amount) from UserStory us where us.manager = :manager and us.draftMode=false")
-	Optional<Double> findLinearDevUserStoryCost(Manager manager);
+	@Query("select p from Project p where p.manager.id = :managerId and p.draftMode =false")
+	Collection<Project> findManyProjectsByManagerId(int managerId);
 
 }

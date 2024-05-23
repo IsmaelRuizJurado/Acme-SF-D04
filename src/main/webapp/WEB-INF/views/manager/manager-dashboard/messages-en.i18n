@@ -1,20 +1,15 @@
-manager.manager-dashboard.form.title= Manager Dashboard
+manager.manager-dashboard.form.title = Manager dashboard
 
-manager.managerDashboard.form.label.average-project-cost = Average cost of the projects:
-manager.managerDashboard.form.label.max-project-cost = Maximum cost of the projects:
-manager.managerDashboard.form.label.min-project-cost = Minimum cost of the projects:
-manager.managerDashboard.form.label.lin-dev-project-cost = Standard deviation of the cost of the projects:
+manager.dashboard.form.title.general-indicators = General indicators
 
-manager.managerDashboard.form.label.average-userstory-cost = Average cost of the user stories:
-manager.managerDashboard.form.label.max-userstory-cost = Maximum cost of the user stories:
-manager.managerDashboard.form.label.min-userstory-cost = Minimum cost of the user stories:
-manager.managerDashboard.form.label.lin-dev-userstory-cost = Standard deviation of the cost of the user stories:
+manager.dashboard.form.label.average-project-cost =  Average cost of the projects
+manager.dashboard.form.label.max-project-cost =  Maximum cost of the projects
+manager.dashboard.form.label.min-project-cost =  Minimum cost of the projects
+manager.dashboard.form.label.deviation-project-cost =  Deviation cost of the projects
 
-manager.managerDashboard.form.label.projects.information = Graphic about project costs
-manager.managerDashboard.form.label.userstories.information = Graphic about user stories estimated cost per hour
-manager.managerDashboard.form.label.userstories.type.information = Graphic about the priorities of the user stories
+manager.dashboard.form.label.average-us-cost =  Average cost of the user stories
+manager.dashboard.form.label.max-us-cost =  Maximum cost of the user stories
+manager.dashboard.form.label.min-us-cost =  Minimum cost of the user stories
+manager.dashboard.form.label.deviation-us-cost =  Deviation cost of the user stories
 
-manager.managerDashboard.form.label.must-userstory = Number of user stories with priority "must":
-manager.managerDashboard.form.label.should-userstory = Number of user stories with priority "should":
-manager.managerDashboard.form.label.could-userstory = Number of user stories with priority "could":
-manager.managerDashboard.form.label.wont-userstory = Number of user stories with priority "wont":
+manager.dashboard.form.title.priority = User Stories by priority

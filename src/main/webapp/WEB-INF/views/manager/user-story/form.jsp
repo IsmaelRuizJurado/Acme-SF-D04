@@ -5,9 +5,9 @@
 
 <acme:form>
 	<acme:input-textbox code="manager.user-story.form.label.title" path="title"/>	
-	<acme:input-textbox code="manager.user-story.form.label.description" path="description"/>	
+	<acme:input-textarea code="manager.user-story.form.label.description" path="description"/>	
 	<acme:input-double code="manager.user-story.form.label.estimatedCostPerHour" path="estimatedCostPerHour"/>	
-	<acme:input-textbox code="manager.user-story.form.label.acceptanceCriteria" path="acceptanceCriteria"/>	
+	<acme:input-textarea code="manager.user-story.form.label.acceptanceCriteria" path="acceptanceCriteria"/>	
 	<acme:input-select code="manager.user-story.form.label.priority" path="priority" choices="${priorities}"/>	
 	<acme:input-url code="manager.user-story.form.label.link" path="link"/>
 	

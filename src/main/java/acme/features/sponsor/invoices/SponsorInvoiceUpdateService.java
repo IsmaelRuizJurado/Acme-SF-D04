@@ -50,7 +50,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	@Override
 	public void bind(final Invoice object) {
 		assert object != null;
-		super.bind(object, "code", "registrationTime", "dueDate", "quantity", "tax", "link");
+		super.bind(object, "code", "dueDate", "quantity", "tax", "link");
 	}
 
 	@Override
@@ -58,24 +58,20 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("quantity"))
 			super.state(this.auxiliarService.validatePrice(object.getQuantity(), 0, 1000000), "quantity", "sponsor.invoice.form.error.quantity");
-		if (!super.getBuffer().getErrors().hasErrors("tax"))
-			super.state(this.auxiliarService.validatePrice(object.getQuantity(), 0, 1000000), "tax", "sponsor.invoice.form.error.tax");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Invoice existing;
 			existing = this.repository.findInvoiceByCode(object.getCode());
 			final Invoice sponsorship2 = object.getCode().equals("") || object.getCode().equals(null) ? null : this.repository.findInvoiceById(object.getId());
-			super.state(existing == null || sponsorship2.equals(existing), "code", "sponsor.sponsorship.form.error.code");
+			super.state(existing == null || sponsorship2.equals(existing), "code", "sponsor.invoice.form.error.code");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("registrationTime")) {
-			super.state(MomentHelper.isBefore(object.getRegistrationTime(), MomentHelper.getCurrentMoment()), "registrationTime", "sponsor.sponsorship.form.error.start-period");
-			super.state(this.auxiliarService.validateDate(object.getRegistrationTime()), "registrationTime", "sponsor.sponsorship.form.error.dates");
-		}
+		if (!super.getBuffer().getErrors().hasErrors("quantity"))
+			super.state(this.auxiliarService.validateCurrency(object.getQuantity()), "quantity", "sponsor.invoice.form.error.quantity2");
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date minimumEndDate;
-			super.state(this.auxiliarService.validateDate(object.getDueDate()), "dueDate", "sponsor.sponsorship.form.error.dates");
+			super.state(this.auxiliarService.validateDate(object.getDueDate()), "dueDate", "sponsor.invoice.form.error.dates");
 			if (object.getRegistrationTime() != null) {
 				minimumEndDate = MomentHelper.deltaFromMoment(object.getRegistrationTime(), 30, ChronoUnit.DAYS);
-				super.state(MomentHelper.isAfterOrEqual(object.getDueDate(), minimumEndDate), "dueDate", "sponsor.sponsorship.form.error.end-period");
+				super.state(MomentHelper.isAfterOrEqual(object.getDueDate(), minimumEndDate), "dueDate", "sponsor.invoice.form.error.end-period");
 
 			}
 		}
@@ -84,6 +80,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	@Override
 	public void perform(final Invoice object) {
 		assert object != null;
+		object.setRegistrationTime(MomentHelper.getCurrentMoment());
 		this.repository.save(object);
 	}
 

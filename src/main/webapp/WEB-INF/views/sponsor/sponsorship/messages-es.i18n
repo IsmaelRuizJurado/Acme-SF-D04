@@ -15,17 +15,20 @@ sponsor.sponsorship.form.label.type = Tipo
 sponsor.sponsorship.form.label.project = Proyecto
 sponsor.sponsorship.form.label.money = Coste en la moneda del sistema
 
-sponsor.sponsorship.form.error.noInvoice = Este patrocinio no tiene facturas
-sponsor.sponsorship.form.error.invoicenp = Algunas facturas de este patrocinio no están publicadas
+sponsor.sponsorship.form.error.noInvoices = Este patrocinio no tiene facturas
 
 sponsor.sponsorship.form.error.spam = El texto introducido es considerado Spam
 
 sponsor.sponsorship.invoice = Facturas
 
 sponsor.sponsorship.form.error.code = Existe un patrocinio con el mismo código
-sponsor.sponsorship.form.error.cost = La cantidad debe ser positivo y menor que 1000000
-sponsor.sponsorship.form.error.cost2 = La divisa introducida no es aceptada por el sistema
-sponsor.sponsorship.form.error.end-period= El periodo de final es incorrecto
+sponsor.sponsorship.form.error.amount = La cantidad debe ser positivo y menor que 1000000
+sponsor.sponsorship.form.error.amount2 = La divisa introducida no es aceptada por el sistema
+sponsor.sponsorship.form.error.dates = La fecha no es válida
+sponsor.sponsorship.form.error.start-period = El momento de registro debe ser en el presente
+sponsor.sponsorship.form.error.end-period = El periodo de final debe ser mínimo un mes después del momento de registro
+sponsor.sponsorship.form.error.invoicestotalamount = La suma de todas las cantidades de las facturas debe ser igual al coste del patrocinio
+sponsor.sponsorship.form.error.invoicesnp = El patrocinio tiene facturas sin publicar
 validation.sponsorship.code = El código debe ser 3 mayúsculas y 4 números unidos por -
 
 sponsor.sponsorship.create = Crear

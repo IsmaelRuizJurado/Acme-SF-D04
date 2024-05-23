@@ -59,7 +59,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		assert object != null;
 		super.bind(object, "code", "startPeriod", "endPeriod", "type", "amount", "link", "email");
 		int projectId = super.getRequest().getData("project", int.class);
-		Project project = this.repository.findProjectbyId(projectId);
+		Project project = this.repository.findPublishedProjectById(projectId);
 		object.setProject(project);
 	}
 

@@ -62,7 +62,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		assert object != null;
 		super.bind(object, "code", "amount", "startPeriod", "endPeriod", "type", "email", "link");
 		int projectId = super.getRequest().getData("project", int.class);
-		Project project = this.repository.findProjectbyId(projectId);
+		Project project = this.repository.findPublishedProjectById(projectId);
 		object.setProject(project);
 	}
 
@@ -77,6 +77,11 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 			super.state(totalAmount == object.getAmount().getAmount(), "*", "sponsor.sponsorship.form.error.invoicestotalamount");
 		}
+		if (!invoices.isEmpty()) {
+			boolean publishedInvoices;
+			publishedInvoices = invoices.stream().allMatch(x -> x.isDraftMode() == false);
+			super.state(publishedInvoices, "*", "sponsor.sponsorship.form.error.invoicesnp");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("amount"))
 			super.state(this.auxiliarService.validatePrice(object.getAmount(), 0, 1000000), "amount", "sponsor.sponsorship.form.error.amount");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
@@ -86,7 +91,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			super.state(existing == null || sponsorship2.equals(existing), "code", "sponsor.sponsorship.form.error.code");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("amount"))
-			super.state(this.auxiliarService.validateCurrency(object.getAmount()), "amount", "sponsor.sponsorship.form.error.amount");
+			super.state(this.auxiliarService.validateCurrency(object.getAmount()), "amount", "sponsor.sponsorship.form.error.amount2");
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			super.state(MomentHelper.isAfterOrEqual(object.getStartPeriod(), MomentHelper.getCurrentMoment()), "startPeriod", "sponsor.sponsorship.form.error.start-period");
 			super.state(this.auxiliarService.validateDate(object.getStartPeriod()), "startPeriod", "sponsor.sponsorship.form.error.dates");
@@ -112,7 +117,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "amount", "startPeriod", "endPeriod", "type", "email", "link", "draftMode", "sponsor");
+		dataset = super.unbind(object, "code", "amount", "moment", "startPeriod", "endPeriod", "type", "email", "link", "draftMode", "sponsor");
 		SelectChoices types = SelectChoices.from(SponsorshipType.class, object.getType());
 		final SelectChoices choices = new SelectChoices();
 		Collection<Project> projects;

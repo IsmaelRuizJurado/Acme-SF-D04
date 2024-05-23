@@ -26,6 +26,10 @@ manager.project.form.error.code = Existe un proyecto con el mismo código
 manager.project.form.error.cost = El coste debe ser positivo y menor que 1000000
 manager.project.form.error.cost2 = La divisa introducida no es aceptada por el sistema
 validation.project.code = El código debe ser 3 mayúsculas y 4 números unidos por -
+manager.project.form.error.deleteCodeAudit = No puedes borrar este proyecto porque tiene un code audit asignado
+manager.project.form.error.deleteSponsorship = No puedes borrar este proyecto porque tiene un sponsorship asignado
+manager.project.form.error.deleteTrainingModule = No puedes borrar este proyecto porque tiene un training module asignado
+manager.project.form.error.deleteContract = No puedes borrar este proyecto porque tiene un contract asignado
 
 manager.project.create = Crear
 manager.project.form.button.delete = Eliminar

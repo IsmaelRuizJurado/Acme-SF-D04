@@ -13,21 +13,22 @@ sponsor.sponsorship.form.label.link = Link
 sponsor.sponsorship.form.label.email = Email
 sponsor.sponsorship.form.label.type = Type
 sponsor.sponsorship.form.label.project = Project
-sponsor.sponsorship.form.label.draftMode = Draft mode
 sponsor.sponsorship.form.label.money = Cost in the system currency
 
 sponsor.sponsorship.form.error.noInvoices = This sponsorship has no invoices
-sponsor.sponsorship.form.error.invoicesnp = Some user story of this sponsorship is not published
 
 sponsor.sponsorship.form.error.spam = The introduced text is considered Spam
 
 sponsor.sponsorship.invoice = Invoices
 
 sponsor.sponsorship.form.error.code = It exists a sponsorship with the same code
-sponsor.sponsorship.form.error.cost = The cost must be positive and lower than 1000000
-sponsor.sponsorship.form.error.cost2 = The introduced currency is not accepted by the system
-sponsor.sponsorship.form.error.end-period= The end period is incorrect
-sponsor.sponsorship.form.error.start-period= The start period is incorrect
+sponsor.sponsorship.form.error.amount = The quantity must be between 0 and 1000000
+sponsor.sponsorship.form.error.amount2 = The currency introduced is not accepted by the system
+sponsor.sponsorship.form.error.dates = This date is not valid
+sponsor.sponsorship.form.error.start-period = The moment must be in the present
+sponsor.sponsorship.form.error.end-period = The end period must be at least one month ahead of the registration time
+sponsor.sponsorship.form.error.invoicestotalamount = The sum of all the total amounts of the invoices must be equal to the amount of the sponsorship
+sponsor.sponsorship.form.error.invoicesnp = The sponsorship has not published invoices
 validation.sponsorship.code = The code must be 3 capital letter and 4 numbers joined by -
 
 sponsor.sponsorship.create = Create
