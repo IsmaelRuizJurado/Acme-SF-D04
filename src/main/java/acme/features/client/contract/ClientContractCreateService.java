@@ -67,10 +67,10 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 			super.state(MomentHelper.isBefore(object.getInstantiationMoment(), MomentHelper.getCurrentMoment()), "instantiationMoment", "client.contract.form.error.moment");
 
 		if (!super.getBuffer().getErrors().hasErrors("customerName"))
-			super.state(this.auxiliarService.validateTextImput(object.getCustomerName()), "title", "client.contract.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getCustomerName()), "customerName", "client.contract.form.error.spam");
 
 		if (!super.getBuffer().getErrors().hasErrors("goals"))
-			super.state(this.auxiliarService.validateTextImput(object.getGoals()), "title", "client.contract.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getGoals()), "goals", "client.contract.form.error.spam");
 
 		if (!super.getBuffer().getErrors().hasErrors("budget"))
 			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "budget", "client.contract.form.error.budget");

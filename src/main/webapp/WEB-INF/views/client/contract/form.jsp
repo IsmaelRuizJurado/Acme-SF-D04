@@ -19,7 +19,7 @@
 	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:input-money code="client.contract.form.label.money" path="money" readonly="true"/>	
+			<acme:input-money code="client.contract.form.label.money" path="budget" readonly="true"/>	
 			<acme:button code="client.contract.progressLogs" action="/client/progress-logs/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true && hasProgressLogs}">
