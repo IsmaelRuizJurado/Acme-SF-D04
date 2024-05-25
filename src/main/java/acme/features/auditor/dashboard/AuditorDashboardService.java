@@ -54,11 +54,16 @@ public class AuditorDashboardService extends AbstractService<Auditor, AuditorDas
 		final double averageAuditRecord = this.repository.findAverageNumOfAuditRecords(auditor.getId()).orElse(0.0);
 		final double maxAuditRecord = this.repository.findMaxNumOfAuditRecords(auditor.getId()).orElse(0.0);
 		final double minAuditRecords = this.repository.findMinNumOfAuditRecords(auditor.getId()).orElse(0.0);
-		//final double devAuditRecords = this.repository.findDevNumOfAuditRecords(auditor.getId()).orElse(0.0);
+		final double devAuditRecords;
+		if (staticCodeAudits + dinamicCodeAudits >= 2)
+			devAuditRecords = this.repository.findDevNumOfAuditRecords(auditor.getId());
+		else
+			devAuditRecords = 0.;
+
 		numAuditRecord.setAverage(averageAuditRecord);
 		numAuditRecord.setMaximum(maxAuditRecord);
 		numAuditRecord.setMinimum(minAuditRecords);
-		//numAuditRecord.setDeviation(devAuditRecords);
+		numAuditRecord.setDeviation(devAuditRecords);
 		dashboard.setNumAuditRecord(numAuditRecord);
 
 		//AuditRecordsTimePeriod
@@ -95,7 +100,7 @@ public class AuditorDashboardService extends AbstractService<Auditor, AuditorDas
 			}
 
 			averageTime = sumTotalTimes / codeaudits.size();
-			devTime = 0.;
+			devTime = this.repository.findDeviationTimePerAuditRecordByAuditorId(auditor.getId());
 		}
 
 		final Stats auditingTimePeriod = new Stats();

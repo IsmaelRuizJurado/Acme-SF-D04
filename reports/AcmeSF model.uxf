@@ -662,7 +662,7 @@ bg=#FFD444</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 provides support v
-m2=  0..*
+m2=  1..*
 m1= 1</panel_attributes>
     <additional_attributes>10.0;180.0;10.0;80.0;320.0;80.0;320.0;10.0</additional_attributes>
   </element>
@@ -900,7 +900,7 @@ bg=red</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 ensures quality v
-m2=  0..*
+m2=  1..*
 m1= 1</panel_attributes>
     <additional_attributes>300.0;210.0;300.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
   </element>

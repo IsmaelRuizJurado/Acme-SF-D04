@@ -1,8 +1,9 @@
 
 package acme.forms;
 
+import java.util.List;
+
 import acme.client.data.AbstractForm;
-import acme.datatypes.Stats;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +17,14 @@ public class SponsorDashboard extends AbstractForm {
 
 	protected Integer			numSponsorshipsWithLink;
 
-	protected Stats				sponsorshipAmountStats;
+	List<Object[]>				averageSponsorshipAmount;
+	List<Object[]>				desviationSponsorshipAmount;
+	List<Object[]>				minSponsorshipAmount;
+	List<Object[]>				maxSponsorshipAmount;
 
-	protected Stats				invoicesQuantityStats;
+	List<Object[]>				averageInvoiceQuantity;
+	List<Object[]>				desviationInvoiceQuantity;
+	List<Object[]>				minInvoiceQuantity;
+	List<Object[]>				maxInvoiceQuantity;
 
 }

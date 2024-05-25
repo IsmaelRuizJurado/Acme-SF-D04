@@ -26,6 +26,10 @@ manager.project.form.error.code = It exists a project with the same code
 manager.project.form.error.cost = The cost must be positive and lower than 1000000
 manager.project.form.error.cost2 = The introduced currency is not accepted by the system
 validation.project.code = The code must be 3 capital letter and 4 numbers joined by -
+manager.project.form.error.deleteCodeAudit = Can´t delete this project because it has some code audit assigned
+manager.project.form.error.deleteSponsorship = Can´t delete this project because it has some sponsorship assigned
+manager.project.form.error.deleteTrainingModule = Can´t delete this project because it has some training module assigned
+manager.project.form.error.deleteContract = Can´t delete this project because it has some contract assigned
 
 manager.project.create = Create
 manager.project.form.button.delete = Delete

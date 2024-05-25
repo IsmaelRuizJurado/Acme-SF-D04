@@ -68,7 +68,7 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingSession existing;
 			existing = this.repository.findTrainingSessionByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.code");
+			super.state(existing == null, "code", "developer.training_session.form.error.code");
 		}
 	}
 

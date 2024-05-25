@@ -1,280 +1,194 @@
-
-
-<%@page language="java"%>
+<%@page%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
+<h2>
+	<acme:message code="manager.dashboard.form.title.general-indicators"/>
+</h2>
+
 <table class="table table-sm">
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.average-project-cost"/>
+			<acme:message code="manager.dashboard.form.label.average-project-cost"/>
 		</th>
 		<td>
-			<acme:print value="${projectCostStats.getAverage()}"/>
+			<acme:print value="${averageProjectCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${averageProjectCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${averageProjectCost[2]}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.min-project-cost"/>
+			<acme:message code="manager.dashboard.form.label.max-project-cost"/>
 		</th>
 		<td>
-			<acme:print value="${projectCostStats.getMinimum()}"/>
+			<acme:print value="${maxProjectCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${maxProjectCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${maxProjectCost[2]}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.max-project-cost"/>
+			<acme:message code="manager.dashboard.form.label.min-project-cost"/>
 		</th>
 		<td>
-			<acme:print value="${projectCostStats.getMaximum()}"/>
+			<acme:print value="${minProjectCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${minProjectCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${minProjectCost[2]}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.lin-dev-project-cost"/>
+			<acme:message code="manager.dashboard.form.label.deviation-project-cost"/>
 		</th>
 		<td>
-			<acme:print value="${projectCostStats.getDeviation()}"/>
+			<acme:print value="${deviationProjectCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${deviationProjectCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${deviationProjectCost[2]}"/>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="manager.dashboard.form.label.average-us-cost"/>
+		</th>
+		<td>
+			<acme:print value="${averageUsCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${averageUsCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${averageUsCost[2]}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.average-userstory-cost"/>
+			<acme:message code="manager.dashboard.form.label.max-us-cost"/>
 		</th>
 		<td>
-			<acme:print value="${userStoriesCostStats.getAverage()}"/>
+			<acme:print value="${maxUsCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${maxUsCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${maxUsCost[2]}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.max-userstory-cost"/>
+			<acme:message code="manager.dashboard.form.label.min-us-cost"/>
 		</th>
 		<td>
-			<acme:print value="${userStoriesCostStats.getMaximum()}"/>
+			<acme:print value="${minUsCost[0]}"/>
+		</td>
+		<td>
+			<acme:print value="${minUsCost[1]}"/>
+		</td>
+		<td>
+			<acme:print value="${minUsCost[2]}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.min-userstory-cost"/>
+			<acme:message code="manager.dashboard.form.label.deviation-us-cost"/>
 		</th>
 		<td>
-			<acme:print value="${userStoriesCostStats.getMinimum()}"/>
+			<acme:print value="${desviationUsCost[0]}"/>
 		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.lin-dev-userstory-cost"/>
-		</th>
 		<td>
-			<acme:print value="${userStoriesCostStats.getDeviation()}"/>
+			<acme:print value="${desviationUsCost[1]}"/>
 		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.must-userstory"/>
-		</th>
 		<td>
-			<acme:print value="${totalUserStoriesByPriority.get('MUST')}"/>
+			<acme:print value="${desviationUsCost[2]}"/>
 		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.should-userstory"/>
-		</th>
-		<td>
-			<acme:print value="${totalUserStoriesByPriority.get('SHOULD')}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.could-userstory"/>
-		</th>
-		<td>
-			<acme:print value="${totalUserStoriesByPriority.get('COULD')}"/>
-		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.managerDashboard.form.label.wont-userstory"/>
-		</th>
-		<td>
-			<acme:print value="${totalUserStoriesByPriority.get('WONT')}"/>
-		</td>
-	</tr>	
+	</tr>		
 </table>
 
-<jstl:choose>
-<jstl:when test="${projectCostStats.getMaximum()>0.0}">
-						
-		
-	<h3><acme:message code="manager.managerDashboard.form.label.projects.information"/></h3>
-	<div>
-		<canvas id="canvas"></canvas>
-	</div>
+<h2>
+	<acme:message code="manager.dashboard.form.title.priority"/>
+</h2>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var data = {
-				labels : [
-						"AVERAGE", "MAX", "MIN","DEVIATION"
-				],
-				datasets : [
-					{
-						data : [
-							<jstl:out value="${projectCostStats.getAverage()}"/>, 
-							<jstl:out value="${projectCostStats.getMaximum()}"/>, 
-							<jstl:out value="${projectCostStats.getMinimum()}"/>,
-							<jstl:out value="${projectCostStats.getDeviation()}"/>
-						],
-						backgroundColor: [
-						      'rgb(40, 180, 99)',
-					    	  'rgb(54, 162, 235)',
-					    	  'rgb(255, 205, 86)',
-					      	  'rgb(230, 170, 243)'
-					    ]
-					}
-				]
-			};
-			var options = {
-				scales : {
-					yAxes : [
-						{
-							ticks : {
-								suggestedMin : 0.0,
-								suggestedMax : 100.0
-							}
-						}
-					]
-				},
-				legend : {
-					display : false
+<div>
+	<canvas id="myCanvas"></canvas>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var data = {
+			labels : [
+					"Must", "Should", "Could", "Wont"
+			],
+			datasets : [
+				{
+					data : [
+						<jstl:out value="${mustNumber}"/>, 
+						<jstl:out value="${shouldNumber}"/>, 
+						<jstl:out value="${couldNumber}"/>,
+						<jstl:out value="${wontNumber}"/>
+					],
+		            backgroundColor: [
+		                'rgba(255, 99, 132, 0.2)',   // Color for "must"
+		                'rgba(54, 162, 235, 0.2)',   // Color for "should"
+		                'rgba(255, 206, 86, 0.2)',   // Color for "could"
+		                'rgba(75, 192, 192, 0.2)'    // Color for "wont"
+		            ],
+		            borderColor: [
+		                'rgba(255, 99, 132, 1)',     // Border color for "must"
+		                'rgba(54, 162, 235, 1)',     // Border color for "should"
+		                'rgba(255, 206, 86, 1)',     // Border color for "could"
+		                'rgba(75, 192, 192, 1)'      // Border color for "wont"
+		            ],
+		            borderWidth: 1
 				}
-			};
-	
-			var canvas, context;
-	
-			canvas = document.getElementById("canvas");
-			context = canvas.getContext("2d");
-			new Chart(context, {
-				type : "bar",
-				data : data,
-				options : options
-			});
-		});
-	</script>
-
-</jstl:when>
-</jstl:choose>
-
-<jstl:choose>
-<jstl:when test="${userStoriesCostStats.getMaximum()>0.0}">
-
-	<h3><acme:message code="manager.managerDashboard.form.label.userstories.information"/></h3>
-	<div>
-		<canvas id="canvas2"></canvas>
-	</div>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var data = {
-				labels : [
-						"AVERAGE", "MAX", "MIN","DEVIATION"
-				],
-				datasets : [
+			]
+		};
+		var options = {
+			scales : {
+				yAxes : [
 					{
-						data : [
-							<jstl:out value="${userStoriesCostStats.getAverage()}"/>, 
-							<jstl:out value="${userStoriesCostStats.getMaximum()}"/>, 
-							<jstl:out value="${userStoriesCostStats.getMinimum()}"/>,
-							<jstl:out value="${userStoriesCostStats.getDeviation()}"/>
-						],
-						backgroundColor: [
-						      'rgb(40, 180, 99)',
-						      'rgb(54, 162, 235)',
-						      'rgb(255, 205, 86)',
-						      'rgb(230, 170, 243)'
-					    ]
+						ticks : {
+							suggestedMin : 0.0,
+							suggestedMax : 1.0
+						}
 					}
 				]
-			};
-			
-			
-			var options = {
-					scales : {
-						yAxes : [
-							{
-								ticks : {
-									suggestedMin : 0.0,
-									suggestedMax : 100.0
-								}
-							}
-						]
-					},
-					legend : {
-						display : false
-					}
-				};
-			
-			var canvas, context;
-			canvas = document.getElementById("canvas2");
-			context = canvas.getContext("2d");
-			new Chart(context, {
-				type : "bar",
-				data : data,
-				options : options
-			});
-		});
-	</script>
-
-</jstl:when>
-</jstl:choose>
-
-<jstl:choose>
-<jstl:when test="${totalUserStoriesByPriority.get('MUST') != 0 || totalUserStoriesByPriority.get('SHOULD') != 0 || totalUserStoriesByPriority.get('COULD') != 0 || totalUserStoriesByPriority.get('WONT') != 0}">
-
-	<h3><acme:message code="manager.managerDashboard.form.label.userstories.type.information"/></h3>
-	<div>
-		<canvas id="canvas3"></canvas>
-	</div>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var data = {
-				labels : [
-						"MUST", "SHOULD", "COULD", "WONT"
-				],
-				datasets : [
-					{
-						data : [
-							<jstl:out value="${totalUserStoriesByPriority.get('MUST')}"/>, 
-							<jstl:out value="${totalUserStoriesByPriority.get('SHOULD')}"/>,
-							<jstl:out value="${totalUserStoriesByPriority.get('COULD')}"/>,
-							<jstl:out value="${totalUserStoriesByPriority.get('WONT')}"/>,
-						],
-						backgroundColor: [
-					      'rgb(40, 180, 99)',
-					      'rgb(54, 162, 235)',
-					      'rgb(255, 205, 86)',
-					      'rgb(230, 170, 243)'
-					    ]
-					}
-				]
-			};
-
+			},
+			legend : {
+				display : false
+			}
+		};
 	
-			var canvas, context;
+		var canvas, context;
 	
-			canvas = document.getElementById("canvas3");
-			context = canvas.getContext("2d");
-			new Chart(context, {
-				type : "doughnut",
-				data : data,
-			});
+		canvas = document.getElementById("myCanvas");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "bar",
+			data : data,
+			options : options
 		});
-	</script>
-</jstl:when>
-</jstl:choose>
+	});
+</script>
 
 
 <acme:return/>

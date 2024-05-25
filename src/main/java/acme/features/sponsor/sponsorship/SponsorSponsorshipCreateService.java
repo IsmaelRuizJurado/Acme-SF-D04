@@ -66,7 +66,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 			super.state(existing == null, "code", "sponsor.sponsorship.form.error.code");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("amount"))
-			super.state(this.auxiliarService.validateCurrency(object.getAmount()), "amount", "sponsor.sponsorship.form.error.amount");
+			super.state(this.auxiliarService.validateCurrency(object.getAmount()), "amount", "sponsor.sponsorship.form.error.amount2");
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			super.state(MomentHelper.isAfterOrEqual(object.getStartPeriod(), MomentHelper.getCurrentMoment()), "startPeriod", "sponsor.sponsorship.form.error.start-period");
 			super.state(this.auxiliarService.validateDate(object.getStartPeriod()), "startPeriod", "sponsor.sponsorship.form.error.dates");

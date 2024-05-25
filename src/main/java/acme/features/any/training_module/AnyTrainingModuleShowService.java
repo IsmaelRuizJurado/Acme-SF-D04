@@ -56,7 +56,8 @@ public class AnyTrainingModuleShowService extends AbstractService<Any, TrainingM
 	public void unbind(final TrainingModule object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "optionalLink", "estimatedTotalTime", "project");
+		dataset = super.unbind(object, "code", "creationTime", "details", "basicLevel", "updateMoment", "optionalLink", "estimatedTotalTime");
+		dataset.put("projectCode", object.getProject().getCode());
 		dataset.put("degree", object.getDeveloper().getDegree());
 		super.getResponse().addData(dataset);
 	}

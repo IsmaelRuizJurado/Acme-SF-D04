@@ -59,6 +59,9 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	@Override
 	public void validate(final Project object) {
 		assert object != null;
+		super.state(this.repository.findSponsorshipsByProject(object).isEmpty(), "*", "manager.project.form.error.deleteSponsorship");
+		super.state(this.repository.findTrainingModulesByProject(object).isEmpty(), "*", "manager.project.form.error.deleteTrainingModule");
+		super.state(this.repository.findContractsByProject(object).isEmpty(), "*", "manager.project.form.error.deleteContract");
 	}
 
 	@Override
@@ -74,7 +77,7 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	public void unbind(final Project object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "title", "abstractt", "link");
+		dataset = super.unbind(object, "code", "title", "abstractt", "cost", "link", "draftMode", "manager");
 		dataset.put("money", this.auxiliarService.changeCurrency(object.getCost()));
 		super.getResponse().addData(dataset);
 	}
