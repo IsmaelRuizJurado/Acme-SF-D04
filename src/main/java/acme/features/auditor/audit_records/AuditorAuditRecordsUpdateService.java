@@ -55,13 +55,20 @@ public class AuditorAuditRecordsUpdateService extends AbstractService<Auditor, A
 		if (object == null)
 			throw new IllegalArgumentException("No Audit Records found");
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			AuditRecords existing;
+			existing = this.repository.findAuditRecordsByCode(object.getCode());
+			final AuditRecords auditRecord2 = object.getCode().equals("") || object.getCode() == null ? null : this.repository.findAuditRecordById(object.getId());
+			super.state(existing == null || auditRecord2.equals(existing), "code", "auditor.audit-records.form.error.code");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("period")) {
 			Date startPeriod = object.getStartPeriod();
 			Date endPeriod = object.getEndPeriod();
 			if (startPeriod != null && endPeriod != null) {
 				long diffInMillis = endPeriod.getTime() - startPeriod.getTime();
 				long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillis);
-				super.state(diffInHours >= 1, "period", "auditor.audit-records.form.error.period");
+				super.state(diffInHours >= 1, "endPeriod", "auditor.audit-records.form.error.period");
 			}
 
 		}
