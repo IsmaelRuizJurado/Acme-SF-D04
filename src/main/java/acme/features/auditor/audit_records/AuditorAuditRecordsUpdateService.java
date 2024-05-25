@@ -1,7 +1,6 @@
 
 package acme.features.auditor.audit_records;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -92,11 +91,9 @@ public class AuditorAuditRecordsUpdateService extends AbstractService<Auditor, A
 		dataset.put("marks", choices);
 
 		final SelectChoices choices2 = new SelectChoices();
-		Collection<CodeAudits> codeaudits;
-		int id = super.getRequest().getPrincipal().getActiveRoleId();
-		codeaudits = this.repository.findCodeAuditsByAuditor(id);
-		for (final CodeAudits c : codeaudits)
-			choices2.add(Integer.toString(c.getId()), c.getCode(), false);
+		CodeAudits codeaudits;
+		codeaudits = object.getCodeAudits();
+		choices2.add(Integer.toString(codeaudits.getId()), codeaudits.getCode(), false);
 
 		dataset.put("codeauditslist", choices2);
 		super.getResponse().addData(dataset);
