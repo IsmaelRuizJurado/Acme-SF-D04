@@ -53,7 +53,7 @@ public class AuditorCodeAuditsDeleteService extends AbstractService<Auditor, Cod
 	public void validate(final CodeAudits object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode(), "draftMode", "auditor.code-audits.form.error.draftMode");
+			super.state(object.isDraftMode(), "code", "auditor.code-audits.form.error.draftMode");
 	}
 
 	@Override

@@ -20,7 +20,7 @@ auditor.code-audits.form.error.code = It exists a code-audits with the same code
 auditor.code-audits.form.error.spam = This text is considered spam.
 validation.code-audits.code = The code must be 3 capital letter and 4 numbers joined by -
 auditor.code-audits.form.error.draftMode = You can't delete a published code Audit
-auditor.code-audits.form.error.mark = Need to be more than C
+auditor.code-audits.form.error.mark = For a code audit to be published, the mark must be, at least, “C”
 
 auditor.code-audits.create = Create
 auditor.code-audits.form.button.delete = Delete

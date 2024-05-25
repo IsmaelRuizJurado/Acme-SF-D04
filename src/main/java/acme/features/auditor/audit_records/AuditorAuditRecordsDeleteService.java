@@ -31,7 +31,7 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 		object = this.repository.findAuditRecordById(id);
 		final Principal principal = super.getRequest().getPrincipal();
 		final int userAccountId = principal.getAccountId();
-		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId && object.isDraftMode());
+		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId);
 
 	}
 
@@ -55,7 +55,7 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 	public void validate(final AuditRecords object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode(), "draftMode", "auditor.audit-records.form.error.draftMode");
+			super.state(object.isDraftMode(), "code", "auditor.audit-records.form.error.draftMode");
 	}
 
 	@Override

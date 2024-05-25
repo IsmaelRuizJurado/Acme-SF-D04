@@ -75,7 +75,7 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 			}
 
 		if (highestMarkType != null && (highestMarkType.equals(MarkType.F) || highestMarkType.equals(MarkType.FMINUS)))
-			super.state(false, "markType", "auditor.code-audits.form.error.mark");
+			super.state(false, "code", "auditor.code-audits.form.error.mark");
 
 	}
 
