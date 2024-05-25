@@ -7,6 +7,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
@@ -31,7 +32,13 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		Sponsorship object;
+		int sponsorshipId;
+		sponsorshipId = super.getRequest().getData("masterId", int.class);
+		object = this.repository.findSponsorshipById(sponsorshipId);
+		final Principal principal = super.getRequest().getPrincipal();
+		final int userAccountId = principal.getAccountId();
+		super.getResponse().setAuthorised(object.getSponsor().getUserAccount().getId() == userAccountId && object.isDraftMode());
 	}
 
 	@Override
@@ -42,7 +49,6 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 		sponsorshipId = super.getRequest().getData("masterId", int.class);
 		super.getResponse().addGlobal("masterId", sponsorshipId);
 		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
-		System.out.println(sponsorship);
 		object = new Invoice();
 		object.setDraftMode(true);
 		object.setSponsorship(sponsorship);
