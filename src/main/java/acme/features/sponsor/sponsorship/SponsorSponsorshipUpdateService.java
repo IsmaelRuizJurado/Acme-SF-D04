@@ -2,7 +2,6 @@
 package acme.features.sponsor.sponsorship;
 
 import java.time.temporal.ChronoUnit;
-import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
-import acme.entities.project.Project;
 import acme.entities.sponsorship.Sponsorship;
 import acme.entities.sponsorship.SponsorshipType;
 import acme.roles.Sponsor;
@@ -57,10 +55,14 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	@Override
 	public void bind(final Sponsorship object) {
 		assert object != null;
-		super.bind(object, "code", "startPeriod", "endPeriod", "type", "amount", "link", "email");
-		int projectId = super.getRequest().getData("project", int.class);
-		Project project = this.repository.findPublishedProjectById(projectId);
-		object.setProject(project);
+		Sponsorship object2;
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		object2 = this.repository.findSponsorshipById(id);
+		object.setProject(object2.getProject());
+		object.setSponsor(object2.getSponsor());
+		super.bind(object, "code", "amount", "startPeriod", "endPeriod", "type", "email", "link");
 	}
 
 	@Override
@@ -101,23 +103,12 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "moment", "startPeriod", "endPeriod", "type", "amount", "link", "email", "draftMode");
+		dataset = super.unbind(object, "code", "moment", "startPeriod", "endPeriod", "type", "amount", "link", "email", "draftMode", "project");
 		SelectChoices types = SelectChoices.from(SponsorshipType.class, object.getType());
 		final Sponsorship sponsorship = this.repository.findSponsorshipById(object.getId());
 		final boolean readonly = !(MomentHelper.getCurrentMoment().before(sponsorship.getStartPeriod()) && MomentHelper.getCurrentMoment().before(sponsorship.getEndPeriod()) || MomentHelper.getCurrentMoment().after(sponsorship.getEndPeriod()));
 		dataset.put("readonly", readonly);
-		final SelectChoices choices = new SelectChoices();
-		Collection<Project> projects;
-		projects = this.repository.findAllPublishedProjects();
-
-		for (final Project c : projects)
-			if (object.getProject() != null && object.getProject().getId() == c.getId())
-				choices.add(Integer.toString(c.getId()), c.getCode() + "-" + c.getTitle(), true);
-			else
-				choices.add(Integer.toString(c.getId()), c.getCode() + "-" + c.getTitle(), false);
-
-		dataset.put("project", choices.getSelected().getKey());
-		dataset.put("projects", choices);
+		dataset.put("projectCode", object.getProject().getCode());
 		dataset.put("types", types);
 		dataset.put("money", this.auxiliarService.changeCurrency(object.getAmount()));
 		super.getResponse().addData(dataset);

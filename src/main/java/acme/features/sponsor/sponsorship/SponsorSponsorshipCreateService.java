@@ -80,6 +80,8 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 
 			}
 		}
+		if (!super.getBuffer().getErrors().hasErrors("project"))
+			super.state(!object.getProject().isDraftMode(), "project", "sponsor.sponsorship.form.error.project");
 	}
 
 	@Override
@@ -92,16 +94,13 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "amount", "moment", "startPeriod", "endPeriod", "type", "email", "link", "draftMode", "sponsor");
+		dataset = super.unbind(object, "code", "amount", "moment", "startPeriod", "endPeriod", "type", "email", "link", "draftMode", "sponsor", "project");
 		final SelectChoices choices = new SelectChoices();
 		Collection<Project> projects;
 		projects = this.repository.findAllPublishedProjects();
 
-		for (final Project c : projects)
-			if (object.getProject() != null && object.getProject().getId() == c.getId())
-				choices.add(Integer.toString(c.getId()), c.getCode() + "-" + c.getTitle(), true);
-			else
-				choices.add(Integer.toString(c.getId()), c.getCode() + "-" + c.getTitle(), false);
+		for (final Project p : projects)
+			choices.add(Integer.toString(p.getId()), p.getCode() + " - " + p.getTitle(), false);
 
 		dataset.put("projects", choices);
 		SelectChoices types = SelectChoices.from(SponsorshipType.class, object.getType());

@@ -16,7 +16,6 @@ import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
 import acme.entities.invoice.Invoice;
-import acme.entities.project.Project;
 import acme.entities.sponsorship.Sponsorship;
 import acme.entities.sponsorship.SponsorshipType;
 import acme.roles.Sponsor;
@@ -60,10 +59,14 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	@Override
 	public void bind(final Sponsorship object) {
 		assert object != null;
+		Sponsorship object2;
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		object2 = this.repository.findSponsorshipById(id);
+		object.setProject(object2.getProject());
+		object.setSponsor(object2.getSponsor());
 		super.bind(object, "code", "amount", "startPeriod", "endPeriod", "type", "email", "link");
-		int projectId = super.getRequest().getData("project", int.class);
-		Project project = this.repository.findPublishedProjectById(projectId);
-		object.setProject(project);
 	}
 
 	@Override
@@ -71,7 +74,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		assert object != null;
 		final Collection<Invoice> invoices = this.repository.findInvoicesBySponsorship(object);
 		super.state(!invoices.isEmpty(), "*", "sponsor.sponsorship.form.error.noInvoices");
-		if (!invoices.isEmpty()) {
+		if (!invoices.isEmpty() && !super.getBuffer().getErrors().hasErrors("amount")) {
 			double totalAmount;
 			totalAmount = invoices.stream().collect(Collectors.summingDouble(x -> x.totalAmount().getAmount()));
 
@@ -117,20 +120,9 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "amount", "moment", "startPeriod", "endPeriod", "type", "email", "link", "draftMode", "sponsor");
+		dataset = super.unbind(object, "code", "amount", "moment", "startPeriod", "endPeriod", "type", "email", "link", "draftMode", "sponsor", "project");
 		SelectChoices types = SelectChoices.from(SponsorshipType.class, object.getType());
-		final SelectChoices choices = new SelectChoices();
-		Collection<Project> projects;
-		projects = this.repository.findAllPublishedProjects();
-
-		for (final Project c : projects)
-			if (object.getProject() != null && object.getProject().getId() == c.getId())
-				choices.add(Integer.toString(c.getId()), c.getCode() + "-" + c.getTitle(), true);
-			else
-				choices.add(Integer.toString(c.getId()), c.getCode() + "-" + c.getTitle(), false);
-
-		dataset.put("project", choices.getSelected().getKey());
-		dataset.put("projects", choices);
+		dataset.put("projectCode", object.getProject().getCode());
 		dataset.put("types", types);
 		dataset.put("money", this.auxiliarService.changeCurrency(object.getAmount()));
 		super.getResponse().addData(dataset);

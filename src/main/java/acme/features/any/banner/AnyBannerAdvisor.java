@@ -1,5 +1,5 @@
 
-package acme.components;
+package acme.features.any.banner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -8,16 +8,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import acme.entities.banner.Banner;
 
 @ControllerAdvice
-public class RandomBannerController {
+public class AnyBannerAdvisor {
 
 	@Autowired
-	RandomBannerService service;
+	protected AnyBannerRepository repository;
 
 
 	@ModelAttribute("banner")
 	public Banner getBanner() {
-		Banner res;
-		res = this.service.getRandomBanner();
-		return res;
+		Banner result;
+
+		try {
+			result = this.repository.findRandomBanner();
+		} catch (final Throwable oops) {
+			result = null;
+		}
+		return result;
 	}
 }

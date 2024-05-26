@@ -25,10 +25,11 @@ sponsor.sponsorship.form.error.code = It exists a sponsorship with the same code
 sponsor.sponsorship.form.error.amount = The quantity must be between 0 and 1000000
 sponsor.sponsorship.form.error.amount2 = The currency introduced is not accepted by the system
 sponsor.sponsorship.form.error.dates = This date is not valid
-sponsor.sponsorship.form.error.start-period = The moment must be in the present
+sponsor.sponsorship.form.error.start-period = The start period must be after the instantiation moment
 sponsor.sponsorship.form.error.end-period = The end period must be at least one month ahead of the registration time
 sponsor.sponsorship.form.error.invoicestotalamount = The sum of all the total amounts of the invoices must be equal to the amount of the sponsorship
 sponsor.sponsorship.form.error.invoicesnp = The sponsorship has not published invoices
+sponsor.sponsorship.form.error.project = The project selected must be published
 validation.sponsorship.code = The code must be 3 capital letter and 4 numbers joined by -
 
 sponsor.sponsorship.create = Create
