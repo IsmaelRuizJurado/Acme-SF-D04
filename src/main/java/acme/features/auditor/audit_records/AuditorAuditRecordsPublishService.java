@@ -35,7 +35,7 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 		object = this.repository.findAuditRecordById(id);
 		final Principal principal = super.getRequest().getPrincipal();
 		final int userAccountId = principal.getAccountId();
-		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId && object.isDraftMode());
+		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId);
 	}
 
 	@Override
@@ -59,6 +59,8 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 		if (object == null)
 			throw new IllegalArgumentException("No Audit Records found");
 
+		super.state(object.getDraftMode() == true, "code", "auditor.audit-records.form.error.publish-draftMode");
+
 		if (!super.getBuffer().getErrors().hasErrors("period")) {
 			Date startPeriod = object.getStartPeriod();
 			Date endPeriod = object.getEndPeriod();
@@ -66,7 +68,7 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 			if (startPeriod != null && endPeriod != null) {
 				long diffInMillis = endPeriod.getTime() - startPeriod.getTime();
 				long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillis);
-				super.state(diffInHours >= 1, "period", "auditor.audit-records.form.error.period");
+				super.state(diffInHours >= 1, "endPeriod", "auditor.audit-records.form.error.period");
 			}
 		}
 	}

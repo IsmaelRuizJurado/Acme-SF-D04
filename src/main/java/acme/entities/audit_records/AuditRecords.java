@@ -54,7 +54,7 @@ public class AuditRecords extends AbstractEntity {
 	@URL
 	private String				link;
 
-	private boolean				draftMode;
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
