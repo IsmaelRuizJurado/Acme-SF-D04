@@ -62,6 +62,8 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 		if (!super.getBuffer().getErrors().hasErrors("correctiveActions"))
 			super.state(this.auxiliarService.validateTextImput(object.getCorrectiveActions()), "correctiveActions", "auditor.code-audits.form.error.spam");
 
+		super.state(object.isDraftMode() == true, "code", "auditor.code-audits.form.error.publish-draftMode");
+
 		//The mark must be, at least, “C”
 		final Collection<AuditRecords> audits = this.repository.findAuditRecordsByCodeAudits(object);
 		final Map<MarkType, Integer> auditsPerMark;

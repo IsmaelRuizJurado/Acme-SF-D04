@@ -22,6 +22,7 @@ auditor.code-audits.form.error.spam = Este texto es considerado spam.
 validation.code-audits.code = El código debe ser 3 letras mayúsculas y 4 numeros unidos por -
 auditor.code-audits.form.error.draftMode = No puedes eliminar una auditoria publicada
 auditor.code-audits.form.error.mark = Para publicar un Code-Audit la marca debe ser mayor a C
+auditor.code-audits.form.error.publish-draftMode = Ya está publicada
 
 
 
