@@ -10,6 +10,7 @@ import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.components.AuxiliarService;
+import acme.entities.training_module.TrainingModule;
 import acme.entities.training_session.TrainingSession;
 import acme.roles.Developer;
 
@@ -47,9 +48,10 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 	@Override
 	public void validate(final TrainingSession object) {
 		assert object != null;
+
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			super.state(this.auxiliarService.validateDate(object.getStartPeriod()), "startPeriod", "developer.training-session.form.error.startPeriod");
-			super.state(object.getStartPeriod().after(object.getTrainingModule().getCreationTime()), "startPeriod", "developer.training-session.form.error.startPeriod");
+			super.state(object.getTrainingModule() == null || object.getStartPeriod().after(object.getTrainingModule().getCreationTime()), "startPeriod", "developer.training-session.form.error.startPeriod");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("location"))
@@ -64,7 +66,13 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingSession existing;
 			existing = this.repository.findTrainingSessionByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.code");
+			super.state(existing == null, "code", "developer.training-session.form.error.code");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("trainingModule")) {
+			TrainingModule published;
+			published = this.repository.findTrainingModuleNotPublishedByDeveloperIdAndModuleId(super.getRequest().getPrincipal().getActiveRoleId(), object.getTrainingModule().getId());
+			super.state(published != null, "project", "developer.training_module.form.error.project");
 		}
 
 	}
