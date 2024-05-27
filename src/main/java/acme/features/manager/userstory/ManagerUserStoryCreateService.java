@@ -51,13 +51,15 @@ public class ManagerUserStoryCreateService extends AbstractService<Manager, User
 	public void validate(final UserStory object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("estimatedCostPerHour"))
-			super.state(this.auxiliarService.validatePrice(object.getEstimatedCostPerHour(), 0, 1000000), "estimatedCostPerHour", "manager.userstory.form.error.estimatedCostPerHour");
+			super.state(this.auxiliarService.validatePrice(object.getEstimatedCostPerHour(), 0, 1000000), "estimatedCostPerHour", "manager.user-story.form.error.estimatedCostPerHour");
 		if (!super.getBuffer().getErrors().hasErrors("title"))
-			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "title", "manager.userstory.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getTitle()), "title", "manager.user-story.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("description"))
-			super.state(this.auxiliarService.validateTextImput(object.getDescription()), "description", "manager.userstory.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getDescription()), "description", "manager.user-story.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("acceptanceCriteria"))
-			super.state(this.auxiliarService.validateTextImput(object.getAcceptanceCriteria()), "acceptanceCriteria", "manager.userstory.form.error.spam");
+			super.state(this.auxiliarService.validateTextImput(object.getAcceptanceCriteria()), "acceptanceCriteria", "manager.user-story.form.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("estimatedCostPerHour"))
+			super.state(this.auxiliarService.validateCurrency(object.getEstimatedCostPerHour()), "estimatedCostPerHour", "manager.user-story.form.error.estimatedCostPerHour2");
 	}
 
 	@Override
