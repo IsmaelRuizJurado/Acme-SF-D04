@@ -66,9 +66,12 @@ public class ClientProgressLogPublishService extends AbstractService<Client, Pro
 		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
 			ProgressLogs existing;
 			existing = this.repository.findProgressLogsByRecordId(object.getRecordId());
-			final ProgressLogs progressLog2 = object.getRecordId().equals("") || object.getRecordId() == null ? null : this.repository.findProgressLogsByRecordId(object.getRecordId());
-			super.state(existing == null || progressLog2.equals(existing), "code", "client.contract.form.error.code");
+			final ProgressLogs progressLog2 = object.getRecordId().equals("") || object.getRecordId() == null ? null : this.repository.findProgressLogsById(object.getId());
+			super.state(existing == null || progressLog2.equals(existing), "recordId", "client.progressLogs.form.error.recordId");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("completeness"))
+			super.state(object.getCompleteness() <= 100 && 0 <= object.getCompleteness(), "completeness", "client.progressLogs.form.error.completeness");
+
 		if (!super.getBuffer().getErrors().hasErrors("registrationMoment"))
 			super.state(MomentHelper.isBefore(object.getRegistrationMoment(), MomentHelper.getCurrentMoment()), "instantiationMoment", "client.progressLogs.form.error.moment");
 
