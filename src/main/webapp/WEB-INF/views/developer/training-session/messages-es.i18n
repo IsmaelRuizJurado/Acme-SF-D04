@@ -22,6 +22,7 @@ developer.training_session.form.error.trainingsessionnp = Algunas sesiones de en
 developer.training_session.form.error.spam = El texto introducido se considera spam
 developer.training-session.form.error.startPeriod = Introduce una fecha valida
 developer.training-session.form.error.endPeriod = Introduce una fecha valida
+developer.training-session.form.error.module = El Modulo no debe ser nulo.
 
 developer.training_session.training_session = Sesiones de entrenamiento
 

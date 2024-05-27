@@ -20,13 +20,14 @@ developer.training_session.form.error.notrainingsession = This training session 
 developer.training_session.form.error.trainingsessionnp = Some training sessions of this training session are not published
 
 developer.training_session.form.error.spam = The introduced text is considered Spam
-developer.training-session.form.error.startPeriod = Introduce a correct date
-developer.training-session.form.error.endPeriod = Introduce a correct date
+developer.training-session.form.error.startPeriod = Introduce a correct date. It must be posterior to TrainingModule Creation Time.
+developer.training-session.form.error.endPeriod = Introduce a correct date. It must be at least, 7 days later than start period date.
+developer.training-session.form.error.module = Training Module must not be null.
 
 developer.training_session.training_session = Training Sessions
 
 developer.training_session.form.error.code = It exists a training session with the same code
-validation.project.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
+validation.training_session.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
 
 developer.training_session.create = Create
 developer.training_session.form.button.delete = Delete
