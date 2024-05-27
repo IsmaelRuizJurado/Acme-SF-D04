@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
@@ -29,7 +30,13 @@ public class AuditorAuditRecordsUpdateService extends AbstractService<Auditor, A
 	@Override
 	public void authorise() {
 
-		super.getResponse().setAuthorised(true);
+		AuditRecords object;
+		int id;
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findAuditRecordById(id);
+		final Principal principal = super.getRequest().getPrincipal();
+		final int userAccountId = principal.getAccountId();
+		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId);
 	}
 
 	@Override
