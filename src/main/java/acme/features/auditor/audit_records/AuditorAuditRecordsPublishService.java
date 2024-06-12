@@ -61,6 +61,13 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 
 		super.state(object.getDraftMode() == true, "code", "auditor.audit-records.form.error.publish-draftMode");
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			AuditRecords existing;
+			existing = this.repository.findAuditRecordsByCode(object.getCode());
+			final AuditRecords auditRecord2 = object.getCode().equals("") || object.getCode() == null ? null : this.repository.findAuditRecordById(object.getId());
+			super.state(existing == null || auditRecord2.equals(existing), "code", "auditor.audit-records.form.error.code");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("period")) {
 			Date startPeriod = object.getStartPeriod();
 			Date endPeriod = object.getEndPeriod();
