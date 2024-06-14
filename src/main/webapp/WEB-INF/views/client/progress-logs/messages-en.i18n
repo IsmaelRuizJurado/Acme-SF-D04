@@ -16,6 +16,7 @@ client.progressLogs.form.error.recordId = This id already exists
 client.progressLogs.form.error.draftMode =  You cannot update or delete a progress Logs already published
 client.progressLogs.form.error.moment = Must be in the past
 client.progressLogs.form.error.spam = Considered spam
+client.contract.form.error.contract = This contract is in draft mode
 
 client.progress-logs.create = Create
 client.progress-logs.form.button.delete = Delete

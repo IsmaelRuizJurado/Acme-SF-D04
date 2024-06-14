@@ -76,6 +76,9 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 			super.state(this.auxiliarService.validatePrice(object.getBudget().getAmount(), 0, object.getProject().getCost().getAmount() / 2), "budget", "client.contract.form.error.budget");
 		if (!super.getBuffer().getErrors().hasErrors("budget"))
 			super.state(this.auxiliarService.validateCurrency(object.getBudget()), "budget", "client.contract.form.error.budget2");
+
+		if (!super.getBuffer().getErrors().hasErrors("project"))
+			super.state(!object.getProject().isDraftMode(), "project", "client.contract.form.error.project");
 	}
 
 	@Override
