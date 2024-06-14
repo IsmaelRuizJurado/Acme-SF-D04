@@ -16,6 +16,7 @@ client.progressLogs.form.error.recordId = Este registro ya existe
 client.progressLogs.form.error.draftMode =  No puedes editar o eliminar un acta ya publicada
 client.progressLogs.form.error.moment = Debe de estar en el pasado
 client.progressLogs.form.error.spam = Se considera spam
+client.contract.form.error.contract = Este contrato es un borrador
 
 client.progress-logs.create = Crear
 client.progress-logs.form.button.delete = Eliminar

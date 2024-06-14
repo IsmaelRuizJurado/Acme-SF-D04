@@ -65,6 +65,9 @@ public class ClientProgressLogCreateService extends AbstractService<Client, Prog
 
 		if (!super.getBuffer().getErrors().hasErrors("responsiblePerson"))
 			super.state(this.auxiliarService.validateTextImput(object.getResponsiblePerson()), "title", "client.progressLogs.form.error.spam");
+
+		if (!super.getBuffer().getErrors().hasErrors("contract"))
+			super.state(!object.getContract().isDraftMode(), "contract", "client.contract.form.error.contract");
 	}
 
 	@Override

@@ -21,6 +21,7 @@ client.contract.form.error.budget = The budget must be under half the projects c
 client.contract.form.error.budget2 = The introduced currency is not accepted by the system
 client.contract.form.error.code = Already exists this code
 client.contract.form.error.moment = Must be in the past
+client.contract.form.error.project = This project is in draft mode
 
 client.contract.create = Create
 client.contract.form.button.delete = Delete
