@@ -48,10 +48,9 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 	@Override
 	public void validate(final TrainingSession object) {
 		assert object != null;
-
 		if (!super.getBuffer().getErrors().hasErrors("startPeriod")) {
 			super.state(this.auxiliarService.validateDate(object.getStartPeriod()), "startPeriod", "developer.training-session.form.error.startPeriod");
-			super.state(object.getTrainingModule() == null || object.getStartPeriod().after(object.getTrainingModule().getCreationTime()), "startPeriod", "developer.training-session.form.error.startPeriod");
+			super.state(object.getTrainingModule() == null || object.getStartPeriod().after(object.getTrainingModule().getCreationTime()), "startPeriod", "developer.training-session.form.error.startPeriod.beforeCreationTime");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("location"))
@@ -60,7 +59,8 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 			super.state(this.auxiliarService.validateTextImput(object.getInstructor()), "instructor", "developer.training-session.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
 			super.state(this.auxiliarService.validateDate(object.getEndPeriod()), "endPeriod", "developer.training-session.form.error.endPeriod");
-			super.state(TimeUnit.DAYS.convert(Math.abs(object.getEndPeriod().getTime() - object.getStartPeriod().getTime()), TimeUnit.MILLISECONDS) >= 7, "endPeriod", "developer.training-session.form.error.endPeriod");
+			if (object.getStartPeriod() != null && object.getEndPeriod() != null)
+				super.state(TimeUnit.DAYS.convert(Math.abs(object.getEndPeriod().getTime() - object.getStartPeriod().getTime()), TimeUnit.MILLISECONDS) >= 7, "endPeriod", "developer.training-session.form.error.endPeriod");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
@@ -72,7 +72,7 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 		if (!super.getBuffer().getErrors().hasErrors("trainingModule")) {
 			TrainingModule published;
 			published = this.repository.findTrainingModuleNotPublishedByDeveloperIdAndModuleId(super.getRequest().getPrincipal().getActiveRoleId(), object.getTrainingModule().getId());
-			super.state(published != null, "project", "developer.training_module.form.error.project");
+			super.state(published == null, "trainingModule", "developer.training-session.form.error.module");
 		}
 
 	}

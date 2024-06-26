@@ -62,7 +62,8 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 			super.state(this.auxiliarService.validateTextImput(object.getInstructor()), "instructor", "developer.training-session.form.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("endPeriod")) {
 			super.state(this.auxiliarService.validateDate(object.getEndPeriod()), "endPeriod", "developer.training-session.form.error.endPeriod");
-			super.state(TimeUnit.DAYS.convert(Math.abs(object.getEndPeriod().getTime() - object.getStartPeriod().getTime()), TimeUnit.MILLISECONDS) >= 7, "endPeriod", "developer.training-session.form.error.endPeriod");
+			if (object.getStartPeriod() != null && object.getEndPeriod() != null)
+				super.state(TimeUnit.DAYS.convert(Math.abs(object.getEndPeriod().getTime() - object.getStartPeriod().getTime()), TimeUnit.MILLISECONDS) >= 7, "endPeriod", "developer.training-session.form.error.endPeriod");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {

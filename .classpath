@@ -45,6 +45,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="**/fragments/**" kind="src" path="acme-framework"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/SpamFilter"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Acme-Framework-24.5.0">
 		<attributes>
