@@ -54,6 +54,12 @@ public class AuditorCodeAuditsUpdateService extends AbstractService<Auditor, Cod
 	@Override
 	public void validate(final CodeAudits object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			CodeAudits existing;
+			existing = this.repository.findCodeAuditsByCode(object.getCode());
+			final CodeAudits code2 = object.getCode().equals("") || object.getCode() == null ? null : this.repository.findCodeAuditsById(object.getId());
+			super.state(existing == null || code2.equals(existing), "code", "auditor.code-audits.form.error.code");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("correctiveActions"))
 			super.state(this.auxiliarService.validateTextImput(object.getCorrectiveActions()), "correctiveActions", "auditor.code-audits.form.error.spam");
 	}

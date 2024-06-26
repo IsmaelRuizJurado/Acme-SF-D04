@@ -57,7 +57,7 @@ public class AuditorAuditRecordsCreateService extends AbstractService<Auditor, A
 			if (startPeriod != null && endPeriod != null) {
 				long diffInMillis = endPeriod.getTime() - startPeriod.getTime();
 				long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillis);
-				super.state(diffInHours >= 1, "period", "auditor.audit-records.form.error.period");
+				super.state(diffInHours >= 1, "endPeriod", "auditor.audit-records.form.error.period");
 			}
 
 		}

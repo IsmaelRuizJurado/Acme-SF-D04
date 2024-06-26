@@ -21,6 +21,7 @@ client.contract.form.error.budget = El presupuesto debe ser inferior a la mitad 
 client.contract.form.error.budget2 = La moneda introducida no es aceptada por el sistema
 client.contract.form.error.code = Este codigo ya existe
 client.contract.form.error.moment = Debe estar en el pasado
+client.contract.form.error.project = Este proyecto esta en borrador
 
 client.contract.create = Crear
 client.contract.form.button.delete = Eliminar

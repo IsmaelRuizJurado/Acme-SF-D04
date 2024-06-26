@@ -35,7 +35,7 @@ public class AuditRecords extends AbstractEntity {
 	@Column(unique = true)
 	@NotBlank
 	@NotNull
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "AU-[0-9]{4}-[0-9]{3}")
 	private String				code;
 
 	@NotNull
@@ -54,7 +54,7 @@ public class AuditRecords extends AbstractEntity {
 	@URL
 	private String				link;
 
-	private boolean				draftMode;
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 

@@ -1,7 +1,6 @@
 
 package acme.features.auditor.audit_records;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -36,7 +35,7 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 		object = this.repository.findAuditRecordById(id);
 		final Principal principal = super.getRequest().getPrincipal();
 		final int userAccountId = principal.getAccountId();
-		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId && object.isDraftMode());
+		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId);
 	}
 
 	@Override
@@ -60,6 +59,15 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 		if (object == null)
 			throw new IllegalArgumentException("No Audit Records found");
 
+		super.state(object.getDraftMode() == true, "code", "auditor.audit-records.form.error.publish-draftMode");
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			AuditRecords existing;
+			existing = this.repository.findAuditRecordsByCode(object.getCode());
+			final AuditRecords auditRecord2 = object.getCode().equals("") || object.getCode() == null ? null : this.repository.findAuditRecordById(object.getId());
+			super.state(existing == null || auditRecord2.equals(existing), "code", "auditor.audit-records.form.error.code");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("period")) {
 			Date startPeriod = object.getStartPeriod();
 			Date endPeriod = object.getEndPeriod();
@@ -67,7 +75,7 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 			if (startPeriod != null && endPeriod != null) {
 				long diffInMillis = endPeriod.getTime() - startPeriod.getTime();
 				long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillis);
-				super.state(diffInHours >= 1, "period", "auditor.audit-records.form.error.period");
+				super.state(diffInHours >= 1, "endPeriod", "auditor.audit-records.form.error.period");
 			}
 		}
 	}
@@ -91,15 +99,12 @@ public class AuditorAuditRecordsPublishService extends AbstractService<Auditor, 
 		dataset.put("marks", choices);
 
 		final SelectChoices choices2 = new SelectChoices();
-		Collection<CodeAudits> codeaudits;
-		int id = super.getRequest().getPrincipal().getActiveRoleId();
-		codeaudits = this.repository.findCodeAuditsByAuditor(id);
-		for (final CodeAudits c : codeaudits)
-			choices2.add(Integer.toString(c.getId()), c.getCode(), false);
+		CodeAudits codeaudits;
+		codeaudits = object.getCodeAudits();
+		choices2.add(Integer.toString(codeaudits.getId()), codeaudits.getCode(), false);
 
 		dataset.put("codeauditslist", choices2);
 		super.getResponse().addData(dataset);
-
 	}
 
 }

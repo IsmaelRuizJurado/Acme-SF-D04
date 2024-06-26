@@ -1,8 +1,6 @@
 
 package acme.features.auditor.audit_records;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +29,7 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 		object = this.repository.findAuditRecordById(id);
 		final Principal principal = super.getRequest().getPrincipal();
 		final int userAccountId = principal.getAccountId();
-		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId && object.isDraftMode());
+		super.getResponse().setAuthorised(object.getCodeAudits().getAuditor().getUserAccount().getId() == userAccountId);
 
 	}
 
@@ -55,7 +53,7 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 	public void validate(final AuditRecords object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode(), "draftMode", "auditor.audit-records.form.error.draftMode");
+			super.state(object.getDraftMode() == true, "code", "auditor.audit-records.form.error.draftMode");
 	}
 
 	@Override
@@ -77,11 +75,9 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 		dataset.put("marks", choices);
 
 		final SelectChoices choices2 = new SelectChoices();
-		Collection<CodeAudits> codeaudits;
-		int id = super.getRequest().getPrincipal().getActiveRoleId();
-		codeaudits = this.repository.findCodeAuditsByAuditor(id);
-		for (final CodeAudits c : codeaudits)
-			choices2.add(Integer.toString(c.getId()), c.getCode(), false);
+		CodeAudits codeaudits;
+		codeaudits = object.getCodeAudits();
+		choices2.add(Integer.toString(codeaudits.getId()), codeaudits.getCode(), false);
 
 		dataset.put("codeauditslist", choices2);
 		super.getResponse().addData(dataset);

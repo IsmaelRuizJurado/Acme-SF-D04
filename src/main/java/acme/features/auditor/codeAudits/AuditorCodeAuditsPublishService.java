@@ -59,8 +59,17 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			CodeAudits existing;
+			existing = this.repository.findCodeAuditsByCode(object.getCode());
+			final CodeAudits code2 = object.getCode().equals("") || object.getCode() == null ? null : this.repository.findCodeAuditsById(object.getId());
+			super.state(existing == null || code2.equals(existing), "code", "auditor.code-audits.form.error.code");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("correctiveActions"))
 			super.state(this.auxiliarService.validateTextImput(object.getCorrectiveActions()), "correctiveActions", "auditor.code-audits.form.error.spam");
+
+		super.state(object.isDraftMode() == true, "code", "auditor.code-audits.form.error.publish-draftMode");
 
 		//The mark must be, at least, “C”
 		final Collection<AuditRecords> audits = this.repository.findAuditRecordsByCodeAudits(object);
@@ -75,7 +84,7 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 			}
 
 		if (highestMarkType != null && (highestMarkType.equals(MarkType.F) || highestMarkType.equals(MarkType.FMINUS)))
-			super.state(false, "markType", "auditor.code-audits.form.error.mark");
+			super.state(false, "code", "auditor.code-audits.form.error.mark");
 
 	}
 
