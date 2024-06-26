@@ -26,8 +26,8 @@ developer.training-session.form.error.module = Training Module must not be null.
 
 developer.training_session.training_session = Training Sessions
 
-developer.training_session.form.error.code = It exists a training session with the same code
-validation.training_session.code = The code must be between 1 and 3 capital letters and 3 numbers joined by -
+developer.training-session.form.error.code = It exists a training session with the same code
+validation.training-session.code = The code must follow the pattern.
 
 developer.training_session.create = Create
 developer.training_session.form.button.delete = Delete
